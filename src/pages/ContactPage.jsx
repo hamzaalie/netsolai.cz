@@ -100,7 +100,7 @@ export default function ContactPage() {
     },
     {
       label: T.contact.info.address,
-      value: 'Školská 660/3, Nové Město,\n110 00 Praha 1',
+      value: 'Netsol AI s.r.o.\nSídlo: Školská 660/3, Nové Město,\n110 00 Praha 1\nIČ: 249 79 333',
       href: 'https://maps.google.com/?q=Školská+660/3,+Praha+1',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
