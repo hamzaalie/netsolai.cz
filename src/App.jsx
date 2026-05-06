@@ -284,7 +284,7 @@ export default function App() {
 
             <a className="portfolio-card" href="https://www.creativehiveco.com/" target="_blank" rel="noreferrer">
               <div className="pc-image-wrapper">
-                <img src="/images/portfolio/Creative Hive co.png" alt="Creative Hive Co — creative community platform" />
+                <img src="/images/portfolio/creative-hive-co.png" alt="Creative Hive Co — creative community platform" />
                 <div className="pc-hover-overlay">
                   <div className="pc-hover-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -300,7 +300,7 @@ export default function App() {
 
             <a className="portfolio-card" href="https://www.thecontractorsacademy.com/" target="_blank" rel="noreferrer">
               <div className="pc-image-wrapper">
-                <img src="/images/portfolio/The contractor Academy.png" alt="The Contractors Academy — training platform for contractors" />
+                <img src="/images/portfolio/the-contractors-academy.png" alt="The Contractors Academy — training platform for contractors" />
                 <div className="pc-hover-overlay">
                   <div className="pc-hover-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -316,7 +316,7 @@ export default function App() {
 
             <a className="portfolio-card" href="https://slumbercbn.com/" target="_blank" rel="noreferrer">
               <div className="pc-image-wrapper">
-                <img src="/images/portfolio/Slumber.png" alt="Slumber CBN — sleep wellness e-commerce brand" />
+                <img src="/images/portfolio/slumber.png" alt="Slumber CBN — sleep wellness e-commerce brand" />
                 <div className="pc-hover-overlay">
                   <div className="pc-hover-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -332,7 +332,7 @@ export default function App() {
 
             <a className="portfolio-card" href="https://imagine-thailand.com/" target="_blank" rel="noreferrer">
               <div className="pc-image-wrapper">
-                <img src="/images/portfolio/Imagine health.png" alt="Imagine Health — health & wellness platform" />
+                <img src="/images/portfolio/imagine-health.png" alt="Imagine Health — health & wellness platform" />
                 <div className="pc-hover-overlay">
                   <div className="pc-hover-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
