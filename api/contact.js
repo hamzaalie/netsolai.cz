@@ -71,79 +71,92 @@ export default async function handler(req, res) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>New Enquiry — Netsol AI</title>
 </head>
-<body style="margin:0;padding:0;background:#0a0a0f;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0f;padding:40px 16px;">
+<body style="margin:0;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#111111;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 16px;">
     <tr>
       <td align="center">
-        <table width="100%" style="max-width:560px;background:#111118;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
+        <table width="100%" style="max-width:560px;">
 
+          <!-- Header -->
           <tr>
-            <td style="background:linear-gradient(135deg,#1a1a2e 0%,#0f0f1a 100%);padding:32px 40px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <td style="padding:0 0 24px 0;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td>
-                    <p style="margin:0 0 4px 0;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#6c6cff;">New Enquiry</p>
-                    <h1 style="margin:0;font-size:22px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">Netsol AI</h1>
+                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#5c5cff;">New Enquiry</p>
+                    <h1 style="margin:0;font-size:24px;font-weight:700;color:#111111;">Netsol AI</h1>
                   </td>
                   <td align="right" style="vertical-align:middle;">
-                    <span style="display:inline-block;background:rgba(108,108,255,0.15);border:1px solid rgba(108,108,255,0.3);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:#8f8fff;letter-spacing:0.5px;">CONTACT FORM</span>
+                    <span style="display:inline-block;border:1.5px solid #5c5cff;border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:#5c5cff;letter-spacing:0.5px;">CONTACT FORM</span>
                   </td>
                 </tr>
               </table>
+              <div style="height:3px;background:#5c5cff;border-radius:2px;margin-top:16px;"></div>
             </td>
           </tr>
 
+          <!-- Intro -->
           <tr>
-            <td style="padding:32px 40px;">
-              <p style="margin:0 0 24px 0;font-size:14px;color:#9090a0;line-height:1.6;">
-                Someone has submitted an enquiry through the website contact form. Details below.
+            <td style="padding:0 0 20px 0;">
+              <p style="margin:0;font-size:14px;color:#666666;line-height:1.6;">
+                Someone submitted an enquiry through the website contact form.
               </p>
+            </td>
+          </tr>
 
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+          <!-- Fields -->
+          <tr>
+            <td style="padding:0 0 20px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#6060a0;">Name</p>
-                    <p style="margin:0;font-size:15px;color:#e8e8f0;font-weight:500;">${name}</p>
+                  <td style="padding:12px 0;border-bottom:1px solid #eeeeee;">
+                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#999999;">Name</p>
+                    <p style="margin:0;font-size:15px;color:#111111;font-weight:500;">${name}</p>
                   </td>
                 </tr>
                 <tr>
-                  <td style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#6060a0;">Email</p>
+                  <td style="padding:12px 0;border-bottom:1px solid #eeeeee;">
+                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#999999;">Email</p>
                     <p style="margin:0;font-size:15px;">
-                      <a href="mailto:${email}" style="color:#8f8fff;text-decoration:none;font-weight:500;">${email}</a>
+                      <a href="mailto:${email}" style="color:#5c5cff;text-decoration:none;font-weight:500;">${email}</a>
                     </p>
                   </td>
                 </tr>
                 <tr>
-                  <td style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#6060a0;">Subject</p>
-                    <p style="margin:0;font-size:15px;color:#e8e8f0;font-weight:500;">${subject}</p>
-                  </td>
-                </tr>
-              </table>
-
-              <p style="margin:0 0 8px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#6060a0;">Message</p>
-              <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px 20px;">
-                <p style="margin:0;font-size:15px;color:#d0d0e0;line-height:1.7;white-space:pre-wrap;">${message.replace(/\n/g, '<br/>')}</p>
-              </div>
-
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:28px;">
-                <tr>
-                  <td align="center">
-                    <a href="mailto:${email}" style="display:inline-block;background:linear-gradient(135deg,#5c5cff,#8f8fff);color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;padding:12px 28px;border-radius:8px;letter-spacing:0.2px;">
-                      Reply to ${name}
-                    </a>
+                  <td style="padding:12px 0;border-bottom:1px solid #eeeeee;">
+                    <p style="margin:0 0 2px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#999999;">Subject</p>
+                    <p style="margin:0;font-size:15px;color:#111111;font-weight:500;">${subject}</p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
+          <!-- Message -->
           <tr>
-            <td style="padding:20px 40px;border-top:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.2);">
-              <p style="margin:0;font-size:12px;color:#505060;text-align:center;line-height:1.5;">
-                This email was sent from the contact form at
-                <a href="https://netsolai.cz" style="color:#6c6cff;text-decoration:none;">netsolai.cz</a>
+            <td style="padding:0 0 28px 0;">
+              <p style="margin:0 0 8px 0;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#999999;">Message</p>
+              <div style="border-left:3px solid #5c5cff;padding:12px 16px;background:#f7f7ff;border-radius:0 6px 6px 0;">
+                <p style="margin:0;font-size:15px;color:#222222;line-height:1.7;">${message.replace(/\n/g, '<br/>')}</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- CTA -->
+          <tr>
+            <td style="padding:0 0 36px 0;" align="center">
+              <a href="mailto:${email}" style="display:inline-block;background:#5c5cff;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;padding:12px 28px;border-radius:8px;letter-spacing:0.2px;">
+                Reply to ${name}
+              </a>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="border-top:1px solid #eeeeee;padding-top:20px;">
+              <p style="margin:0;font-size:12px;color:#aaaaaa;text-align:center;line-height:1.5;">
+                Sent from the contact form at
+                <a href="https://netsolai.cz" style="color:#5c5cff;text-decoration:none;">netsolai.cz</a>
                 &nbsp;·&nbsp; Netsol AI s.r.o., Školská 660/3, Praha 1
               </p>
             </td>
