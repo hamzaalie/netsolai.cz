@@ -1,6 +1,7 @@
 import { AIAutomationPreview, ProductDevPreview, DesignPreview, GrowthPreview, IntegrationsPreview } from './components/ServicePreviews';
 import AboutSection from './components/AboutSection';
 import SiteLayout from './components/SiteLayout';
+import SEOHead from './components/SEOHead';
 import { useEffect } from 'react';
 import { useLanguage } from './context/LanguageContext';
 import translations from './i18n/index';
@@ -100,8 +101,50 @@ export default function App() {
   const { lang } = useLanguage();
   const T = translations[lang];
 
+  const homeJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Netsol AI s.r.o.",
+      "url": "https://netsolai.cz",
+      "logo": "https://netsolai.cz/images/logo/Oroginal.png",
+      "description": "AI-powered digital agency specialising in automation systems, scalable web development, and growth infrastructure for startups and scaling businesses.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Školská 660/3, Nové Město",
+        "addressLocality": "Praha 1",
+        "postalCode": "110 00",
+        "addressCountry": "CZ"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420721405452",
+        "email": "info@netsolai.cz",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Czech"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/netsolai.cz/",
+        "https://www.instagram.com/netsolai/",
+        "https://www.tiktok.com/@netsolai.cz"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Netsol AI",
+      "url": "https://netsolai.cz"
+    }
+  ];
+
   return (
     <SiteLayout>
+      <SEOHead
+        title="Netsol AI | AI-Powered Digital Agency — Automation, Web Dev & Growth"
+        description="Netsol AI builds AI automation systems, scalable web products, and growth infrastructure for startups and businesses ready to scale smarter. Based in Prague."
+        canonical="/"
+        jsonLd={homeJsonLd}
+      />
 
       {/* ══ HERO BANNER ══ */}
       <div className="cta-banner-wrapper">

@@ -1,9 +1,20 @@
 import { useLanguage } from '../context/LanguageContext';
 import LegalLayout from '../components/LegalLayout';
+import SEOHead from '../components/SEOHead';
 
 export default function PrivacyPage() {
   const { lang } = useLanguage();
-  return lang === 'cs' ? <PrivacyCS /> : <PrivacyEN />;
+  return (
+    <>
+      <SEOHead
+        title="Privacy Policy | Netsol AI"
+        description="Read Netsol AI's privacy policy to understand how we collect, use, and protect your personal data in line with GDPR and Czech law."
+        canonical="/privacy-policy"
+        noIndex={false}
+      />
+      {lang === 'cs' ? <PrivacyCS /> : <PrivacyEN />}
+    </>
+  );
 }
 
 function PrivacyEN() {

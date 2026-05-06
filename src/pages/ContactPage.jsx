@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import SiteLayout from '../components/SiteLayout';
+import SEOHead from '../components/SEOHead';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../i18n/index';
 
@@ -159,8 +160,35 @@ export default function ContactPage() {
     }
   };
 
+  const contactJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Netsol AI s.r.o.",
+    "url": "https://netsolai.cz",
+    "telephone": "+420721405452",
+    "email": "info@netsolai.cz",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Školská 660/3, Nové Město",
+      "addressLocality": "Praha 1",
+      "postalCode": "110 00",
+      "addressCountry": "CZ"
+    },
+    "sameAs": [
+      "https://www.facebook.com/netsolai.cz/",
+      "https://www.instagram.com/netsolai/",
+      "https://www.tiktok.com/@netsolai.cz"
+    ]
+  };
+
   return (
     <SiteLayout>
+      <SEOHead
+        title="Contact Netsol AI | Get in Touch with Our AI Agency in Prague"
+        description="Reach out to Netsol AI — Prague's AI-powered digital agency. Call +420 721 405 452, email info@netsolai.cz, or use our contact form to start a conversation."
+        canonical="/contact"
+        jsonLd={[contactJsonLd]}
+      />
       {/* ── Hero ── */}
       <div className="cta-banner-wrapper">
         <section className="cp-hero" aria-label="Contact hero">

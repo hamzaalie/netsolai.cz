@@ -1,9 +1,20 @@
 import { useLanguage } from '../context/LanguageContext';
 import LegalLayout from '../components/LegalLayout';
+import SEOHead from '../components/SEOHead';
 
 export default function TermsPage() {
   const { lang } = useLanguage();
-  return lang === 'cs' ? <TermsCS /> : <TermsEN />;
+  return (
+    <>
+      <SEOHead
+        title="Terms & Conditions | Netsol AI"
+        description="Read the terms and conditions governing use of Netsol AI's services and website."
+        canonical="/terms-and-conditions"
+        noIndex={false}
+      />
+      {lang === 'cs' ? <TermsCS /> : <TermsEN />}
+    </>
+  );
 }
 
 function TermsEN() {

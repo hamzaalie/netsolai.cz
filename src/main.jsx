@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "./context/LanguageContext";
 import App from "./App";
 import ContactPage from "./pages/ContactPage";
@@ -11,6 +12,7 @@ import "../styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <HelmetProvider>
     <LanguageProvider>
       <BrowserRouter>
         <Routes>
@@ -22,5 +24,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

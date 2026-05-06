@@ -1,9 +1,20 @@
 import { useLanguage } from '../context/LanguageContext';
 import LegalLayout from '../components/LegalLayout';
+import SEOHead from '../components/SEOHead';
 
 export default function CookiesPage() {
   const { lang } = useLanguage();
-  return lang === 'cs' ? <CookiesCS /> : <CookiesEN />;
+  return (
+    <>
+      <SEOHead
+        title="Cookies Policy | Netsol AI"
+        description="Learn how Netsol AI uses cookies and similar technologies on our website, and how to manage your cookie preferences."
+        canonical="/cookies-policy"
+        noIndex={false}
+      />
+      {lang === 'cs' ? <CookiesCS /> : <CookiesEN />}
+    </>
+  );
 }
 
 function CookiesEN() {
