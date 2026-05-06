@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx vite *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Bash(powershell -command \"\\(Get-Content 'd:\\\\NetsolAi\\\\V3\\\\styles.css'\\).Count\")",
+      "Bash(not exist *)"
+    ]
+  }
+}

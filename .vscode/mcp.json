@@ -1,0 +1,30 @@
+{
+	"inputs": [
+		{
+			"type": "promptString",
+			"id": "firecrawlApiKey",
+			"description": "Firecrawl API Key",
+			"password": true
+		}
+	],
+	"servers": {
+		"playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"firecrawl": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"firecrawl-mcp"
+			],
+			"env": {
+				"FIRECRAWL_API_KEY": "fc-af721eca3a9740e5807a98f24cf14a6f"
+			},
+			"type": "stdio"
+		}
+	}
+}
