@@ -282,25 +282,41 @@ export default function App() {
 
           <div className="portfolio-grid">
 
-            <div className="portfolio-card">
+            <a className="portfolio-card" href="https://www.creativehiveco.com/" target="_blank" rel="noreferrer">
               <div className="pc-image-wrapper">
-                <img src="/images/port-ai.png" alt="Nexus AI Dashboard — AI analytics SaaS platform" />
+                <img src="/images/portfolio/Creative Hive co.png" alt="Creative Hive Co — creative community platform" />
                 <div className="pc-hover-overlay">
                   <div className="pc-hover-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </div>
                 </div>
                 <div className="pc-tags-floating">
-                  <span className="pc-tag">AI Analytics</span>
-                  <span className="pc-tag">SaaS</span>
+                  <span className="pc-tag">Web Dev</span>
+                  <span className="pc-tag">Community</span>
                 </div>
               </div>
-              <h3>Nexus AI Dashboard</h3>
-            </div>
+              <h3>Creative Hive Co</h3>
+            </a>
 
-            <div className="portfolio-card">
+            <a className="portfolio-card" href="https://www.thecontractorsacademy.com/" target="_blank" rel="noreferrer">
               <div className="pc-image-wrapper">
-                <img src="/images/port-ecom.png" alt="Aura Commerce — high-converting e-commerce storefront" />
+                <img src="/images/portfolio/The contractor Academy.png" alt="The Contractors Academy — training platform for contractors" />
+                <div className="pc-hover-overlay">
+                  <div className="pc-hover-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </div>
+                </div>
+                <div className="pc-tags-floating">
+                  <span className="pc-tag">E-Learning</span>
+                  <span className="pc-tag">Web Dev</span>
+                </div>
+              </div>
+              <h3>The Contractors Academy</h3>
+            </a>
+
+            <a className="portfolio-card" href="https://slumbercbn.com/" target="_blank" rel="noreferrer">
+              <div className="pc-image-wrapper">
+                <img src="/images/portfolio/Slumber.png" alt="Slumber CBN — sleep wellness e-commerce brand" />
                 <div className="pc-hover-overlay">
                   <div className="pc-hover-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -308,43 +324,27 @@ export default function App() {
                 </div>
                 <div className="pc-tags-floating">
                   <span className="pc-tag">E-Commerce</span>
+                  <span className="pc-tag">Branding</span>
+                </div>
+              </div>
+              <h3>Slumber CBN</h3>
+            </a>
+
+            <a className="portfolio-card" href="https://imagine-thailand.com/" target="_blank" rel="noreferrer">
+              <div className="pc-image-wrapper">
+                <img src="/images/portfolio/Imagine health.png" alt="Imagine Health — health & wellness platform" />
+                <div className="pc-hover-overlay">
+                  <div className="pc-hover-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </div>
+                </div>
+                <div className="pc-tags-floating">
+                  <span className="pc-tag">Health</span>
                   <span className="pc-tag">Web Dev</span>
                 </div>
               </div>
-              <h3>Aura Commerce</h3>
-            </div>
-
-            <div className="portfolio-card">
-              <div className="pc-image-wrapper">
-                <img src="/images/port-fintech.png" alt="Vault Financial — fintech web application" />
-                <div className="pc-hover-overlay">
-                  <div className="pc-hover-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  </div>
-                </div>
-                <div className="pc-tags-floating">
-                  <span className="pc-tag">Fintech</span>
-                  <span className="pc-tag">Mobile/Web</span>
-                </div>
-              </div>
-              <h3>Vault Financial</h3>
-            </div>
-
-            <div className="portfolio-card">
-              <div className="pc-image-wrapper">
-                <img src="/images/port-auto.png" alt="FlowOps Builder — no-code automation workflow platform" />
-                <div className="pc-hover-overlay">
-                  <div className="pc-hover-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  </div>
-                </div>
-                <div className="pc-tags-floating">
-                  <span className="pc-tag">Automation</span>
-                  <span className="pc-tag">Systems</span>
-                </div>
-              </div>
-              <h3>FlowOps Builder</h3>
-            </div>
+              <h3>Imagine Health</h3>
+            </a>
 
           </div>
         </div>
