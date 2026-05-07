@@ -17,7 +17,7 @@ const T = {
       cta1: 'Book Free AI Audit →',
       cta2: 'See How It Works ↓',
       stats: ['Prague-based', 'Builds in 2–3 weeks', 'No long contracts'],
-      flow: ['Enquiry comes in', 'AI qualifies in 60 sec', 'Viewing booked automatically', 'Agent gets hot lead alert'],
+      flow: ['Visitor finds you on Google / Ads', 'AI captures lead 24/7', 'Lead qualified in 60 sec', 'Viewing booked automatically', 'Agent closes the deal'],
     },
     proof: ['✓ 4 live projects built', '✓ Prague & EU clients', '✓ Built with Claude · n8n · OpenAI', '✓ Avg. delivery: 3 weeks', '✓ Czech + English support'],
     split: {
@@ -154,7 +154,7 @@ const T = {
       cta1: 'Rezervovat bezplatný AI audit →',
       cta2: 'Jak to funguje ↓',
       stats: ['Sídlíme v Praze', 'Dodáváme za 2–3 týdny', 'Bez dlouhých smluv'],
-      flow: ['Přijde poptávka', 'AI kvalifikuje za 60 sec', 'Prohlídka rezervována automaticky', 'Makléř dostane upozornění'],
+      flow: ['Návštěvník vás najde na Googlu / Ads', 'AI zachytí lead 24/7', 'Lead kvalifikován za 60 sec', 'Prohlídka rezervována automaticky', 'Makléř uzavře obchod'],
     },
     proof: ['✓ 4 živé projekty', '✓ Klienti v Praze i EU', '✓ Postaveno s Claude · n8n · OpenAI', '✓ Průměrná dodávka: 3 týdny', '✓ Podpora česky i anglicky'],
     split: {
