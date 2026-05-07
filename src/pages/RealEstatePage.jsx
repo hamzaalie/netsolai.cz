@@ -876,7 +876,6 @@ export default function RealEstatePage() {
 
       <div ref={processRef}><ProcessSection t={t} onBook={bookAudit} /></div>
 
-      <PackagesSection t={t} onBook={bookAudit} />
       <CasesSection t={t} />
       <FAQSection t={t} />
       <FinalCTA t={t} onBook={bookAudit} ctaRef={ctaRef} />
