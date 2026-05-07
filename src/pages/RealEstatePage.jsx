@@ -330,7 +330,7 @@ function RENav({ t, lang, setLang, onBook }) {
   return (
     <nav className={`re-nav${scrolled ? ' re-nav--scrolled' : ''}`}>
       <a href="/" className="re-nav-logo">
-        <img src="/images/logo/White.png" alt="Netsol AI" height={28} />
+        <img src="/images/logo/Oroginal.png" alt="Netsol AI" height={28} />
       </a>
       <div className="re-nav-right">
         <button className="re-lang-btn" onClick={() => setLang(l => l === 'cs' ? 'en' : 'cs')}>
@@ -768,7 +768,7 @@ function REFooter() {
     <footer className="re-footer">
       <div className="re-container re-footer-inner">
         <a href="/" className="re-footer-logo">
-          <img src="/images/logo/White.png" alt="Netsol AI" height={26} />
+          <img src="/images/logo/Oroginal.png" alt="Netsol AI" height={26} />
         </a>
         <p className="re-footer-copy">© 2026 Netsol AI s.r.o. · Školská 660/3, Praha 1</p>
         <div className="re-footer-links">
