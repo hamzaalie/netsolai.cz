@@ -347,29 +347,28 @@ function RENav({ t, lang, setLang, onBook }) {
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
+const FLOW_ICONS = ['🔍', '🤖', '⚡', '📅', '🏆'];
+
 function FlowDiagram({ steps }) {
   return (
     <div className="re-flow">
+      <div className="re-flow-track" />
       {steps.map((step, i) => (
-        <div key={i} className="re-flow-item">
-          <motion.div
-            className="re-flow-box"
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7 + i * 0.25, duration: 0.45 }}
-          >
-            <span className="re-flow-dot" />
-            {step}
-          </motion.div>
-          {i < steps.length - 1 && (
-            <motion.div
-              className="re-flow-arrow"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 + i * 0.25 }}
-            >↓</motion.div>
-          )}
-        </div>
+        <motion.div
+          key={i}
+          className={`re-flow-step${i === steps.length - 1 ? ' re-flow-step--final' : ''}`}
+          initial={{ opacity: 0, x: 32 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5 + i * 0.18, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="re-flow-node">
+            <span className="re-flow-num">{String(i + 1).padStart(2, '0')}</span>
+          </div>
+          <div className="re-flow-card">
+            <span className="re-flow-icon">{FLOW_ICONS[i]}</span>
+            <span className="re-flow-text">{step}</span>
+          </div>
+        </motion.div>
       ))}
     </div>
   );
