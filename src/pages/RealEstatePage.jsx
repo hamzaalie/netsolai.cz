@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import SEOHead from '../components/SEOHead';
+import SiteFooter from '../components/SiteFooter';
 import '../styles/re-landing.css';
 
 const CALENDLY = 'https://calendly.com/netsolai/ai-audit';
@@ -319,30 +320,53 @@ function ProgressBar({ label, hours, max }) {
 }
 
 // ─── Nav ──────────────────────────────────────────────────────────────────────
-function RENav({ t, lang, setLang, onBook }) {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', h, { passive: true });
-    return () => window.removeEventListener('scroll', h);
-  }, []);
+const RE_NAV_LINKS = {
+  en: [
+    { label: 'How It Works', href: '#process'  },
+    { label: 'Pricing',      href: '#packages' },
+    { label: 'Portfolio',    href: '#work'      },
+    { label: 'FAQ',          href: '#faq'       },
+  ],
+  cs: [
+    { label: 'Jak to funguje', href: '#process'  },
+    { label: 'Ceny',           href: '#packages' },
+    { label: 'Portfolio',      href: '#work'      },
+    { label: 'FAQ',            href: '#faq'       },
+  ],
+};
 
+function RENav({ t, lang, setLang, onBook }) {
+  const links = RE_NAV_LINKS[lang];
   return (
-    <nav className={`re-nav${scrolled ? ' re-nav--scrolled' : ''}`}>
-      <div className="re-nav-pill">
-        <a href="/" className="re-nav-logo">
-          <img src="/images/logo/Oroginal.png" alt="Netsol AI" height={28} />
+    <header className="topbar">
+      <div className="topbar-pill">
+        <a href="/" className="brand">
+          <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="brand-logo" />
         </a>
-        <div className="re-nav-right">
-          <button className="re-lang-btn" onClick={() => setLang(l => l === 'cs' ? 'en' : 'cs')}>
-            {t.nav.langToggle}
-          </button>
-          <button className="re-btn-primary re-nav-cta-pill" onClick={onBook}>
-            {t.nav.cta}
-          </button>
+
+        <nav className="nav-links" aria-label="Real Estate Page Navigation">
+          {links.map(({ label, href }) => (
+            <a key={href} href={href}>{label}</a>
+          ))}
+        </nav>
+
+        <div className="lang-switcher">
+          <button
+            className={`lang-btn${lang === 'en' ? ' lang-btn--active' : ''}`}
+            onClick={() => setLang('en')}
+            aria-label="Switch to English"
+          >EN</button>
+          <span className="lang-sep">|</span>
+          <button
+            className={`lang-btn${lang === 'cs' ? ' lang-btn--active' : ''}`}
+            onClick={() => setLang('cs')}
+            aria-label="Přepnout do češtiny"
+          >CS</button>
         </div>
+
+        <button className="topbar-cta" onClick={onBook}>{t.nav.cta}</button>
       </div>
-    </nav>
+    </header>
   );
 }
 
@@ -785,23 +809,6 @@ function FinalCTA({ t, onBook, ctaRef }) {
 }
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
-function REFooter() {
-  return (
-    <footer className="re-footer">
-      <div className="re-container re-footer-inner">
-        <a href="/" className="re-footer-logo">
-          <img src="/images/logo/Oroginal.png" alt="Netsol AI" height={26} />
-        </a>
-        <p className="re-footer-copy">© 2026 Netsol AI s.r.o. · Školská 660/3, Praha 1</p>
-        <div className="re-footer-links">
-          <a href="/privacy-policy">Privacy</a>
-          <a href="/terms-and-conditions">Terms</a>
-          <a href="/contact">Contact</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function RealEstatePage() {
@@ -876,7 +883,7 @@ export default function RealEstatePage() {
       <CasesSection t={t} />
       <FAQSection t={t} />
       <FinalCTA t={t} onBook={bookAudit} ctaRef={ctaRef} />
-      <REFooter />
+      <SiteFooter />
 
       <AnimatePresence>
         {showBar && (
