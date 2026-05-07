@@ -329,16 +329,18 @@ function RENav({ t, lang, setLang, onBook }) {
 
   return (
     <nav className={`re-nav${scrolled ? ' re-nav--scrolled' : ''}`}>
-      <a href="/" className="re-nav-logo">
-        <img src="/images/logo/Oroginal.png" alt="Netsol AI" height={28} />
-      </a>
-      <div className="re-nav-right">
-        <button className="re-lang-btn" onClick={() => setLang(l => l === 'cs' ? 'en' : 'cs')}>
-          {t.nav.langToggle}
-        </button>
-        <button className="re-btn-primary re-nav-cta" onClick={onBook}>
-          {t.nav.cta}
-        </button>
+      <div className="re-nav-pill">
+        <a href="/" className="re-nav-logo">
+          <img src="/images/logo/Oroginal.png" alt="Netsol AI" height={28} />
+        </a>
+        <div className="re-nav-right">
+          <button className="re-lang-btn" onClick={() => setLang(l => l === 'cs' ? 'en' : 'cs')}>
+            {t.nav.langToggle}
+          </button>
+          <button className="re-btn-primary re-nav-cta-pill" onClick={onBook}>
+            {t.nav.cta}
+          </button>
+        </div>
       </div>
     </nav>
   );
@@ -379,7 +381,12 @@ function HeroSection({ t, variant, onBook, onScrollDown }) {
     <section className="re-hero" id="home">
       <div className="re-container re-hero-inner">
         <div className="re-hero-text">
-          <FadeUp><span className="re-badge">{t.hero.badge}</span></FadeUp>
+          <FadeUp>
+            <div className="re-hero-badge">
+              <span className="re-badge-dot" />
+              {t.hero.badge}
+            </div>
+          </FadeUp>
           <FadeUp delay={0.1}>
             <h1 className="re-h1">
               {h1.map((line, i) => <span key={i}>{line}<br /></span>)}
@@ -389,7 +396,7 @@ function HeroSection({ t, variant, onBook, onScrollDown }) {
           <FadeUp delay={0.3}>
             <div className="re-hero-ctas">
               <button className="re-btn-primary re-btn-lg" onClick={onBook}>{t.hero.cta1}</button>
-              <button className="re-btn-ghost re-btn-lg" onClick={onScrollDown}>{t.hero.cta2}</button>
+              <button className="re-btn-soft re-btn-lg" onClick={onScrollDown}>{t.hero.cta2}</button>
             </div>
           </FadeUp>
           <FadeUp delay={0.4}>
@@ -644,7 +651,7 @@ function PackagesSection({ t, onBook }) {
                   {pkg.features.map((f, j) => <li key={j}><span className="re-pkg-check">✓</span>{f}</li>)}
                 </ul>
                 <p className="re-pkg-best"><em>{t.packages.bestFor}</em> {pkg.best}</p>
-                <button className={`re-pkg-cta ${pkg.popular ? 're-btn-primary' : 're-btn-ghost'}`} onClick={onBook}>
+                <button className={`re-pkg-cta ${pkg.popular ? 're-btn-primary' : 're-btn-soft'}`} onClick={onBook}>
                   {t.packages.cta}
                 </button>
               </div>
@@ -829,7 +836,7 @@ export default function RealEstatePage() {
   };
 
   return (
-    <>
+    <div className="re-page">
       <SEOHead
         title="AI systémy pro realitní kanceláře v Praze | Netsol AI"
         description="Netsol AI automatizuje realitní kanceláře v Praze — kvalifikace leadů, rezervace prohlídek, WhatsApp bot. Dodávka za 2–3 týdny. Rezervujte bezplatný AI audit."
@@ -869,6 +876,6 @@ export default function RealEstatePage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
