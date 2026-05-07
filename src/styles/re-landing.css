@@ -624,9 +624,10 @@
   font-size: 16px;
   color: var(--re-accent);
   opacity: 0.3;
-  padding: 0 8px;
-  margin-top: 24px;
+  padding: 0 6px;
+  margin-top: 22px;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 
 /* ── Before / After ──────────────────────────────────────────────────────── */
@@ -1060,47 +1061,78 @@
 }
 
 @media (max-width: 768px) {
-  .re-nav { padding: 8px 12px; }
-  .re-nav-pill { gap: 12px; padding: 6px 8px 6px 16px; }
-  .re-nav-cta-pill { display: none; }
-
-  .re-hero { padding-top: 88px; padding-bottom: 56px; }
+  /* Hero */
+  .re-hero { padding-top: 96px; padding-bottom: 56px; }
   .re-hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .re-hero-text { align-items: center; text-align: center; }
   .re-hero-sub { margin-inline: auto; }
-  .re-hero-ctas { justify-content: center; flex-direction: column; }
+  .re-hero-ctas { justify-content: center; flex-direction: column; align-items: stretch; }
   .re-hero-ctas .re-btn-primary,
   .re-hero-ctas .re-btn-soft { width: 100%; justify-content: center; }
-  .re-hero-stats { justify-content: center; }
+  .re-hero-stats { justify-content: center; flex-wrap: wrap; }
   .re-hero-diagram { display: none; }
 
-  .re-proof-inner { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 16px; }
+  /* Proof bar */
+  .re-proof-inner { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 16px; padding-bottom: 4px; }
 
+  /* Sections */
   .re-section { padding: 56px 0; }
-  .re-split-grid { grid-template-columns: 1fr; }
-  .re-steps-row { flex-direction: column; gap: 16px; }
-  .re-step-wrap { flex-direction: column; width: 100%; }
+  .re-section-head { text-align: center; }
+  .re-h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+
+  /* Split cards */
+  .re-split-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* Step rows — stack vertically */
+  .re-steps-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .re-step-wrap {
+    flex-direction: column;
+    width: 100%;
+    flex: none;
+    min-width: unset;
+  }
+  .re-step-card {
+    width: 100%;
+    flex: none;
+  }
   .re-step-arr { display: none; }
 
-  .re-ba { grid-template-columns: 1fr; }
+  /* Before / After */
+  .re-ba { grid-template-columns: 1fr; gap: 0; }
   .re-ba-col:first-child { border-right: none; border-bottom: 1px solid var(--re-line); }
 
+  /* Time bars */
   .re-bar-row { grid-template-columns: 1fr 70px; grid-template-rows: auto auto; }
   .re-bar-label { grid-column: 1 / 3; }
+  .re-time-block { padding: 24px 20px; }
 
+  /* Cases */
   .re-cases-grid { grid-template-columns: 1fr; }
 
+  /* Timeline */
   .re-timeline { flex-direction: column; align-items: flex-start; padding-left: 16px; gap: 0; }
-  .re-tl-item { flex-direction: row; align-items: flex-start; gap: 16px; width: 100%; min-width: unset; padding-bottom: 24px; }
+  .re-tl-item { flex-direction: row; align-items: flex-start; gap: 16px; width: 100%; min-width: unset; padding-bottom: 24px; position: relative; }
   .re-tl-dot { margin-top: 3px; flex-shrink: 0; }
   .re-tl-line { display: none; }
   .re-tl-label { text-align: left; margin-top: 0; }
 
+  /* Final CTA */
   .re-btn-white { width: 100%; justify-content: center; }
-  .re-final-bullets { padding: 0 8px; }
-  .re-footer-inner { flex-direction: column; text-align: center; }
-  .re-footer-links { justify-content: center; }
+  .re-final-bullets { padding: 0; }
 
+  /* Packages */
+  .re-pkg-grid { grid-template-columns: 1fr; }
+  .re-pkg-card--pop { order: -1; }
+
+  /* Section CTAs */
+  .re-section-cta .re-btn-primary,
+  .re-section-cta .re-btn-amber { width: 100%; justify-content: center; }
+
+  /* Mobile sticky bar */
   .re-mobile-bar { display: block; }
   body { padding-bottom: 72px; }
 }
@@ -1108,6 +1140,9 @@
 @media (max-width: 480px) {
   .re-container { padding-inline: 16px; }
   .re-h1 { letter-spacing: -0.025em; }
-  .re-split-card { padding: 24px; }
-  .re-time-block { padding: 24px; }
+  .re-split-card { padding: 20px; }
+  .re-step-card { padding: 20px 16px; }
+  .re-pkg-card { padding: 24px 20px; }
+  .re-hero-badge { font-size: 10px; }
+  .re-stat-pill { font-size: 12px; padding: 6px 12px; }
 }
