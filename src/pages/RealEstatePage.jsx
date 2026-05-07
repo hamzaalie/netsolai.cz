@@ -142,6 +142,8 @@ const T = {
       sub: "We'll map your exact workflow, identify the 3 things we'd automate first, and give you a plan you can take away — even if you don't hire us.",
       bullets: ['We review your current lead and ops workflow', 'We identify your top 3 automation opportunities', 'You get a written action plan — whether you work with us or not'],
       btn: 'Book Free 30-min Audit →',
+      secondary: 'See How It Works',
+      badge: 'AI FOR REAL ESTATE · PRAGUE',
       footer: 'Prague-based team · Czech & English · Builds in 2–3 weeks',
     },
   },
@@ -279,6 +281,8 @@ const T = {
       sub: 'Zmapujeme váš přesný postup, identifikujeme 3 věci, které bychom automatizovali jako první, a dáme vám plán — i když si nás nenajmete.',
       bullets: ['Zkontrolujeme váš aktuální postup pro leady a operace', 'Identifikujeme vaše top 3 příležitosti pro automatizaci', 'Dostanete písemný akční plán — ať s námi budete spolupracovat nebo ne'],
       btn: 'Rezervovat bezplatný 30min audit →',
+      secondary: 'Jak to funguje',
+      badge: 'AI PRO REALITNÍ KANCELÁŘE · PRAHA',
       footer: 'Tým v Praze · Česky i anglicky · Dodáváme za 2–3 týdny',
     },
   },
@@ -785,21 +789,23 @@ function FAQSection({ t }) {
 function FinalCTA({ t, onBook, ctaRef }) {
   return (
     <section className="re-final-cta" id="book" ref={ctaRef}>
-      <div className="re-container re-final-inner">
+      <div className="re-final-inner">
         <FadeUp>
+          <div className="re-final-badge">{t.cta.badge}</div>
+        </FadeUp>
+        <FadeUp delay={0.08}>
           <h2 className="re-final-h2">
             {t.cta.title.map((line, i) => <span key={i}>{line}<br /></span>)}
           </h2>
+        </FadeUp>
+        <FadeUp delay={0.15}>
           <p className="re-final-sub">{t.cta.sub}</p>
         </FadeUp>
-        <FadeUp delay={0.1}>
-          <ul className="re-final-bullets">
-            {t.cta.bullets.map((b, i) => <li key={i}>✓ {b}</li>)}
-          </ul>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <button className="re-btn-white re-btn-lg" onClick={onBook}>{t.cta.btn}</button>
-          <p className="re-final-footer">{t.cta.footer}</p>
+        <FadeUp delay={0.22}>
+          <div className="re-final-btns">
+            <button className="re-btn-primary re-btn-lg" onClick={onBook}>{t.cta.btn}</button>
+            <a href="#faq" className="re-btn-soft re-btn-lg">{t.cta.secondary}</a>
+          </div>
         </FadeUp>
       </div>
     </section>
