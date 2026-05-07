@@ -326,49 +326,82 @@ function ProgressBar({ label, hours, max }) {
 // ─── Nav ──────────────────────────────────────────────────────────────────────
 const RE_NAV_LINKS = {
   en: [
-    { label: 'How It Works', href: '#process' },
-    { label: 'Portfolio',    href: '#work'     },
-    { label: 'FAQ',          href: '#faq'      },
+    { label: 'Solutions',    href: '#challenges' },
+    { label: 'How It Works', href: '#process'    },
+    { label: 'Portfolio',    href: '#work'        },
+    { label: 'FAQ',          href: '#faq'         },
   ],
   cs: [
-    { label: 'Jak to funguje', href: '#process' },
-    { label: 'Portfolio',      href: '#work'     },
-    { label: 'FAQ',            href: '#faq'      },
+    { label: 'Řešení',         href: '#challenges' },
+    { label: 'Jak to funguje', href: '#process'    },
+    { label: 'Portfolio',      href: '#work'        },
+    { label: 'FAQ',            href: '#faq'         },
   ],
 };
 
 function RENav({ t, lang, setLang, onBook }) {
+  const [open, setOpen] = useState(false);
   const links = RE_NAV_LINKS[lang];
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
+  const handleLink = () => setOpen(false);
+
   return (
-    <header className="topbar">
-      <div className="topbar-pill">
-        <a href="/" className="brand">
-          <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="brand-logo" />
-        </a>
+    <>
+      <header className="topbar">
+        <div className="topbar-pill">
+          <a href="/" className="brand">
+            <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="brand-logo" />
+          </a>
 
-        <nav className="nav-links" aria-label="Real Estate Page Navigation">
-          {links.map(({ label, href }) => (
-            <a key={href} href={href}>{label}</a>
-          ))}
-        </nav>
+          <nav className="nav-links" aria-label="Real Estate Page Navigation">
+            {links.map(({ label, href }) => (
+              <a key={href} href={href}>{label}</a>
+            ))}
+          </nav>
 
-        <div className="lang-switcher">
+          <div className="lang-switcher">
+            <button
+              className={`lang-btn${lang === 'en' ? ' lang-btn--active' : ''}`}
+              onClick={() => setLang('en')}
+              aria-label="Switch to English"
+            >EN</button>
+            <span className="lang-sep">|</span>
+            <button
+              className={`lang-btn${lang === 'cs' ? ' lang-btn--active' : ''}`}
+              onClick={() => setLang('cs')}
+              aria-label="Přepnout do češtiny"
+            >CS</button>
+          </div>
+
+          <button className="topbar-cta re-nav-book-btn" onClick={onBook}>{t.nav.cta}</button>
+
           <button
-            className={`lang-btn${lang === 'en' ? ' lang-btn--active' : ''}`}
-            onClick={() => setLang('en')}
-            aria-label="Switch to English"
-          >EN</button>
-          <span className="lang-sep">|</span>
-          <button
-            className={`lang-btn${lang === 'cs' ? ' lang-btn--active' : ''}`}
-            onClick={() => setLang('cs')}
-            aria-label="Přepnout do češtiny"
-          >CS</button>
+            className={`nav-burger${open ? ' nav-burger--open' : ''}`}
+            onClick={() => setOpen(o => !o)}
+            aria-label="Toggle navigation"
+            aria-expanded={open}
+          >
+            <span /><span /><span />
+          </button>
         </div>
+      </header>
 
-        <button className="topbar-cta re-nav-book-btn" onClick={onBook}>{t.nav.cta}</button>
+      <div className={`mob-nav${open ? ' mob-nav--open' : ''}`} aria-hidden={!open}>
+        <nav className="mob-nav-links">
+          {links.map(({ label, href }) => (
+            <a key={href} href={href} className="mob-nav-link" onClick={handleLink}>{label}</a>
+          ))}
+          <button className="mob-nav-cta" onClick={() => { handleLink(); onBook(); }}>
+            {t.nav.cta}
+          </button>
+        </nav>
       </div>
-    </header>
+    </>
   );
 }
 
