@@ -347,29 +347,45 @@ function RENav({ t, lang, setLang, onBook }) {
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
-const FLOW_ICONS = ['🔍', '🤖', '⚡', '📅', '🏆'];
+const FLOW_STEPS_META = [
+  { icon: '🔍', label: 'DISCOVERY',  color: '#9c70ff' },
+  { icon: '🤖', label: 'CAPTURE',    color: '#7e4bfb' },
+  { icon: '⚡', label: 'QUALIFY',    color: '#6d28d9' },
+  { icon: '📅', label: 'SCHEDULE',   color: '#5b21b6' },
+  { icon: '🏆', label: 'CLOSE',      color: '#22c55e' },
+];
 
 function FlowDiagram({ steps }) {
   return (
     <div className="re-flow">
-      <div className="re-flow-track" />
-      {steps.map((step, i) => (
-        <motion.div
-          key={i}
-          className={`re-flow-step${i === steps.length - 1 ? ' re-flow-step--final' : ''}`}
-          initial={{ opacity: 0, x: 32 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 + i * 0.18, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="re-flow-node">
-            <span className="re-flow-num">{String(i + 1).padStart(2, '0')}</span>
-          </div>
-          <div className="re-flow-card">
-            <span className="re-flow-icon">{FLOW_ICONS[i]}</span>
-            <span className="re-flow-text">{step}</span>
-          </div>
-        </motion.div>
-      ))}
+      {steps.map((step, i) => {
+        const meta = FLOW_STEPS_META[i];
+        const isFinal = i === steps.length - 1;
+        return (
+          <motion.div
+            key={i}
+            className={`re-flow-step${isFinal ? ' re-flow-step--final' : ''}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 + i * 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {/* connector line above (skip first) */}
+            {i > 0 && <div className="re-flow-connector" />}
+
+            <div className="re-flow-card">
+              <div className="re-flow-node" style={{ '--node-color': meta.color }}>
+                <span className="re-flow-pulse" style={{ '--node-color': meta.color }} />
+                <span className="re-flow-icon">{meta.icon}</span>
+              </div>
+              <div className="re-flow-body">
+                <span className="re-flow-label">{meta.label}</span>
+                <span className="re-flow-text">{step}</span>
+              </div>
+              <span className="re-flow-num">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
