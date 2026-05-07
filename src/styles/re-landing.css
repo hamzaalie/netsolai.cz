@@ -960,7 +960,9 @@
   position: relative;
   overflow: hidden;
   border-radius: 28px;
-  margin: 0 10px 0;
+  max-width: var(--re-max);
+  margin: 0 auto;
+  width: calc(100% - 48px);
 }
 .re-final-inner {
   display: flex;
