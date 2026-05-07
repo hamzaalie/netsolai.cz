@@ -322,16 +322,14 @@ function ProgressBar({ label, hours, max }) {
 // ─── Nav ──────────────────────────────────────────────────────────────────────
 const RE_NAV_LINKS = {
   en: [
-    { label: 'How It Works', href: '#process'  },
-    { label: 'Pricing',      href: '#packages' },
-    { label: 'Portfolio',    href: '#work'      },
-    { label: 'FAQ',          href: '#faq'       },
+    { label: 'How It Works', href: '#process' },
+    { label: 'Portfolio',    href: '#work'     },
+    { label: 'FAQ',          href: '#faq'      },
   ],
   cs: [
-    { label: 'Jak to funguje', href: '#process'  },
-    { label: 'Ceny',           href: '#packages' },
-    { label: 'Portfolio',      href: '#work'      },
-    { label: 'FAQ',            href: '#faq'       },
+    { label: 'Jak to funguje', href: '#process' },
+    { label: 'Portfolio',      href: '#work'     },
+    { label: 'FAQ',            href: '#faq'      },
   ],
 };
 
@@ -364,7 +362,7 @@ function RENav({ t, lang, setLang, onBook }) {
           >CS</button>
         </div>
 
-        <button className="topbar-cta" onClick={onBook}>{t.nav.cta}</button>
+        <button className="topbar-cta re-nav-book-btn" onClick={onBook}>{t.nav.cta}</button>
       </div>
     </header>
   );

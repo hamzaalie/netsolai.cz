@@ -202,11 +202,17 @@
   color: #92400e;
 }
 
+/* ── Nav book button override — remove any inherited border ───────────────── */
+.re-nav-book-btn {
+  border: none !important;
+  outline: none !important;
+}
+
 /* ── Hero ────────────────────────────────────────────────────────────────── */
 .re-hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(6rem, 10vw, 8rem) 0 clamp(4rem, 7vw, 6rem);
+  padding: clamp(8rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 6rem);
   isolation: isolate;
 }
 .re-hero-glow-l {
@@ -953,6 +959,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 24px;
+  margin: 0 10px 0;
 }
 .re-final-cta::before {
   content: '';
@@ -1062,7 +1070,7 @@
 
 @media (max-width: 768px) {
   /* Hero */
-  .re-hero { padding-top: 96px; padding-bottom: 56px; }
+  .re-hero { padding-top: 120px; padding-bottom: 56px; }
   .re-hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .re-hero-text { align-items: center; text-align: center; }
   .re-hero-sub { margin-inline: auto; }
