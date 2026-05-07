@@ -565,13 +565,13 @@
 /* ── Step cards (shared) ─────────────────────────────────────────────────── */
 .re-steps-row {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0;
   margin-bottom: 48px;
 }
 .re-step-wrap {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   flex: 1;
   min-width: 180px;
 }
