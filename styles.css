@@ -106,7 +106,7 @@ a {
 }
 
 .brand-logo {
-  width: 120px;
+  width: 148px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -3020,7 +3020,7 @@ a {
     border-radius: 16px;
   }
   .topbar { padding: 0.5rem 1rem; }
-  .brand-logo { width: 100px; }
+  .brand-logo { width: 124px; }
 
   /* Hero banner */
   .cta-banner-wrapper { padding: 0.5rem 0.75rem 0; }
@@ -3079,7 +3079,7 @@ a {
 @media (max-width: 480px) {
   .topbar { padding: 0.4rem 0.6rem; }
   .topbar-pill { padding: 6px 12px; border-radius: 14px; }
-  .brand-logo { width: 88px; }
+  .brand-logo { width: 108px; }
 
   .cta-banner { padding: 5.5rem 1.25rem 4rem; border-radius: 16px; }
   .cta-banner-wrapper { padding: 0.4rem 0.6rem 0; }
