@@ -194,7 +194,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .re-eyebrow--amber {
   border-color: rgba(245,158,11,0.3);
@@ -475,7 +475,7 @@
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--re-text);
-  margin: 0 0 12px;
+  margin: 4px 0 16px;
 }
 .re-section-sub {
   font-size: 16px;
@@ -961,7 +961,7 @@
   overflow: hidden;
   border-radius: 28px;
   max-width: var(--re-max);
-  margin: 0 auto 24px;
+  margin: 0 auto 44px;
   width: calc(100% - 48px);
 }
 .re-final-inner {
