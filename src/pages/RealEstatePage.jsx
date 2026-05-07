@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import SiteFooter from '../components/SiteFooter';
 import '../styles/re-landing.css';
 
-const CALENDLY = 'https://calendly.com/netsolai/ai-audit';
+const CALENDLY = 'https://calendly.com/netsolai-info/30min';
 
 // ─── Translations ─────────────────────────────────────────────────────────────
 const T = {
