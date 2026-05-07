@@ -1070,7 +1070,8 @@
   .re-hero-ctas .re-btn-primary,
   .re-hero-ctas .re-btn-soft { width: 100%; justify-content: center; }
   .re-hero-stats { justify-content: center; flex-wrap: wrap; }
-  .re-hero-diagram { display: none; }
+  .re-hero-diagram { display: flex; justify-content: center; }
+  .re-flow { max-width: 100%; }
 
   /* Proof bar */
   .re-proof-inner { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 16px; padding-bottom: 4px; }
