@@ -501,6 +501,11 @@
   user-select: none;
 }
 .re-split-card:hover { transform: translateY(-4px); }
+.re-split-card .re-btn-amber,
+.re-split-card .re-btn-primary {
+  width: 100%;
+  justify-content: center;
+}
 .re-split-card--amber:hover {
   border-color: rgba(245,158,11,0.4);
   box-shadow: 0 16px 48px rgba(245,158,11,0.1);
