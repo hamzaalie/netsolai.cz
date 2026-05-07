@@ -1114,10 +1114,35 @@
   /* Cases */
   .re-cases-grid { grid-template-columns: 1fr; }
 
-  /* Timeline */
-  .re-timeline { flex-direction: column; align-items: flex-start; padding-left: 16px; gap: 0; }
-  .re-tl-item { flex-direction: row; align-items: flex-start; gap: 16px; width: 100%; min-width: unset; padding-bottom: 24px; position: relative; }
-  .re-tl-dot { margin-top: 3px; flex-shrink: 0; }
+  /* Timeline — vertical track on mobile */
+  .re-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-left: 6px;
+    position: relative;
+  }
+  .re-timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(156,112,255,0.5), rgba(156,112,255,0.1));
+    border-radius: 2px;
+  }
+  .re-tl-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    min-width: unset;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .re-tl-item:last-child { padding-bottom: 0; }
+  .re-tl-dot { margin-top: 3px; flex-shrink: 0; z-index: 1; }
   .re-tl-line { display: none; }
   .re-tl-label { text-align: left; margin-top: 0; }
 

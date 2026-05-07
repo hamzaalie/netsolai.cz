@@ -871,7 +871,6 @@ export default function RealEstatePage() {
         <HeroSection t={t} variant={variant} onBook={bookAudit} onScrollDown={() => scrollTo(processRef)} />
       </div>
 
-      <ProofBar t={t} />
       <SplitSection t={t} onTypeA={handleTypeA} onTypeB={handleTypeB} onBook={bookAudit} />
 
       <div ref={solARef}><SolutionASection t={t} onBook={bookAudit} /></div>
