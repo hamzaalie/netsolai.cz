@@ -126,7 +126,7 @@ export default function FreeConsultationPage() {
             </div>
             <div className="fc-hero-card-body">
               <p className="fc-card-label">{T.profileBadge}</p>
-              <h3 className="fc-card-name">Asghar Ali</h3>
+              <h3 className="fc-card-name">Ing. Ali Asghar, MBA</h3>
               <p className="fc-card-role">{T.profileRole}</p>
             </div>
           </div>
@@ -137,35 +137,17 @@ export default function FreeConsultationPage() {
       {/* ══ ABOUT ASGHAR ══ */}
       <section className="section" id="about-asghar">
         <div className="container">
-          <div className="fc-about-grid">
-            <div className="fc-about-photo-col">
-              <div className="fc-about-frame">
-                <img
-                  src="/images/asghar-ali-image.jpeg"
-                  alt="Asghar Ali"
-                  className="fc-about-photo"
-                  onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
-                />
-                <div className="fc-photo-fallback fc-photo-fallback--lg" style={{ display: 'none' }}>AA</div>
-                <div className="fc-about-badge">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 7l3.5 3.5 7.5-7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  {lang === 'cs' ? 'Ověřený AI expert' : 'Verified AI Expert'}
-                </div>
-              </div>
+          <div className="fc-about-text-only">
+            <p className="eyebrow">{T.profileBadge}</p>
+            <h2 className="fc-about-h2">Ing. Ali Asghar, MBA</h2>
+            <p className="fc-about-role">{T.profileRole}</p>
+            <p className="fc-about-bio">{T.profileBio}</p>
+            <div className="fc-about-tags">
+              {T.profileTags.map((tag, i) => (
+                <span key={i} className="fc-tag">{tag}</span>
+              ))}
             </div>
-
-            <div className="fc-about-text">
-              <p className="eyebrow">{T.profileBadge}</p>
-              <h2 className="fc-about-h2">Asghar Ali</h2>
-              <p className="fc-about-role">{T.profileRole}</p>
-              <p className="fc-about-bio">{T.profileBio}</p>
-              <div className="fc-about-tags">
-                {T.profileTags.map((tag, i) => (
-                  <span key={i} className="fc-tag">{tag}</span>
-                ))}
-              </div>
-              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-cta-btn">{T.cta}</a>
-            </div>
+            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-cta-btn">{T.cta}</a>
           </div>
         </div>
       </section>

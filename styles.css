@@ -3945,6 +3945,10 @@ a {
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
+.fc-about-text-only {
+  max-width: 720px;
+}
+
 .fc-about-h2 {
   font-family: var(--font-head);
   font-size: clamp(2rem, 4vw, 3rem);
