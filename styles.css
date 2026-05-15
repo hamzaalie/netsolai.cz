@@ -3757,7 +3757,7 @@ a {
 }
 
 .fc-hero-accent {
-  color: #c4b5fd;
+  color: #fff;
 }
 
 .fc-hero-sub {
@@ -3801,14 +3801,14 @@ a {
   font-family: var(--font-head);
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.8);
+  color: #fff;
   text-decoration: none;
   padding: 14px 22px;
   border-radius: 100px;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  transition: color 0.15s, border-color 0.15s;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  transition: border-color 0.15s, background 0.15s;
 }
-.fc-btn-outline:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+.fc-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
 
 .fc-hero-trust {
   display: flex;
