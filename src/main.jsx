@@ -9,6 +9,7 @@ import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import CookiesPage from "./pages/CookiesPage";
 import RealEstatePage from "./pages/RealEstatePage";
+import FreeConsultationPage from "./pages/FreeConsultationPage";
 import "../styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/cookies-policy" element={<CookiesPage />} />
           <Route path="/real-estate" element={<RealEstatePage />} />
+          <Route path="/free-consultation" element={<FreeConsultationPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
