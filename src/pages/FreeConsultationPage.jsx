@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import SiteLayout from '../components/SiteLayout';
 import SEOHead from '../components/SEOHead';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../i18n/index';
 
 function useBinaryCanvas(id) {
   useEffect(() => {
@@ -70,51 +72,29 @@ function useBinaryCanvas(id) {
   }, [id]);
 }
 
-const BENEFITS = [
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <circle cx="11" cy="11" r="9" stroke="#9c70ff" strokeWidth="1.5" />
-        <path d="M7 11l3 3 5-5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: 'Zcela zdarma',
-    desc: 'Žádná kreditní karta, žádné závazky. Skutečná 30minutová strategická konzultace bez nákladů.',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path d="M11 2a7 7 0 100 14A7 7 0 0011 2z" stroke="#9c70ff" strokeWidth="1.5" />
-        <path d="M11 6v5l3 2" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M4 19c1.5-2 4-3 7-3s5.5 1 7 3" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'AI expert — Asghar Ali',
-    desc: 'Mluvíte přímo se specialistou na AI, který vyřešil komplexní výzvy v mnoha odvětvích.',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <rect x="2" y="3" width="18" height="15" rx="2" stroke="#9c70ff" strokeWidth="1.5" />
-        <path d="M7 8h8M7 12h5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Plán AI na míru',
-    desc: 'Odejdete s konkrétním plánem využití AI ve Vašem podnikání — žádné obecné rady.',
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path d="M11 2l2.5 6H20l-5 3.5 2 6.5L11 14l-6 4 2-6.5L2 8h6.5L11 2z" stroke="#9c70ff" strokeWidth="1.5" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: 'Skutečná řešení',
-    desc: 'Identifikujeme AI automatizace s největším dopadem na Váš provoz a ukážeme Vám, jak je zavést.',
-  },
+const BENEFIT_ICONS = [
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <circle cx="11" cy="11" r="9" stroke="#9c70ff" strokeWidth="1.5" />
+    <path d="M7 11l3 3 5-5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>,
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M11 2a7 7 0 100 14A7 7 0 0011 2z" stroke="#9c70ff" strokeWidth="1.5" />
+    <path d="M11 6v5l3 2" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M4 19c1.5-2 4-3 7-3s5.5 1 7 3" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>,
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <rect x="2" y="3" width="18" height="15" rx="2" stroke="#9c70ff" strokeWidth="1.5" />
+    <path d="M7 8h8M7 12h5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>,
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M11 2l2.5 6H20l-5 3.5 2 6.5L11 14l-6 4 2-6.5L2 8h6.5L11 2z" stroke="#9c70ff" strokeWidth="1.5" strokeLinejoin="round" />
+  </svg>,
 ];
 
 export default function FreeConsultationPage() {
   useBinaryCanvas('consult-particles');
+  const { lang } = useLanguage();
+  const T = translations[lang].consultation;
 
   const jsonLd = [{
     "@context": "https://schema.org",
@@ -151,23 +131,14 @@ export default function FreeConsultationPage() {
             <div className="cta-glow" />
           </div>
           <div className="cta-content">
-            <p className="cta-eyebrow">100% zdarma · Bez závazků</p>
+            <p className="cta-eyebrow">{T.eyebrow}</p>
             <h1 className="cta-headline">
-              Máte komplexní problém<br />
-              <span style={{ color: '#9c70ff' }}>ve Vašem podnikání?</span>
+              {T.headline1}<br />
+              <span style={{ color: '#9c70ff' }}>{T.headline2}</span>
             </h1>
-            <p className="cta-sub">
-              Používáte více různých software nebo hledáte správné IT řešení?
-              Nabízíme Vám efektivní řešení, které Vám dá čas a sjednotí systémy.
-              Rezervujte si bezplatnou konzultaci s Asghar Ali už dnes.
-            </p>
+            <p className="cta-sub">{T.sub}</p>
             <div className="cta-actions">
-              <a
-                className="cta-btn-primary"
-                href="#book"
-              >
-                Rezervovat konzultaci zdarma
-              </a>
+              <a className="cta-btn-primary" href="#book">{T.cta}</a>
             </div>
           </div>
         </section>
@@ -178,7 +149,6 @@ export default function FreeConsultationPage() {
         <div className="container">
           <div className="consult-profile-card">
 
-            {/* Avatar */}
             <div className="consult-avatar" aria-label="Asghar Ali">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
                 <circle cx="32" cy="32" r="32" fill="url(#avatarGrad)" />
@@ -194,22 +164,15 @@ export default function FreeConsultationPage() {
               <span className="consult-avatar-initials">AA</span>
             </div>
 
-            {/* Bio */}
             <div className="consult-bio">
-              <div className="consult-badge">Your Consultant</div>
+              <div className="consult-badge">{T.profileBadge}</div>
               <h2 className="consult-name">Asghar Ali</h2>
-              <p className="consult-role">AI Solutions Specialist · Netsol AI</p>
-              <p className="consult-bio-text">
-                Asghar specialises in helping complex businesses identify and implement
-                AI-driven solutions that create real, measurable impact. From process
-                automation to intelligent systems, he translates your biggest challenges
-                into working AI solutions — fast.
-              </p>
+              <p className="consult-role">{T.profileRole}</p>
+              <p className="consult-bio-text">{T.profileBio}</p>
               <div className="consult-tags">
-                <span className="consult-tag">AI Automation</span>
-                <span className="consult-tag">Business Strategy</span>
-                <span className="consult-tag">Process Optimisation</span>
-                <span className="consult-tag">System Integration</span>
+                {T.profileTags.map((tag, i) => (
+                  <span key={i} className="consult-tag">{tag}</span>
+                ))}
               </div>
             </div>
 
@@ -220,16 +183,16 @@ export default function FreeConsultationPage() {
       {/* ── WHAT YOU GET ── */}
       <section className="section">
         <div className="container">
-          <p className="eyebrow">Co získáte</p>
+          <p className="eyebrow">{T.benefitsEyebrow}</p>
           <div className="section-head">
-            <h2>Vše v jednom 30minutovém hovoru</h2>
-            <p>Žádný prodejní tlak. Jen odborné rady šité na míru Vašemu podnikání.</p>
+            <h2>{T.benefitsTitle}</h2>
+            <p>{T.benefitsSub}</p>
           </div>
 
           <div className="consult-benefits-grid">
-            {BENEFITS.map((b, i) => (
+            {T.benefits.map((b, i) => (
               <div key={i} className="consult-benefit-card">
-                <div className="consult-benefit-icon">{b.icon}</div>
+                <div className="consult-benefit-icon">{BENEFIT_ICONS[i]}</div>
                 <h3 className="consult-benefit-title">{b.title}</h3>
                 <p className="consult-benefit-desc">{b.desc}</p>
               </div>
@@ -243,29 +206,18 @@ export default function FreeConsultationPage() {
         <div className="container">
           <div className="consult-book-card">
             <div className="consult-book-left">
-              <p className="eyebrow">Připraveni začít?</p>
-              <h2>Rezervujte si 30minutový hovor zdarma</h2>
-              <p className="consult-book-desc">
-                Vyberte si termín, který Vám vyhovuje. Asghar si Váš případ předem prostuduje,
-                abyste z každé minuty vytěžili maximum.
-              </p>
+              <p className="eyebrow">{T.bookEyebrow}</p>
+              <h2>{T.bookTitle}</h2>
+              <p className="consult-book-desc">{T.bookDesc}</p>
               <ul className="consult-checklist">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Zdarma — bez platby
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  30 minut přes video hovor
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Konkrétní AI plán na míru
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Vhodné pro komplexní byznys problémy
-                </li>
+                {T.checklist.map((item, i) => (
+                  <li key={i}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="consult-book-right">
@@ -279,9 +231,9 @@ export default function FreeConsultationPage() {
                   <rect x="2" y="3" width="16" height="15" rx="2" stroke="currentColor" strokeWidth="1.5"/>
                   <path d="M6 1v4M14 1v4M2 8h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
-                Rezervovat přes Calendly
+                {T.bookBtn}
               </a>
-              <p className="consult-book-note">Budete přesměrováni na Calendly pro výběr termínu</p>
+              <p className="consult-book-note">{T.bookNote}</p>
             </div>
           </div>
         </div>
