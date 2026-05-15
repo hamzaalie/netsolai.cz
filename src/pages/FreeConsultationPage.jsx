@@ -117,7 +117,7 @@ export default function FreeConsultationPage() {
           <div className="fc-hero-card">
             <div className="fc-hero-photo-wrap">
               <img
-                src="/images/asghar-ali.jpg"
+                src="/images/asghar-ali-image.jpeg"
                 alt="Asghar Ali"
                 className="fc-hero-photo"
                 onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
@@ -141,7 +141,7 @@ export default function FreeConsultationPage() {
             <div className="fc-about-photo-col">
               <div className="fc-about-frame">
                 <img
-                  src="/images/asghar-ali.jpg"
+                  src="/images/asghar-ali-image.jpeg"
                   alt="Asghar Ali"
                   className="fc-about-photo"
                   onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
