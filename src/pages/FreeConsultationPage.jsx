@@ -78,8 +78,8 @@ const BENEFITS = [
         <path d="M7 11l3 3 5-5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Completely Free',
-    desc: 'No credit card, no strings attached. A genuine 30-minute strategy session at zero cost.',
+    title: 'Zcela zdarma',
+    desc: 'Žádná kreditní karta, žádné závazky. Skutečná 30minutová strategická konzultace bez nákladů.',
   },
   {
     icon: (
@@ -89,8 +89,8 @@ const BENEFITS = [
         <path d="M4 19c1.5-2 4-3 7-3s5.5 1 7 3" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: 'AI Expert — Asghar Ali',
-    desc: 'Speak directly with an AI specialist who has solved complex business challenges across multiple industries.',
+    title: 'AI expert — Asghar Ali',
+    desc: 'Mluvíte přímo se specialistou na AI, který vyřešil komplexní výzvy v mnoha odvětvích.',
   },
   {
     icon: (
@@ -99,8 +99,8 @@ const BENEFITS = [
         <path d="M7 8h8M7 12h5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: 'Tailored AI Roadmap',
-    desc: "Walk away with a concrete plan for using AI in your specific business — not generic advice.",
+    title: 'Plán AI na míru',
+    desc: 'Odejdete s konkrétním plánem využití AI ve Vašem podnikání — žádné obecné rady.',
   },
   {
     icon: (
@@ -108,15 +108,15 @@ const BENEFITS = [
         <path d="M11 2l2.5 6H20l-5 3.5 2 6.5L11 14l-6 4 2-6.5L2 8h6.5L11 2z" stroke="#9c70ff" strokeWidth="1.5" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Real Solutions',
-    desc: 'We identify the highest-impact AI automations for your workflow and show you exactly how to implement them.',
+    title: 'Skutečná řešení',
+    desc: 'Identifikujeme AI automatizace s největším dopadem na Váš provoz a ukážeme Vám, jak je zavést.',
   },
 ];
 
 export default function FreeConsultationPage() {
   useBinaryCanvas('consult-particles');
 
-  const jsonLd = {
+  const jsonLd = [{
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Free AI Consultation — Asghar Ali",
@@ -132,7 +132,7 @@ export default function FreeConsultationPage() {
       "price": "0",
       "priceCurrency": "EUR"
     }
-  };
+  }];
 
   return (
     <SiteLayout>
@@ -151,21 +151,22 @@ export default function FreeConsultationPage() {
             <div className="cta-glow" />
           </div>
           <div className="cta-content">
-            <p className="cta-eyebrow">100% Free · No Commitment</p>
+            <p className="cta-eyebrow">100% zdarma · Bez závazků</p>
             <h1 className="cta-headline">
-              Book Your Free<br />
-              <span style={{ color: '#9c70ff' }}>AI Strategy Call</span>
+              Máte komplexní problém<br />
+              <span style={{ color: '#9c70ff' }}>ve Vašem podnikání?</span>
             </h1>
             <p className="cta-sub">
-              Got a complex business problem? In 30 minutes, Asghar Ali will show you
-              exactly how AI can solve it — and hand you a clear action plan to get started.
+              Používáte více různých software nebo hledáte správné IT řešení?
+              Nabízíme Vám efektivní řešení, které Vám dá čas a sjednotí systémy.
+              Rezervujte si bezplatnou konzultaci s Asghar Ali už dnes.
             </p>
             <div className="cta-actions">
               <a
                 className="cta-btn-primary"
                 href="#book"
               >
-                Book Your Free Call
+                Rezervovat konzultaci zdarma
               </a>
             </div>
           </div>
@@ -219,10 +220,10 @@ export default function FreeConsultationPage() {
       {/* ── WHAT YOU GET ── */}
       <section className="section">
         <div className="container">
-          <p className="eyebrow">What's Included</p>
+          <p className="eyebrow">Co získáte</p>
           <div className="section-head">
-            <h2>Everything in One 30-Minute Call</h2>
-            <p>No sales pitch. No upsell pressure. Just expert advice tailored to your business.</p>
+            <h2>Vše v jednom 30minutovém hovoru</h2>
+            <p>Žádný prodejní tlak. Jen odborné rady šité na míru Vašemu podnikání.</p>
           </div>
 
           <div className="consult-benefits-grid">
@@ -242,28 +243,28 @@ export default function FreeConsultationPage() {
         <div className="container">
           <div className="consult-book-card">
             <div className="consult-book-left">
-              <p className="eyebrow">Ready to Start?</p>
-              <h2>Book Your Free 30-Min Call</h2>
+              <p className="eyebrow">Připraveni začít?</p>
+              <h2>Rezervujte si 30minutový hovor zdarma</h2>
               <p className="consult-book-desc">
-                Pick a time that works for you. Asghar will review your business
-                challenge before the call so you get maximum value from every minute.
+                Vyberte si termín, který Vám vyhovuje. Asghar si Váš případ předem prostuduje,
+                abyste z každé minuty vytěžili maximum.
               </p>
               <ul className="consult-checklist">
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Free — no payment required
+                  Zdarma — bez platby
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  30 minutes via video call
+                  30 minut přes video hovor
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Tailored AI action plan included
+                  Konkrétní AI plán na míru
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Complex business problems welcome
+                  Vhodné pro komplexní byznys problémy
                 </li>
               </ul>
             </div>
@@ -278,9 +279,9 @@ export default function FreeConsultationPage() {
                   <rect x="2" y="3" width="16" height="15" rx="2" stroke="currentColor" strokeWidth="1.5"/>
                   <path d="M6 1v4M14 1v4M2 8h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
-                Schedule on Calendly
+                Rezervovat přes Calendly
               </a>
-              <p className="consult-book-note">You'll be redirected to Calendly to pick your slot</p>
+              <p className="consult-book-note">Budete přesměrováni na Calendly pro výběr termínu</p>
             </div>
           </div>
         </div>
