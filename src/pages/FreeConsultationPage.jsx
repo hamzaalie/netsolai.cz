@@ -59,7 +59,6 @@ const BENEFIT_ICONS = [
 ];
 
 export default function FreeConsultationPage() {
-  useBinaryCanvas('consult-particles');
   const { lang } = useLanguage();
   const T = translations[lang].consultation;
 
@@ -83,9 +82,9 @@ export default function FreeConsultationPage() {
       />
 
       {/* ══ HERO ══ */}
+      <div className="fc-hero-wrapper">
       <section className="fc-hero">
         <div className="fc-hero-bg" aria-hidden="true">
-          <canvas id="consult-particles" className="cta-canvas" />
           <div className="fc-hero-orb fc-hero-orb--1" />
           <div className="fc-hero-orb fc-hero-orb--2" />
         </div>
@@ -113,18 +112,6 @@ export default function FreeConsultationPage() {
                 {lang === 'cs' ? 'Zjistit více ↓' : 'Learn more ↓'}
               </a>
             </div>
-            <div className="fc-hero-trust">
-              {[
-                lang === 'cs' ? 'Zcela zdarma' : 'Completely free',
-                lang === 'cs' ? 'Bez závazků' : 'No commitment',
-                `30 ${lang === 'cs' ? 'minut' : 'minutes'}`,
-              ].map((item, i) => (
-                <div key={i} className="fc-trust-item">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 7l3.5 3.5 7.5-7" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  {item}
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="fc-hero-card">
@@ -141,18 +128,11 @@ export default function FreeConsultationPage() {
               <p className="fc-card-label">{T.profileBadge}</p>
               <h3 className="fc-card-name">Asghar Ali</h3>
               <p className="fc-card-role">{T.profileRole}</p>
-              <div className="fc-card-divider" />
-              <div className="fc-card-stats">
-                <div className="fc-stat"><span className="fc-stat-num">30</span><span className="fc-stat-label">{lang === 'cs' ? 'min / hovor' : 'min / call'}</span></div>
-                <div className="fc-stat-sep" />
-                <div className="fc-stat"><span className="fc-stat-num">0€</span><span className="fc-stat-label">{lang === 'cs' ? 'náklady' : 'cost'}</span></div>
-                <div className="fc-stat-sep" />
-                <div className="fc-stat"><span className="fc-stat-num">AI</span><span className="fc-stat-label">expert</span></div>
-              </div>
             </div>
           </div>
         </div>
       </section>
+      </div>
 
       {/* ══ ABOUT ASGHAR ══ */}
       <section className="section" id="about-asghar">
