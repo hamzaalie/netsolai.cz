@@ -6,24 +6,60 @@ import translations from '../i18n/index';
 
 const CALENDLY_URL = 'https://calendly.com/netsolai-info/30min';
 
+function useBinaryCanvas(id) {
+  useEffect(() => {
+    const canvas = document.getElementById(id);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animFrame;
+    const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; };
+    resize();
+    window.addEventListener('resize', resize);
+    const chars = '01';
+    const fontSize = 13;
+    let cols, rows, grid = [];
+    const buildGrid = () => {
+      cols = Math.ceil(canvas.width / (fontSize * 0.7)) + 2;
+      rows = Math.ceil(canvas.height / (fontSize * 1.4)) + 2;
+      grid = [];
+      for (let c = 0; c < cols; c++) {
+        grid[c] = [];
+        for (let r = 0; r < rows; r++) {
+          grid[c][r] = { char: chars[Math.floor(Math.random() * chars.length)], alpha: Math.random() * 0.25 + 0.08, changeAt: Math.random() * 12 };
+        }
+      }
+    };
+    buildGrid();
+    window.addEventListener('resize', buildGrid);
+    let t = 0;
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.font = `${fontSize}px monospace`;
+      ctx.textBaseline = 'top';
+      const cw = fontSize * 0.7, ch = fontSize * 1.4;
+      for (let c = 0; c < cols; c++) for (let r = 0; r < rows; r++) {
+        const cell = grid[c][r];
+        if (t > cell.changeAt) { cell.char = chars[Math.floor(Math.random() * chars.length)]; cell.alpha = Math.random() * 0.28 + 0.07; cell.changeAt = t + Math.random() * 17 + 3; }
+        ctx.fillStyle = `rgba(255,255,255,${cell.alpha})`;
+        ctx.fillText(cell.char, c * cw, r * ch);
+      }
+      t++;
+      animFrame = requestAnimationFrame(draw);
+    };
+    draw();
+    return () => { cancelAnimationFrame(animFrame); window.removeEventListener('resize', resize); window.removeEventListener('resize', buildGrid); };
+  }, [id]);
+}
+
 const BENEFIT_ICONS = [
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.6"/>
-    <path d="M7.5 12l3 3 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>,
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.6"/>
-    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
-  </svg>,
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>,
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>,
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#9c70ff" strokeWidth="1.5"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="#9c70ff" strokeWidth="1.5"/><path d="M3 17c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="13" rx="2" stroke="#9c70ff" strokeWidth="1.5"/><path d="M6 7h8M6 11h5" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11 3l-7 9h6l-1 5 7-9h-6l1-5z" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
 ];
 
 export default function FreeConsultationPage() {
+  useBinaryCanvas('consult-particles');
   const { lang } = useLanguage();
   const T = translations[lang].consultation;
 
@@ -41,198 +77,104 @@ export default function FreeConsultationPage() {
     <SiteLayout>
       <SEOHead
         title="Free AI Consultation with Asghar Ali | Netsol AI"
-        description="Book a free 30-minute call with Asghar Ali. We'll analyse your complex business challenges and show you exactly how AI can solve them."
+        description="Book a free 30-minute call with Asghar Ali. We analyse your complex business challenges and show you exactly how AI can solve them."
         canonical="/free-consultation"
         jsonLd={jsonLd}
       />
 
-      {/* ══ HERO ══ */}
-      <section className="fc-hero">
-        <div className="fc-hero-bg" aria-hidden="true">
-          <div className="fc-hero-orb fc-hero-orb--1" />
-          <div className="fc-hero-orb fc-hero-orb--2" />
-          <div className="fc-hero-grid" />
-        </div>
-
-        <div className="container fc-hero-inner">
-          <div className="fc-hero-text">
-            <div className="fc-hero-badge">
-              <span className="fc-hero-badge-dot" />
-              {T.eyebrow}
-            </div>
-            <h1 className="fc-hero-h1">
-              {T.headline1}<br />
-              <span className="fc-hero-accent">{T.headline2}</span>
-            </h1>
-            <p className="fc-hero-sub">{T.sub}</p>
-            <div className="fc-hero-actions">
-              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-btn-primary">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <rect x="1" y="2" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/>
-                  <path d="M5 1v3M13 1v3M1 7h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
-                </svg>
-                {T.cta}
-              </a>
-              <a href="#about-asghar" className="fc-btn-ghost">
-                {lang === 'cs' ? 'Zjistit více ↓' : 'Learn more ↓'}
-              </a>
-            </div>
-            <div className="fc-hero-trust">
-              <div className="fc-trust-item">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                {lang === 'cs' ? 'Zcela zdarma' : 'Completely free'}
-              </div>
-              <div className="fc-trust-item">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                {lang === 'cs' ? 'Bez závazků' : 'No commitment'}
-              </div>
-              <div className="fc-trust-item">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                30 {lang === 'cs' ? 'minut' : 'minutes'}
-              </div>
+      {/* ── HERO — same pattern as homepage ── */}
+      <div className="cta-banner-wrapper">
+        <section className="cta-banner" aria-label="Free Consultation Hero">
+          <div className="cta-bg" aria-hidden="true">
+            <canvas id="consult-particles" className="cta-canvas" />
+            <div className="cta-glow" />
+          </div>
+          <div className="cta-content">
+            <p className="cta-eyebrow">{T.eyebrow}</p>
+            <h1 className="cta-headline">{T.headline1}<br />{T.headline2}</h1>
+            <p className="cta-sub">{T.sub}</p>
+            <div className="cta-actions">
+              <a className="cta-btn-primary" href={CALENDLY_URL} target="_blank" rel="noreferrer">{T.cta}</a>
+              <a className="cta-btn-secondary" href="#about-asghar">{lang === 'cs' ? 'Zjistit více' : 'Learn more'}</a>
             </div>
           </div>
+        </section>
+      </div>
 
-          <div className="fc-hero-card">
-            <div className="fc-hero-card-inner">
-              <div className="fc-hero-photo-wrap">
+      {/* ── CONSULTANT PROFILE ── */}
+      <section className="section" id="about-asghar">
+        <div className="container">
+          <div className="cp-profile-wrap">
+
+            <div className="cp-photo-col">
+              <div className="cp-photo-frame">
                 <img
                   src="/images/asghar-ali.jpg"
                   alt="Asghar Ali — AI Solutions Specialist"
-                  className="fc-hero-photo"
+                  className="cp-photo"
                   onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
                 />
-                <div className="fc-hero-photo-fallback" style={{ display: 'none' }}>AA</div>
-              </div>
-              <div className="fc-hero-card-body">
-                <p className="fc-hero-card-label">{T.profileBadge}</p>
-                <h3 className="fc-hero-card-name">Asghar Ali</h3>
-                <p className="fc-hero-card-role">{T.profileRole}</p>
-                <div className="fc-hero-card-divider" />
-                <div className="fc-hero-card-stats">
-                  <div className="fc-stat">
-                    <span className="fc-stat-num">30</span>
-                    <span className="fc-stat-label">{lang === 'cs' ? 'min / hovor' : 'min / call'}</span>
-                  </div>
-                  <div className="fc-stat-sep" />
-                  <div className="fc-stat">
-                    <span className="fc-stat-num">0</span>
-                    <span className="fc-stat-label">{lang === 'cs' ? 'Kč nákladů' : 'cost'}</span>
-                  </div>
-                  <div className="fc-stat-sep" />
-                  <div className="fc-stat">
-                    <span className="fc-stat-num">AI</span>
-                    <span className="fc-stat-label">{lang === 'cs' ? 'expert' : 'expert'}</span>
-                  </div>
-                </div>
+                <div className="cp-photo-fallback" style={{ display: 'none' }}>AA</div>
               </div>
             </div>
+
+            <div className="cp-bio-col">
+              <p className="eyebrow">{T.profileBadge}</p>
+              <h2 className="cp-name">Asghar Ali</h2>
+              <p className="cp-role">{T.profileRole}</p>
+              <p className="cp-bio">{T.profileBio}</p>
+              <div className="cp-tags">
+                {T.profileTags.map((tag, i) => (
+                  <span key={i} className="cp-tag">{tag}</span>
+                ))}
+              </div>
+              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="cp-cta-btn">{T.cta}</a>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ══ ABOUT ASGHAR ══ */}
-      <section className="fc-about" id="about-asghar">
-        <div className="container fc-about-inner">
-          <div className="fc-about-photo-col">
-            <div className="fc-about-photo-frame">
-              <img
-                src="/images/asghar-ali.jpg"
-                alt="Asghar Ali"
-                className="fc-about-photo"
-                onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
-              />
-              <div className="fc-about-photo-fallback" style={{ display: 'none' }}>AA</div>
-              <div className="fc-about-photo-badge">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                {lang === 'cs' ? 'Ověřený expert' : 'Verified Expert'}
-              </div>
-            </div>
-          </div>
-
-          <div className="fc-about-text">
-            <p className="eyebrow">{T.profileBadge}</p>
-            <h2 className="fc-about-h2">Asghar Ali</h2>
-            <p className="fc-about-role">{T.profileRole}</p>
-            <p className="fc-about-bio">{T.profileBio}</p>
-            <div className="fc-about-tags">
-              {T.profileTags.map((tag, i) => (
-                <span key={i} className="fc-tag">{tag}</span>
-              ))}
-            </div>
-            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-btn-primary" style={{ marginTop: '32px', display: 'inline-flex' }}>
-              {T.cta}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ══ BENEFITS ══ */}
-      <section className="fc-benefits">
+      {/* ── BENEFITS ── */}
+      <section className="section" style={{ background: 'var(--bg-soft)' }}>
         <div className="container">
-          <div className="fc-section-head">
-            <p className="eyebrow">{T.benefitsEyebrow}</p>
+          <p className="eyebrow">{T.benefitsEyebrow}</p>
+          <div className="section-head">
             <h2>{T.benefitsTitle}</h2>
-            <p className="fc-section-sub">{T.benefitsSub}</p>
+            <p>{T.benefitsSub}</p>
           </div>
-          <div className="fc-benefits-grid">
+          <div className="cp-benefits-grid">
             {T.benefits.map((b, i) => (
-              <div key={i} className="fc-benefit-card">
-                <div className="fc-benefit-icon">{BENEFIT_ICONS[i]}</div>
-                <h3 className="fc-benefit-title">{b.title}</h3>
-                <p className="fc-benefit-desc">{b.desc}</p>
+              <div key={i} className="cp-benefit-card">
+                <div className="cp-benefit-icon">{BENEFIT_ICONS[i]}</div>
+                <h3 className="cp-benefit-title">{b.title}</h3>
+                <p className="cp-benefit-desc">{b.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══ BOOKING CTA ══ */}
-      <section className="fc-book" id="book">
+      {/* ── BOOKING ── */}
+      <section className="section" id="book">
         <div className="container">
-          <div className="fc-book-card">
-            <div className="fc-book-orb" aria-hidden="true" />
-            <div className="fc-book-content">
-              <div className="fc-book-left">
-                <p className="fc-book-eyebrow">{T.bookEyebrow}</p>
-                <h2 className="fc-book-h2">{T.bookTitle}</h2>
-                <p className="fc-book-desc">{T.bookDesc}</p>
-                <ul className="fc-checklist">
-                  {T.checklist.map((item, i) => (
-                    <li key={i}>
-                      <span className="fc-check-icon">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M1.5 6l3 3 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div className="precta-card">
+            <div className="precta-left">
+              <span className="precta-badge">{T.bookEyebrow}</span>
+              <h2 className="precta-heading">{T.bookTitle}</h2>
+              <p className="precta-desc">{T.bookDesc}</p>
+              <ul className="cp-checklist">
+                {T.checklist.map((item, i) => (
+                  <li key={i}>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 7l3.5 3.5 7.5-7" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="precta-actions" style={{ marginTop: '32px' }}>
+                <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="precta-btn-primary">{T.bookBtn}</a>
               </div>
-              <div className="fc-book-right">
-                <div className="fc-book-cta-box">
-                  <div className="fc-book-cta-icon">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                      <rect x="2" y="4" width="28" height="24" rx="3" stroke="#9c70ff" strokeWidth="1.8"/>
-                      <path d="M9 2v5M23 2v5M2 12h28" stroke="#9c70ff" strokeWidth="1.8" strokeLinecap="round"/>
-                      <circle cx="10" cy="19" r="1.5" fill="#9c70ff"/>
-                      <circle cx="16" cy="19" r="1.5" fill="#9c70ff"/>
-                      <circle cx="22" cy="19" r="1.5" fill="#9c70ff"/>
-                    </svg>
-                  </div>
-                  <p className="fc-book-cta-label">{lang === 'cs' ? 'Vyberte si termín' : 'Pick your time slot'}</p>
-                  <a
-                    href={CALENDLY_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="fc-btn-book"
-                  >
-                    {T.bookBtn}
-                  </a>
-                  <p className="fc-book-note">{T.bookNote}</p>
-                </div>
-              </div>
+              <p className="cp-book-note">{T.bookNote}</p>
             </div>
           </div>
         </div>
