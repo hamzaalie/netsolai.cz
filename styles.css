@@ -4153,7 +4153,7 @@ a {
   .fc-hero-wrapper      { padding: 0.4rem 0.6rem 0; }
   .fc-hero              { padding: 90px 0 52px; border-radius: 16px; }
   .fc-hero-h1           { font-size: 2.2rem; }
-  .fc-hero-photo-wrap   { height: 240px; }
+  .fc-hero-photo-wrap   { height: 360px; }
   .fc-book-section      { padding: 48px 0.6rem 60px; }
   .fc-benefits-grid     { grid-template-columns: 1fr; }
   .fc-book-inner        { padding: 32px 24px; }
