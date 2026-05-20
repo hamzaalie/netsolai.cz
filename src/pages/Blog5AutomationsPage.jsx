@@ -128,7 +128,7 @@ const content = {
     ],
     h2_1: '1. Automatic Enquiry Response (24/7 AI Assistant)',
     s1p: [
-      <>We\'ve deliberately put communication first. <strong>78% of customers</strong> sign with the company that responds first — regardless of price or quality.</>,
+      <>We've deliberately put communication first. <strong>78% of customers</strong> sign with the company that responds first — regardless of price or quality.</>,
       'An AI communication system responds to enquiries within 30 seconds — across your website, email, Instagram DM, WhatsApp, and Facebook Messenger. It qualifies the customer, discovers their needs, and hands a ready-to-close opportunity to your salesperson.',
     ],
     s1result: <><strong>Result:</strong> 30–50% more closed deals without adding headcount.</>,
