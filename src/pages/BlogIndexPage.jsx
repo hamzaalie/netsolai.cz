@@ -13,8 +13,6 @@ export const BLOG_POSTS = [
     titleEn: 'How Not to Lose Customers: A System That Responds for You',
     excerptCs: 'Každý zmeškaný dotaz je ztracený zákazník. Zjistěte, jak AI automatizace zajistí, že vaše firma nikdy nezmešká obchodní příležitost.',
     excerptEn: 'Every missed enquiry is a lost customer. See how AI automation ensures your business never misses a business opportunity.',
-    author: 'Ing. Ali Asghar, MBA',
-    authorRole: 'CEO & AI Strategy Lead',
   },
 ];
 
@@ -31,9 +29,11 @@ export function BlogCard({ post, lang }) {
       <p className="blog-card-excerpt">{excerpt}</p>
       <div className="blog-card-footer">
         <div className="blog-card-author">
-          <div className="blog-card-avatar">AA</div>
+          <div className="blog-card-logo-wrap">
+            <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="blog-card-logo" />
+          </div>
           <div>
-            <p className="blog-card-author-name">{post.author}</p>
+            <p className="blog-card-author-name">Netsol AI</p>
             <p className="blog-card-date">{post.date}</p>
           </div>
         </div>

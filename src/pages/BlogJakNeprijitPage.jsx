@@ -46,10 +46,12 @@ export default function BlogJakNeprijitPage() {
               Každý zmeškaný dotaz je ztracený zákazník. Zjistěte, jak AI automatizace zajistí, že vaše firma nikdy nezmešká obchodní příležitost — bez přidaných zaměstnanců.
             </p>
             <div className="blog-hero-author">
-              <div className="blog-author-avatar">AA</div>
+              <div className="blog-author-logo-wrap">
+                <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="blog-author-logo" />
+              </div>
               <div>
-                <p className="blog-author-name">Ing. Ali Asghar, MBA</p>
-                <p className="blog-author-role">CEO & AI Strategy Lead, Netsol AI</p>
+                <p className="blog-author-name">Netsol AI</p>
+                <p className="blog-author-role">netsolai.cz</p>
               </div>
             </div>
           </div>
@@ -196,10 +198,10 @@ export default function BlogJakNeprijitPage() {
           {/* Sidebar */}
           <aside className="blog-sidebar">
             <div className="blog-sidebar-card">
-              <div className="blog-sidebar-author-avatar">AA</div>
-              <p className="blog-sidebar-name">Ing. Ali Asghar, MBA</p>
-              <p className="blog-sidebar-role">CEO & AI Strategy Lead</p>
-              <p className="blog-sidebar-bio">Specialista na AI automatizaci pro středně velké a velké podniky v CEE regionu.</p>
+              <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="blog-sidebar-logo" />
+              <p className="blog-sidebar-name">Netsol AI</p>
+              <p className="blog-sidebar-role">AI-Powered Digital Agency</p>
+              <p className="blog-sidebar-bio">Stavíme AI automatizaci, škálovatelné produkty a growth infrastrukturu pro podniky připravené na růst.</p>
               <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="blog-sidebar-cta">
                 Konzultace zdarma →
               </a>
