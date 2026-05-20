@@ -10,6 +10,7 @@ import PrivacyPage from "./pages/PrivacyPage";
 import CookiesPage from "./pages/CookiesPage";
 import RealEstatePage from "./pages/RealEstatePage";
 import FreeConsultationPage from "./pages/FreeConsultationPage";
+import BlogJakNeprijitPage from "./pages/BlogJakNeprijitPage";
 import "../styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/cookies-policy" element={<CookiesPage />} />
           <Route path="/real-estate" element={<RealEstatePage />} />
           <Route path="/free-consultation" element={<FreeConsultationPage />} />
+          <Route path="/blog/jak-neprijit-o-zakazniky" element={<BlogJakNeprijitPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
