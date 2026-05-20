@@ -4346,12 +4346,12 @@ a {
 /* ── Hero ── */
 .blog-hero {
   position: relative;
-  background: linear-gradient(135deg, #5b21b6 0%, var(--accent) 50%, #7c3aed 100%);
+  background: linear-gradient(135deg, var(--accent-deep) 0%, var(--accent) 60%, #b48fff 100%);
   border-radius: 24px;
   overflow: hidden;
-  padding: 112px 48px 100px;
+  padding: 120px 48px 108px;
   color: #fff;
-  min-height: 420px;
+  min-height: 460px;
 }
 .blog-hero-orb {
   position: absolute;
@@ -4391,9 +4391,10 @@ a {
   font-weight: 800;
   line-height: 1.15;
   margin: 0 0 20px;
-  color: #fff;
+  color: #ffffff;
 }
-.blog-hero-accent { color: #fff; }
+.blog-hero-h1 * { color: #ffffff !important; }
+.blog-hero-accent { color: #ffffff !important; }
 .blog-hero-sub {
   font-size: 1.05rem;
   line-height: 1.65;
@@ -4626,7 +4627,7 @@ a {
   .blog-channels-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
-  .blog-hero { padding: 48px 24px 44px; }
+  .blog-hero { padding: 72px 24px 64px; min-height: unset; }
   .blog-hero-h1 { font-size: 1.6rem; }
   .blog-channels-grid { grid-template-columns: 1fr 1fr; }
   .blog-cta-block { padding: 36px 24px; }
