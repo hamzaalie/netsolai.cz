@@ -264,15 +264,6 @@ export default function BlogJakNeprijitPage() {
               <span className="blog-hero-accent">{T.h1b}</span>
             </h1>
             <p className="blog-hero-sub">{T.sub}</p>
-            <div className="blog-hero-author">
-              <div className="blog-author-logo-wrap">
-                <img src="/images/logo/Oroginal.png" alt="Netsol AI" className="blog-author-logo" />
-              </div>
-              <div>
-                <p className="blog-author-name">Netsol AI</p>
-                <p className="blog-author-role">netsolai.cz</p>
-              </div>
-            </div>
           </div>
         </section>
       </div>

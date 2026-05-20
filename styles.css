@@ -4349,9 +4349,9 @@ a {
   background: linear-gradient(135deg, #5b21b6 0%, var(--accent) 50%, #7c3aed 100%);
   border-radius: 24px;
   overflow: hidden;
-  padding: 96px 48px 88px;
+  padding: 112px 48px 100px;
   color: #fff;
-  min-height: 360px;
+  min-height: 420px;
 }
 .blog-hero-orb {
   position: absolute;
@@ -4393,7 +4393,7 @@ a {
   margin: 0 0 20px;
   color: #fff;
 }
-.blog-hero-accent { color: #c4b5fd; }
+.blog-hero-accent { color: #fff; }
 .blog-hero-sub {
   font-size: 1.05rem;
   line-height: 1.65;
@@ -4525,12 +4525,13 @@ a {
 /* ── CTA block ── */
 .blog-cta-block {
   position: relative;
-  background: linear-gradient(135deg, #7c3aed 0%, var(--accent) 50%, #9c70ff 100%);
+  background: linear-gradient(114deg, rgba(156,112,255,0.18) -1%, rgba(200,170,255,0.1) 40%, rgb(248,246,255) 80%);
+  border: 1px solid rgba(156,112,255,0.2);
   border-radius: 20px;
   padding: 48px 40px;
   margin: 48px 0 0;
   overflow: hidden;
-  color: #fff;
+  color: var(--heading);
   text-align: center;
 }
 .blog-cta-orb {
@@ -4546,7 +4547,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.65);
+  color: var(--accent);
   margin: 0 0 12px;
   position: relative; z-index: 1;
 }
@@ -4554,12 +4555,12 @@ a {
   font-size: 1.7rem;
   font-weight: 800;
   margin: 0 0 12px;
-  color: #fff;
+  color: var(--heading);
   position: relative; z-index: 1;
 }
 .blog-cta-desc {
   font-size: 1rem;
-  color: rgba(255,255,255,0.75);
+  color: var(--text-light);
   margin: 0 0 28px;
   position: relative; z-index: 1;
 }
@@ -4571,11 +4572,11 @@ a {
   position: relative; z-index: 1;
 }
 .fc-btn-outline--dark {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.3);
-  color: #fff;
+  background: transparent;
+  border-color: rgba(156,112,255,0.4);
+  color: var(--accent-deep);
 }
-.fc-btn-outline--dark:hover { background: rgba(255,255,255,0.2); }
+.fc-btn-outline--dark:hover { background: var(--accent-soft); border-color: var(--accent); }
 
 /* ── Sidebar ── */
 .blog-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 20px; }
