@@ -4,6 +4,18 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const BLOG_POSTS = [
   {
+    slug: 'ai-chatbot-pro-firmy',
+    tag: 'AI Chatbot',
+    tagEn: 'AI Chatbot',
+    tagColor: 'green',
+    date: '20. května 2026',
+    readTime: '7 min',
+    titleCs: 'AI chatbot pro firmy: jak zvýšit tržby bez přidání lidí',
+    titleEn: 'AI Chatbot for Business: How to Grow Revenue Without Hiring',
+    excerptCs: 'AI chatbot není jen pro velké korporace. Zjistěte, jak ho nasadit do 2 týdnů a kolik vám ušetří — s konkrétními čísly.',
+    excerptEn: 'An AI chatbot isn\'t just for big companies. Learn how to deploy one in 2 weeks and how much it saves — with real numbers.',
+  },
+  {
     slug: '5-ai-automatizaci-pro-vas-byznys',
     tag: 'AI Strategie',
     tagEn: 'AI Strategy',
@@ -110,13 +122,6 @@ export default function BlogIndexPage() {
             {BLOG_POSTS.map(post => (
               <BlogCard key={post.slug} post={post} lang={lang} />
             ))}
-            {/* Placeholder card */}
-            <div className="blog-card blog-card--coming">
-              <div className="blog-card-coming-inner">
-                <span className="blog-coming-icon">✍️</span>
-                <p>{lang === 'cs' ? 'Další článek brzy' : 'More coming soon'}</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
