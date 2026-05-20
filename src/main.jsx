@@ -11,6 +11,7 @@ import CookiesPage from "./pages/CookiesPage";
 import RealEstatePage from "./pages/RealEstatePage";
 import FreeConsultationPage from "./pages/FreeConsultationPage";
 import BlogJakNeprijitPage from "./pages/BlogJakNeprijitPage";
+import Blog5AutomationsPage from "./pages/Blog5AutomationsPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
 import "../styles.css";
 
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/free-consultation" element={<FreeConsultationPage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/jak-neprijit-o-zakazniky" element={<BlogJakNeprijitPage />} />
+          <Route path="/blog/5-ai-automatizaci-pro-vas-byznys" element={<Blog5AutomationsPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

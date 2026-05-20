@@ -4,8 +4,21 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const BLOG_POSTS = [
   {
+    slug: '5-ai-automatizaci-pro-vas-byznys',
+    tag: 'AI Strategie',
+    tagEn: 'AI Strategy',
+    tagColor: 'blue',
+    date: '20. května 2026',
+    readTime: '6 min',
+    titleCs: '5 AI automatizací, které každý byznys potřebuje v roce 2026',
+    titleEn: '5 AI Automations Every Business Needs in 2026',
+    excerptCs: 'Zjistěte, které 5 AI automatizací přináší firmám největší návratnost — a jak je nasadit bez technických znalostí.',
+    excerptEn: 'Discover the 5 AI automations that deliver the highest ROI — and how to deploy them without technical knowledge.',
+  },
+  {
     slug: 'jak-neprijit-o-zakazniky',
     tag: 'AI Automatizace',
+    tagEn: 'AI Automation',
     tagColor: 'purple',
     date: '20. května 2026',
     readTime: '8 min',
@@ -19,10 +32,11 @@ export const BLOG_POSTS = [
 export function BlogCard({ post, lang }) {
   const title = lang === 'cs' ? post.titleCs : post.titleEn;
   const excerpt = lang === 'cs' ? post.excerptCs : post.excerptEn;
+  const tag = lang === 'cs' ? post.tag : (post.tagEn || post.tag);
   return (
     <a href={`/blog/${post.slug}`} className="blog-card">
       <div className="blog-card-top">
-        <span className={`blog-card-tag blog-card-tag--${post.tagColor}`}>{post.tag}</span>
+        <span className={`blog-card-tag blog-card-tag--${post.tagColor}`}>{tag}</span>
         <span className="blog-card-read">{post.readTime} {lang === 'cs' ? 'čtení' : 'read'}</span>
       </div>
       <h3 className="blog-card-title">{title}</h3>
@@ -73,7 +87,7 @@ export default function BlogIndexPage() {
               <span className="blog-tag">{lang === 'cs' ? 'Znalosti & Strategie' : 'Insights & Strategy'}</span>
             </div>
             <h1 className="blog-hero-h1">
-              {lang === 'cs' ? <>Blog<br /><span className="blog-hero-accent">Netsol AI</span></> : <>The Netsol AI<br /><span className="blog-hero-accent">Blog</span></>}
+              {lang === 'cs' ? <>Blog<br /><span className="blog-hero-accent">Netsol AI</span></> : <>The Netsol AI<span className="blog-hero-accent">Blog</span></>}
             </h1>
             <p className="blog-hero-sub">
               {lang === 'cs'
@@ -96,13 +110,7 @@ export default function BlogIndexPage() {
             {BLOG_POSTS.map(post => (
               <BlogCard key={post.slug} post={post} lang={lang} />
             ))}
-            {/* Placeholder cards to fill the grid visually */}
-            <div className="blog-card blog-card--coming">
-              <div className="blog-card-coming-inner">
-                <span className="blog-coming-icon">✍️</span>
-                <p>{lang === 'cs' ? 'Další článek brzy' : 'More coming soon'}</p>
-              </div>
-            </div>
+            {/* Placeholder card */}
             <div className="blog-card blog-card--coming">
               <div className="blog-card-coming-inner">
                 <span className="blog-coming-icon">✍️</span>

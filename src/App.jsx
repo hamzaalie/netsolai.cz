@@ -370,12 +370,6 @@ export default function App() {
                 <p>{lang === 'cs' ? 'Další článek brzy' : 'More coming soon'}</p>
               </div>
             </div>
-            <div className="blog-card blog-card--coming">
-              <div className="blog-card-coming-inner">
-                <span className="blog-coming-icon">✍️</span>
-                <p>{lang === 'cs' ? 'Další článek brzy' : 'More coming soon'}</p>
-              </div>
-            </div>
           </div>
           <div className="blog-preview-footer">
             <a href="/blog" className="blog-view-all">{T.blog.viewAll}</a>
