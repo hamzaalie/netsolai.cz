@@ -76,6 +76,15 @@
   </url>
 
   <url>
+    <loc>https://netsolai.cz/blog/jak-merit-roi-z-ai</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/blog/jak-merit-roi-z-ai"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/blog/jak-merit-roi-z-ai"/>
+  </url>
+
+  <url>
     <loc>https://netsolai.cz/blog/jak-neprijit-o-zakazniky</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>

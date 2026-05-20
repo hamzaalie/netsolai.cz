@@ -40,6 +40,18 @@ export const BLOG_POSTS = [
     excerptEn: 'Discover the 5 AI automations that deliver the highest ROI — and how to deploy them without technical knowledge.',
   },
   {
+    slug: 'jak-merit-roi-z-ai',
+    tag: 'AI Strategie',
+    tagEn: 'AI Strategy',
+    tagColor: 'blue',
+    date: '20. května 2026',
+    readTime: '8 min',
+    titleCs: 'Jak měřit ROI z AI: kdy se investice vrátí a jak to dokázat',
+    titleEn: 'How to Measure AI ROI: When Will the Investment Pay Off and How to Prove It',
+    excerptCs: 'Jak zjistit, jestli se AI investice vyplatila? Kompletní průvodce měřením ROI z AI — vzorec, KPI, reálné příklady a nejčastější chyby.',
+    excerptEn: 'How do you know if your AI investment paid off? A complete guide to measuring AI ROI — formula, KPIs, real examples, and common mistakes.',
+  },
+  {
     slug: 'jak-neprijit-o-zakazniky',
     tag: 'AI Automatizace',
     tagEn: 'AI Automation',

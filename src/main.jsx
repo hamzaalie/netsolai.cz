@@ -14,6 +14,7 @@ import BlogJakNeprijitPage from "./pages/BlogJakNeprijitPage";
 import Blog5AutomationsPage from "./pages/Blog5AutomationsPage";
 import BlogAiChatbotPage from "./pages/BlogAiChatbotPage";
 import BlogAiAgentPage from "./pages/BlogAiAgentPage";
+import BlogAiRoiPage from "./pages/BlogAiRoiPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
 import "../styles.css";
 
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/blog/5-ai-automatizaci-pro-vas-byznys" element={<Blog5AutomationsPage />} />
           <Route path="/blog/ai-chatbot-pro-firmy" element={<BlogAiChatbotPage />} />
           <Route path="/blog/co-je-ai-agent" element={<BlogAiAgentPage />} />
+          <Route path="/blog/jak-merit-roi-z-ai" element={<BlogAiRoiPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
