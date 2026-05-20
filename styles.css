@@ -4803,8 +4803,21 @@ a {
 }
 
 /* Blog index hero compact variant */
-.blog-index-hero { padding: 64px 48px 56px; }
-.blog-index-hero-inner { max-width: 640px; }
+.blog-index-hero {
+  background: linear-gradient(135deg, var(--accent-deep) 0%, var(--accent) 60%, #b48fff 100%);
+  padding: 120px 48px 108px;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+}
+.blog-index-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.blog-index-hero-inner .blog-hero-meta { justify-content: center; }
+.blog-index-hero-inner .blog-hero-h1 * { color: #ffffff !important; }
+.blog-index-hero-inner .blog-hero-h1 { color: #ffffff; }
 
 /* Newsletter card */
 .blog-newsletter-card {
