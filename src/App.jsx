@@ -1,5 +1,6 @@
 import { AIAutomationPreview, ProductDevPreview, DesignPreview, GrowthPreview, IntegrationsPreview } from './components/ServicePreviews';
 import AboutSection from './components/AboutSection';
+import { BlogCard, BLOG_POSTS } from './pages/BlogIndexPage';
 import SiteLayout from './components/SiteLayout';
 import SEOHead from './components/SEOHead';
 import { useEffect } from 'react';
@@ -351,6 +352,37 @@ export default function App() {
       </section>
 
       {/* ══ PRE-FOOTER CTA ══ */}
+      {/* ══ BLOG PREVIEW ══ */}
+      <section className="section blog-preview-section" id="blog">
+        <div className="container">
+          <p className="eyebrow">{T.blog.eyebrow}</p>
+          <div className="section-head">
+            <h2>{T.blog.title}</h2>
+            <p>{T.blog.sub}</p>
+          </div>
+          <div className="blog-grid">
+            {BLOG_POSTS.map(post => (
+              <BlogCard key={post.slug} post={post} lang={lang} />
+            ))}
+            <div className="blog-card blog-card--coming">
+              <div className="blog-card-coming-inner">
+                <span className="blog-coming-icon">✍️</span>
+                <p>{lang === 'cs' ? 'Další článek brzy' : 'More coming soon'}</p>
+              </div>
+            </div>
+            <div className="blog-card blog-card--coming">
+              <div className="blog-card-coming-inner">
+                <span className="blog-coming-icon">✍️</span>
+                <p>{lang === 'cs' ? 'Další článek brzy' : 'More coming soon'}</p>
+              </div>
+            </div>
+          </div>
+          <div className="blog-preview-footer">
+            <a href="/blog" className="blog-view-all">{T.blog.viewAll}</a>
+          </div>
+        </div>
+      </section>
+
       <section className="precta-section">
         <div className="container">
           <div className="precta-card">

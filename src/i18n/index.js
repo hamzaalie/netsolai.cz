@@ -93,6 +93,13 @@ const translations = {
       title: 'Selected Work',
       sub: 'A sample of what we build — AI systems, scalable platforms, and high-performance digital experiences that deliver real results.',
     },
+    blog: {
+      eyebrow: 'Insights & Strategy',
+      title: 'From the Netsol AI Blog',
+      sub: 'Practical guides on AI automation, digital strategy, and growth for modern businesses.',
+      readMore: 'Read Article →',
+      viewAll: 'View All Articles →',
+    },
     precta: {
       badge: 'AI-Powered Agency',
       heading: 'Stop managing what\na system can do for you.',
@@ -296,6 +303,13 @@ const translations = {
       eyebrow: 'Portfolio',
       title: 'Vybrané projekty',
       sub: 'Ukázka toho, co stavíme — AI systémy, škálovatelné platformy a vysokovýkonné digitální zážitky přinášející skutečné výsledky.',
+    },
+    blog: {
+      eyebrow: 'Znalosti & Strategie',
+      title: 'Z blogu Netsol AI',
+      sub: 'Praktické návody o AI automatizaci, digitální strategii a growth hackingu pro moderní podniky.',
+      readMore: 'Číst článek →',
+      viewAll: 'Zobrazit všechny články →',
     },
     precta: {
       badge: 'Agentura poháněná AI',
