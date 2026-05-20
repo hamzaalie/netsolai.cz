@@ -49,6 +49,15 @@
   </url>
 
   <url>
+    <loc>https://netsolai.cz/blog/co-je-ai-agent</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/blog/co-je-ai-agent"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/blog/co-je-ai-agent"/>
+  </url>
+
+  <url>
     <loc>https://netsolai.cz/blog/ai-chatbot-pro-firmy</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>

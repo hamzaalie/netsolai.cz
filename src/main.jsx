@@ -13,6 +13,7 @@ import FreeConsultationPage from "./pages/FreeConsultationPage";
 import BlogJakNeprijitPage from "./pages/BlogJakNeprijitPage";
 import Blog5AutomationsPage from "./pages/Blog5AutomationsPage";
 import BlogAiChatbotPage from "./pages/BlogAiChatbotPage";
+import BlogAiAgentPage from "./pages/BlogAiAgentPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
 import "../styles.css";
 
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/blog/jak-neprijit-o-zakazniky" element={<BlogJakNeprijitPage />} />
           <Route path="/blog/5-ai-automatizaci-pro-vas-byznys" element={<Blog5AutomationsPage />} />
           <Route path="/blog/ai-chatbot-pro-firmy" element={<BlogAiChatbotPage />} />
+          <Route path="/blog/co-je-ai-agent" element={<BlogAiAgentPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

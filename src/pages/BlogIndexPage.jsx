@@ -4,6 +4,18 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const BLOG_POSTS = [
   {
+    slug: 'co-je-ai-agent',
+    tag: 'AI Agenti',
+    tagEn: 'AI Agents',
+    tagColor: 'purple',
+    date: '20. května 2026',
+    readTime: '7 min',
+    titleCs: 'Co je AI agent a jak ho vaše firma využije v roce 2026',
+    titleEn: 'What Is an AI Agent and How Your Business Can Use It in 2026',
+    excerptCs: 'AI agenti jsou největší byznysový trend roku 2026. Zjistěte, co umí, jak se liší od chatbotu a jak je nasadit — bez technických znalostí.',
+    excerptEn: 'AI agents are the biggest business trend of 2026. Discover what they do, how they differ from chatbots, and how to deploy one without technical knowledge.',
+  },
+  {
     slug: 'ai-chatbot-pro-firmy',
     tag: 'AI Chatbot',
     tagEn: 'AI Chatbot',
