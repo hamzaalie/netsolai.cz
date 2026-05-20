@@ -5,6 +5,7 @@ const translations = {
       about: 'About',
       services: 'Services',
       portfolio: 'Portfolio',
+      blog: 'Blog',
       contact: 'Contact Us',
     },
     hero: {
@@ -216,6 +217,7 @@ const translations = {
       about: 'O nás',
       services: 'Služby',
       portfolio: 'Portfolio',
+      blog: 'Blog',
       contact: 'Kontakt',
     },
     hero: {
