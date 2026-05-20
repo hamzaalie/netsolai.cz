@@ -141,22 +141,6 @@ export default function BlogPostLayout({ lang, meta, children, topics }) {
               </a>
             </div>
 
-            {/* Internal links */}
-            <div className="blog-sidebar-card blog-sidebar-card--links">
-              <p className="blog-sidebar-section-label">
-                {lang === 'cs' ? 'Naše služby' : 'Our Services'}
-              </p>
-              <a href="/#services" className="blog-sidebar-link">
-                {lang === 'cs' ? '→ AI Automatizace' : '→ AI Automation'}
-              </a>
-              <a href="/free-consultation" className="blog-sidebar-link blog-sidebar-link--cta">
-                {lang === 'cs' ? '→ Konzultace zdarma' : '→ Free Consultation'}
-              </a>
-              <a href="/contact" className="blog-sidebar-link">
-                {lang === 'cs' ? '→ Kontakt' : '→ Contact Us'}
-              </a>
-            </div>
-
             {topics && topics.length > 0 && (
               <div className="blog-sidebar-card blog-sidebar-card--topics">
                 <p className="blog-sidebar-section-label">{T.topicsLabel}</p>
