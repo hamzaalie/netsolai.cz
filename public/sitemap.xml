@@ -38,6 +38,40 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ── Tools ── -->
+  <url>
+    <loc>https://netsolai.cz/nastroje</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/nastroje"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/nastroje"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/nastroje/ztrata-poptavek</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/nastroje/ztrata-poptavek"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/nastroje/ztrata-poptavek"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/nastroje/kalkulacka-provize</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/nastroje/kalkulacka-provize"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/nastroje/kalkulacka-provize"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/nastroje/ai-skore</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/nastroje/ai-skore"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/nastroje/ai-skore"/>
+  </url>
+
   <!-- ── Blog ── -->
   <url>
     <loc>https://netsolai.cz/blog</loc>

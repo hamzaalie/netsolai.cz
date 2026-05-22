@@ -16,6 +16,10 @@ import BlogAiChatbotPage from "./pages/BlogAiChatbotPage";
 import BlogAiAgentPage from "./pages/BlogAiAgentPage";
 import BlogAiRoiPage from "./pages/BlogAiRoiPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
+import NastrojeIndexPage from "./pages/tools/NastrojeIndexPage";
+import LeadLossCalculatorPage from "./pages/tools/LeadLossCalculatorPage";
+import CommissionCalculatorPage from "./pages/tools/CommissionCalculatorPage";
+import AiReadinessPage from "./pages/tools/AiReadinessPage";
 import "../styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -37,6 +41,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/blog/ai-chatbot-pro-firmy" element={<BlogAiChatbotPage />} />
           <Route path="/blog/co-je-ai-agent" element={<BlogAiAgentPage />} />
           <Route path="/blog/jak-merit-roi-z-ai" element={<BlogAiRoiPage />} />
+          <Route path="/nastroje" element={<NastrojeIndexPage />} />
+          <Route path="/nastroje/ztrata-poptavek" element={<LeadLossCalculatorPage />} />
+          <Route path="/nastroje/kalkulacka-provize" element={<CommissionCalculatorPage />} />
+          <Route path="/nastroje/ai-skore" element={<AiReadinessPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

@@ -26,6 +26,7 @@ export default function SiteLayout({ children }) {
     { label: T.nav.services,  href: '/#services' },
     { label: T.nav.portfolio, href: '/#portfolio'},
     { label: T.nav.blog,      href: '/blog'      },
+    { label: T.nav.tools,     href: '/nastroje'  },
   ];
 
   return (
