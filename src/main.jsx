@@ -20,6 +20,7 @@ import NastrojeIndexPage from "./pages/tools/NastrojeIndexPage";
 import LeadLossCalculatorPage from "./pages/tools/LeadLossCalculatorPage";
 import CommissionCalculatorPage from "./pages/tools/CommissionCalculatorPage";
 import AiReadinessPage from "./pages/tools/AiReadinessPage";
+import AiAutomatizacePage from "./pages/services/AiAutomatizacePage";
 import "../styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/nastroje/ztrata-poptavek" element={<LeadLossCalculatorPage />} />
           <Route path="/nastroje/kalkulacka-provize" element={<CommissionCalculatorPage />} />
           <Route path="/nastroje/ai-skore" element={<AiReadinessPage />} />
+          <Route path="/services/ai-automatizace" element={<AiAutomatizacePage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
