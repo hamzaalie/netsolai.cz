@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary meta — managed per-route by react-helmet-async -->
-    <title>Netsol AI | AI-Powered Digital Agency — Automation, Web Dev &amp; Growth</title>
+    <!-- Primary meta — title/description are set per-route by react-helmet-async in SEOHead.jsx
+         and baked in statically by scripts/prerender.mjs at build time. No static <title> here:
+         react-helmet-async appends rather than replaces, and per the HTML spec the first <title>
+         in the document wins — a static default here would permanently shadow every page's real title. -->
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Netsol AI s.r.o." />
-    <meta name="keywords" content="AI agency, AI automation, web development, AI digital agency, business automation, Prague AI agency, SaaS development, AI systems, digital transformation, chatbot development, AI integration, workflow automation" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
