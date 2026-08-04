@@ -1,4 +1,3 @@
-import { chromium } from 'playwright';
 import { preview } from 'vite';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -19,7 +18,25 @@ if (routes.length === 0) {
 const server = await preview({ root, preview: { port: 4173, strictPort: true } });
 const baseUrl = `http://localhost:4173`;
 
-const browser = await chromium.launch();
+// Vercel's build image is missing the shared libraries (libnspr4, libnss3, ...) that
+// Playwright's own Chromium download needs, and there's no root access there to install
+// them. @sparticuz/chromium ships a statically-linked build made for exactly this kind
+// of restricted/serverless environment, so we use it there and plain Playwright locally
+// (where a normal Chromium install already works fine via `npx playwright install chromium`).
+let browser;
+if (process.env.VERCEL) {
+  const { default: chromium } = await import('@sparticuz/chromium');
+  const { launch } = await import('puppeteer-core');
+  browser = await launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath(),
+    headless: true,
+  });
+} else {
+  const { chromium } = await import('playwright');
+  browser = await chromium.launch();
+}
+
 const page = await browser.newPage();
 
 // Capture every route into memory first. The dev/preview server serves dist/index.html
@@ -28,7 +45,9 @@ const page = await browser.newPage();
 // leak into the fallback shell used by every route captured after it.
 const results = [];
 for (const route of routes) {
-  await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle' });
+  // 'networkidle' isn't a valid waitUntil value in puppeteer-core (only in Playwright),
+  // so use 'load' — supported by both — and lean on waitForSelector below for the rest.
+  await page.goto(`${baseUrl}${route}`, { waitUntil: 'load' });
   // Let React mount and Helmet flush head tags.
   await page.waitForSelector('#root *', { timeout: 10000 }).catch(() => {});
   const html = await page.content();
