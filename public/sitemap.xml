@@ -41,11 +41,43 @@
   <!-- ── Services ── -->
   <url>
     <loc>https://netsolai.cz/services/ai-automatizace</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/services/ai-automatizace"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/services/ai-automatizace"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/services/ai-chatbot</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/services/ai-chatbot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/services/ai-chatbot"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/services/vyvoj-webu</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/services/vyvoj-webu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/services/vyvoj-webu"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/services/ai-agenti</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/services/ai-agenti"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/services/ai-agenti"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/services/integrace</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/services/integrace"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/services/integrace"/>
   </url>
 
   <!-- ── Tools ── -->
