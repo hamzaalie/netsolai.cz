@@ -26,6 +26,32 @@ const content = {
     ctaPrimary: 'Konzultace zdarma',
     ctaSecondary: 'Co řešíme',
     ctaSecondary2: 'Kontaktovat nás',
+    stats: [
+      { num: '2–4', label: 'týdny do spuštění' },
+      { num: '24/7', label: 'provoz bez přestávky' },
+      { num: '0', label: 'potřeba IT oddělení' },
+    ],
+
+    problemsEyebrow: 'Problém a řešení',
+    problemsTitle: 'Poznáváte se v tomhle?',
+    problems: {
+      title: 'Bez automatizace',
+      items: [
+        'Poptávky se ztrácejí mezi e-mailem, Instagramem a WhatsAppem',
+        'Obchodník tráví polovinu dne přepisováním dat mezi systémy',
+        'Reporting se sestavuje ručně a vždy o den později, než by měl',
+        'Zákazník čeká na odpověď hodiny, protože nikdo není zrovna u telefonu',
+      ],
+    },
+    solutions: {
+      title: 'S Netsol AI',
+      items: [
+        'Každá poptávka se automaticky zachytí a zapíše do jednoho systému',
+        'Data mezi CRM, e-mailem a kalendářem se synchronizují sama',
+        'Reporty se generují a doručují automaticky, přesně podle harmonogramu',
+        'Odpověď na zákazníka jde do minut, ve dne v noci',
+      ],
+    },
 
     whatEyebrow: 'Co řešíme',
     whatTitle: 'Co pro vás AI automatizace řeší',
@@ -72,6 +98,32 @@ const content = {
     ctaPrimary: 'Free consultation',
     ctaSecondary: 'What we solve',
     ctaSecondary2: 'Contact us',
+    stats: [
+      { num: '2–4', label: 'weeks to launch' },
+      { num: '24/7', label: 'runs around the clock' },
+      { num: '0', label: 'IT department needed' },
+    ],
+
+    problemsEyebrow: 'Problem and solution',
+    problemsTitle: 'Does this sound familiar?',
+    problems: {
+      title: 'Without automation',
+      items: [
+        'Inquiries get lost between email, Instagram, and WhatsApp',
+        'Your salesperson spends half the day retyping data between systems',
+        'Reports get assembled manually, always a day later than they should be',
+        'Customers wait hours for a reply because no one is by the phone',
+      ],
+    },
+    solutions: {
+      title: 'With Netsol AI',
+      items: [
+        'Every inquiry is automatically captured and logged into one system',
+        'Data between your CRM, email, and calendar syncs itself',
+        'Reports generate and deliver automatically, right on schedule',
+        'Customers get a reply within minutes, day or night',
+      ],
+    },
 
     whatEyebrow: 'What we solve',
     whatTitle: 'What AI automation solves for you',

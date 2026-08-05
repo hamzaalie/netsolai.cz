@@ -60,9 +60,59 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
               <a className="cta-btn-primary" href={CALENDLY_URL} target="_blank" rel="noreferrer">{C.ctaPrimary}</a>
               <a className="cta-btn-secondary" href="#what">{C.ctaSecondary}</a>
             </div>
+            {C.stats && (
+              <div className="svc-stats">
+                {C.stats.map((s, i) => (
+                  <div key={i} className="svc-stat">
+                    <div className="svc-stat-num">{s.num}</div>
+                    <div className="svc-stat-label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </div>
+
+      {/* ══ PROBLEM → SOLUTION ══ */}
+      {C.problems && (
+        <section className="comp-section">
+          <div className="container">
+            <div className="comp-header">
+              <p className="eyebrow">{C.problemsEyebrow}</p>
+              <h2 className="comp-title">{C.problemsTitle}</h2>
+            </div>
+            <div className="comp-grid">
+              <div className="comp-card comp-old">
+                <h3 className="comp-card-title">{C.problems.title}</h3>
+                <ul className="comp-list">
+                  {C.problems.items.map((item, i) => (
+                    <li key={i} className="comp-item comp-item--bad">
+                      <span className="comp-icon comp-icon--bad">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="comp-card comp-new">
+                <h3 className="comp-card-title">{C.solutions.title}</h3>
+                <ul className="comp-list">
+                  {C.solutions.items.map((item, i) => (
+                    <li key={i} className="comp-item comp-item--good">
+                      <span className="comp-icon comp-icon--good">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ══ WHAT IT SOLVES — feature grid ══ */}
       <section className="section" id="what">

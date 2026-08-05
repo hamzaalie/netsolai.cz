@@ -5592,13 +5592,38 @@ a {
   .svc-process-step:not(:last-child)::after { display: none; }
 }
 
-/* ── Service pages: FAQ accordion ── */
-.svc-faq {
-  max-width: 760px;
-  margin: 2.5rem auto 0;
+/* ── Service pages: hero trust stats ── */
+.svc-stats {
   display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  gap: clamp(1.8rem, 5vw, 3.2rem);
+  margin-top: 2.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.svc-stat {
+  text-align: center;
+}
+.svc-stat-num {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.svc-stat-label {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.25rem;
+}
+
+/* ── Service pages: FAQ accordion (full-width grid, not a narrow centered column) ── */
+.svc-faq {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+  align-items: start;
 }
 .svc-faq-item {
   border: 1px solid var(--line);
