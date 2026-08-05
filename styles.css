@@ -5578,18 +5578,8 @@ a {
   color: var(--text-subtle);
   line-height: 1.6;
 }
-.svc-process-step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 22px;
-  right: -1.2rem;
-  width: 1.2rem;
-  height: 0;
-  border-top: 2px dashed rgba(156, 112, 255, 0.45);
-}
 @media (max-width: 900px) {
   .svc-process-grid { grid-template-columns: 1fr; }
-  .svc-process-step:not(:last-child)::after { display: none; }
 }
 
 /* ── Service pages: hero trust stats ── */
