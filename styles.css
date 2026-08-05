@@ -5674,7 +5674,27 @@ a {
 .svc-faq-a p {
   margin: 0;
   padding: 0 1.3rem 1.2rem;
-  font-size: 0.9rem;
-  color: var(--text-subtle);
-  line-height: 1.65;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* ── Service pages: readability pass — darker, slightly larger body text
+   than the site default (#6b7280 at 14px is borderline low-contrast) ── */
+.svc-feature-card .sc-desc,
+.svc-process-step p {
+  font-size: 0.95rem !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+}
+/* .comp-old sits on a white card (dark text); .comp-new sits on a purple
+   card and must stay white — only darken the white-card side. */
+.comp-old .comp-item {
+  font-size: 0.95rem !important;
+  color: #374151 !important;
+  line-height: 1.7 !important;
+}
+.svc-feature-card h3,
+.svc-process-step h3 {
+  font-size: 1.1rem !important;
 }

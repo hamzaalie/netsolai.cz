@@ -8,7 +8,7 @@ const meta = {
     seoTitle: 'AI Automatizace pro Firmy | Netsol AI — Praha',
     seoDesc: 'Navrhneme a nasadíme AI automatizaci na míru vaší firmě — od zpracování poptávek po reporting. Bez IT oddělení, spuštění do 2–4 týdnů.',
     tag: 'AI Automatizace',
-    h1: 'AI automatizace pro firmy, které nechtějí růst do nekonečné administrativy',
+    h1: 'AI automatizace, která za vás vyřídí opakující se práci',
   },
   en: {
     slug: 'ai-automatizace',
@@ -16,7 +16,7 @@ const meta = {
     seoTitle: 'AI Automation for Businesses | Netsol AI — Prague',
     seoDesc: 'We design and deploy custom AI automation for your business — from lead handling to reporting. No IT department needed, live in 2–4 weeks.',
     tag: 'AI Automation',
-    h1: 'AI automation for businesses that don’t want to scale their admin workload',
+    h1: 'AI automation that takes repetitive work off your plate',
   },
 };
 
