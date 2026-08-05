@@ -70,18 +70,16 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
             <h2>{C.whatTitle}</h2>
             <p>{C.whatSub}</p>
           </div>
-          <div className="services-grid">
+          <div className="svc-feature-grid">
             {C.features.map((f, i) => (
-              <article key={i} className="service-card sc-top">
-                <div className="sc-card-content">
-                  <div className="sc-header">
-                    <div className="sc-icon">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#9c70ff" strokeWidth="1.5" /><path d="M7 10h6M10 7v6" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" /></svg>
-                    </div>
+              <article key={i} className="svc-feature-card">
+                <div className="sc-header">
+                  <div className="sc-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#9c70ff" strokeWidth="1.5" /><path d="M7 10h6M10 7v6" stroke="#9c70ff" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </div>
-                  <h3>{f.title}</h3>
-                  <p className="sc-desc">{f.desc}</p>
                 </div>
+                <h3>{f.title}</h3>
+                <p className="sc-desc">{f.desc}</p>
               </article>
             ))}
           </div>
@@ -114,8 +112,8 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
             <p className="eyebrow">{C.forEyebrow}</p>
             <h2 className="comp-title">{C.forTitle}</h2>
           </div>
-          <div className="comp-grid">
-            <div className="comp-card comp-new">
+          <div className="svc-for-wrap">
+            <div className="comp-card comp-new svc-for-card">
               <h3 className="comp-card-title">{C.forSubtitle}</h3>
               <ul className="comp-list">
                 {C.forItems.map((item, i) => (

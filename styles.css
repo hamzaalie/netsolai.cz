@@ -5502,3 +5502,31 @@ a {
   .tool-card, .tool-results { padding: 22px; }
   .tool-hero-h1 { font-size: 2rem; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   SERVICE PAGES — generic N-card grid & single centered card.
+   .services-grid/.comp-grid are hardcoded for a fixed card count
+   (5 and 2 respectively) via nth-child rules — not reusable here.
+══════════════════════════════════════════════════════════ */
+.svc-feature-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.svc-feature-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(17, 18, 35, 0.04);
+  padding: 1.6rem;
+}
+
+.svc-for-wrap {
+  display: flex;
+  justify-content: center;
+}
+.svc-for-card {
+  max-width: 640px;
+  width: 100%;
+}
