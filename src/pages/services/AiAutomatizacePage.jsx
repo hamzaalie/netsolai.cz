@@ -87,6 +87,7 @@ const content = {
       { q: 'Jak dlouho trvá nasazení?', a: 'Typicky 2–4 týdny od identifikace procesu po ostrý provoz, v závislosti na složitosti a počtu systémů, které je potřeba propojit.' },
       { q: 'Potřebuji vlastní IT oddělení?', a: 'Ne. Nasazení, propojení se systémy i následné úpravy má na starosti náš tým.' },
       { q: 'Co když automatizace udělá chybu?', a: 'Každá automatizace má nastavené hranice a eskalační pravidla — složitější nebo nejednoznačné případy se předávají člověku s plným kontextem, ne se řeší naslepo.' },
+      { q: 'Kolik to stojí?', a: 'Cena se odvíjí od složitosti a počtu procesů, které automatizujeme. Přesnou nabídku dostanete po bezplatné konzultaci, kde probereme váš konkrétní případ.' },
     ],
 
     ctaEyebrow: 'Bezplatná konzultace',
@@ -159,6 +160,7 @@ const content = {
       { q: 'How long does deployment take?', a: 'Typically 2–4 weeks from process identification to live operation, depending on complexity and the number of systems that need to be connected.' },
       { q: 'Do I need my own IT department?', a: 'No. Deployment, system integration, and ongoing adjustments are handled by our team.' },
       { q: 'What happens if the automation makes a mistake?', a: 'Every automation has defined boundaries and escalation rules — complex or ambiguous cases are handed to a human with full context.' },
+      { q: 'How much does it cost?', a: 'Pricing depends on the complexity and number of processes we automate. You’ll get an exact quote after a free consultation, where we discuss your specific case.' },
     ],
 
     ctaEyebrow: 'Free consultation',

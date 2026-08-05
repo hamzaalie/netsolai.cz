@@ -5607,13 +5607,16 @@ a {
   margin-top: 0.25rem;
 }
 
-/* ── Service pages: FAQ accordion (full-width grid, not a narrow centered column) ── */
+/* ── Service pages: FAQ accordion — fixed 2x2 grid ── */
 .svc-faq {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: 2.5rem;
   align-items: start;
+}
+@media (max-width: 700px) {
+  .svc-faq { grid-template-columns: 1fr; }
 }
 .svc-faq-item {
   border: 1px solid var(--line);
