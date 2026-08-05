@@ -8,7 +8,7 @@ const SITE_URL = 'https://netsolai.cz';
 export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [] }) {
   const T = meta[lang] || meta.en;
   const C = content[lang] || content.en;
-  const [openFaq, setOpenFaq] = useState(0);
+  const [openFaq, setOpenFaq] = useState(-1);
 
   const jsonLd = [
     {
