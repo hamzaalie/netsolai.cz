@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SiteLayout from './SiteLayout';
 import SEOHead from './SEOHead';
 
@@ -7,6 +8,7 @@ const SITE_URL = 'https://netsolai.cz';
 export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [] }) {
   const T = meta[lang] || meta.en;
   const C = content[lang] || content.en;
+  const [openFaq, setOpenFaq] = useState(0);
 
   const jsonLd = [
     {
@@ -137,11 +139,21 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
           <div className="section-head">
             <h2>{C.faqTitle}</h2>
           </div>
-          <div className="blog-article" style={{ maxWidth: '760px', margin: '0 auto' }}>
+          <div className="svc-faq">
             {C.faq.map((q, i) => (
-              <div key={i} className="blog-callout blog-callout--example" style={{ marginBottom: '16px' }}>
-                <span className="blog-callout-label">{q.q}</span>
-                <p>{q.a}</p>
+              <div key={i} className={`svc-faq-item${openFaq === i ? ' open' : ''}`}>
+                <button
+                  type="button"
+                  className="svc-faq-q"
+                  onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
+                  aria-expanded={openFaq === i}
+                >
+                  {q.q}
+                  <span className="svc-faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div className="svc-faq-a">
+                  <p>{q.a}</p>
+                </div>
               </div>
             ))}
           </div>
