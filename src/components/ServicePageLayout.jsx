@@ -93,12 +93,12 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
           <div className="section-head">
             <h2>{C.processTitle}</h2>
           </div>
-          <div className="blog-channels-grid">
+          <div className="svc-process-grid">
             {C.steps.map((s, i) => (
-              <div key={i} className="blog-channel-card">
-                <span className="blog-channel-icon">{i + 1}</span>
-                <strong>{s.title}</strong>
-                <span>{s.desc}</span>
+              <div key={i} className="svc-process-step">
+                <div className="svc-process-num">{i + 1}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
               </div>
             ))}
           </div>

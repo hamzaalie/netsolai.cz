@@ -5530,3 +5530,64 @@ a {
   max-width: 640px;
   width: 100%;
 }
+
+/* ── Service pages: process steps with connecting line ── */
+.svc-process-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.svc-process-step {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.9rem 1.6rem 1.7rem;
+  box-shadow: 0 4px 16px rgba(17, 18, 35, 0.04);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.svc-process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(17, 18, 35, 0.09);
+  border-color: rgba(156, 112, 255, 0.35);
+}
+.svc-process-num {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #b794ff, #7a4fe6);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 8px 18px rgba(122, 79, 230, 0.35);
+}
+.svc-process-step h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.svc-process-step p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-subtle);
+  line-height: 1.6;
+}
+.svc-process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  right: -1.2rem;
+  width: 1.2rem;
+  height: 0;
+  border-top: 2px dashed rgba(156, 112, 255, 0.45);
+}
+@media (max-width: 900px) {
+  .svc-process-grid { grid-template-columns: 1fr; }
+  .svc-process-step:not(:last-child)::after { display: none; }
+}
