@@ -155,6 +155,8 @@ export default function ContactPage() {
       }
 
       setStatus('success');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'contact_form_submit' });
     } catch {
       setStatus('error');
     }
