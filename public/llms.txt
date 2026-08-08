@@ -1,0 +1,39 @@
+# Netsol AI
+
+> Netsol AI is a Prague-based AI agency building custom AI automation, chatbots, AI agents, web applications, and system integrations for businesses across the Czech Republic. Typical engagements start with a free consultation and deploy in 2–4 weeks.
+
+## Company
+
+- Netsol AI s.r.o.
+- Address: Školská 660/3, Nové Město, 110 00 Praha 1, Czech Republic
+- Email: info@netsolai.cz
+- Phone: +420 721 405 452
+- Website: https://netsolai.cz
+
+## Services
+
+- [AI Automation](https://netsolai.cz/services/ai-automatizace) — automating recurring business processes (lead handling, reporting, cross-system data sync)
+- [AI Chatbot](https://netsolai.cz/services/ai-chatbot) — 24/7 customer-facing chatbots for support and lead qualification
+- [AI Agents](https://netsolai.cz/services/ai-agenti) — autonomous multi-step agents that carry out tasks across systems, not just answer questions
+- [Web Development](https://netsolai.cz/services/vyvoj-webu) — custom websites, e-commerce, and web applications
+- [System Integration](https://netsolai.cz/services/integrace) — connecting CRM, email, calendar, invoicing, and other tools
+
+## Pricing
+
+See [/pricing.md](https://netsolai.cz/pricing.md) — Netsol AI uses custom quotes based on project scope rather than fixed tiers.
+
+## Case studies
+
+- [Creative Hive Co](https://netsolai.cz/pripadove-studie/creative-hive-co) — educational platform for independent makers
+- [The Contractors Academy](https://netsolai.cz/pripadove-studie/the-contractors-academy) — e-learning platform for the trades industry
+- [Slumber CBN](https://netsolai.cz/pripadove-studie/slumber-cbn) — e-commerce and brand for a sleep wellness company
+- [Imagine Health](https://netsolai.cz/pripadove-studie/imagine-health) — website for a medical travel facilitator
+
+## Free tools
+
+- [Nástroje](https://netsolai.cz/nastroje) — free calculators and assessment tools for real estate agencies
+
+## Contact
+
+Free consultation: https://netsolai.cz/free-consultation
+Contact form: https://netsolai.cz/contact

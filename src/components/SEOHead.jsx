@@ -22,10 +22,11 @@ export default function SEOHead({
       <link rel="canonical" href={fullCanonical} />
       {noIndex && <meta name="robots" content="noindex, follow" />}
 
-      {/* hreflang — same URL serves EN and CS */}
-      <link rel="alternate" hreflang="en" href={fullCanonical} />
-      <link rel="alternate" hreflang="cs" href={fullCanonical} />
-      <link rel="alternate" hreflang="x-default" href={fullCanonical} />
+      {/* No hreflang tags: Google requires distinct URLs per language variant,
+          but EN/CS content here is served from the same URL via a client-side
+          toggle. Declaring hreflang alternates that all point to one identical
+          URL is invalid per Google's spec, so language is signaled only via
+          <html lang> (set dynamically in LanguageContext) and page content. */}
 
       {/* Open Graph */}
       <meta property="og:type" content={ogType} />
@@ -34,8 +35,8 @@ export default function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:locale:alternate" content="cs_CZ" />
+      <meta property="og:locale" content="cs_CZ" />
+      <meta property="og:locale:alternate" content="en_US" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
