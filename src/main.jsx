@@ -16,6 +16,7 @@ import BlogAiChatbotPage from "./pages/BlogAiChatbotPage";
 import BlogAiAgentPage from "./pages/BlogAiAgentPage";
 import BlogAiRoiPage from "./pages/BlogAiRoiPage";
 import BlogIndexPage from "./pages/BlogIndexPage";
+import BlogJakVybratAgenturuPage from "./pages/BlogJakVybratAgenturuPage";
 import NastrojeIndexPage from "./pages/tools/NastrojeIndexPage";
 import LeadLossCalculatorPage from "./pages/tools/LeadLossCalculatorPage";
 import CommissionCalculatorPage from "./pages/tools/CommissionCalculatorPage";
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/real-estate" element={<RealEstatePage />} />
           <Route path="/free-consultation" element={<FreeConsultationPage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
+          <Route path="/blog/jak-vybrat-ai-agenturu" element={<BlogJakVybratAgenturuPage />} />
           <Route path="/blog/jak-neprijit-o-zakazniky" element={<BlogJakNeprijitPage />} />
           <Route path="/blog/5-ai-automatizaci-pro-vas-byznys" element={<Blog5AutomationsPage />} />
           <Route path="/blog/ai-chatbot-pro-firmy" element={<BlogAiChatbotPage />} />

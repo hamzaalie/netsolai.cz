@@ -4,6 +4,18 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const BLOG_POSTS = [
   {
+    slug: 'jak-vybrat-ai-agenturu',
+    tag: 'AI Strategie',
+    tagEn: 'AI Strategy',
+    tagColor: 'blue',
+    date: '8. srpna 2026',
+    readTime: '7 min',
+    titleCs: 'Jak vybrat AI agenturu a na co si dát pozor v roce 2026',
+    titleEn: 'How to Choose an AI Agency and What to Watch For in 2026',
+    excerptCs: 'Trh AI agentur roste rychle a ne všechny jsou stejné. Zjistěte, jaké otázky položit před podpisem smlouvy a jaké red flags hlídat.',
+    excerptEn: 'The AI agency market is growing fast, and not all agencies are equal. Learn what to ask before signing and which red flags to watch for.',
+  },
+  {
     slug: 'co-je-ai-agent',
     tag: 'AI Agenti',
     tagEn: 'AI Agents',
