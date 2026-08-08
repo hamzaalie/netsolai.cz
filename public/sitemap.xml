@@ -80,6 +80,40 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/services/integrace"/>
   </url>
 
+  <!-- ── Case Studies ── -->
+  <url>
+    <loc>https://netsolai.cz/pripadove-studie/creative-hive-co</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/pripadove-studie/creative-hive-co"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/pripadove-studie/creative-hive-co"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/pripadove-studie/the-contractors-academy</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/pripadove-studie/the-contractors-academy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/pripadove-studie/the-contractors-academy"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/pripadove-studie/slumber-cbn</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/pripadove-studie/slumber-cbn"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/pripadove-studie/slumber-cbn"/>
+  </url>
+  <url>
+    <loc>https://netsolai.cz/pripadove-studie/imagine-health</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://netsolai.cz/pripadove-studie/imagine-health"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://netsolai.cz/pripadove-studie/imagine-health"/>
+  </url>
+
   <!-- ── Tools ── -->
   <url>
     <loc>https://netsolai.cz/nastroje</loc>

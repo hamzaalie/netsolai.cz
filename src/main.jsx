@@ -25,6 +25,10 @@ import AiChatbotPage from "./pages/services/AiChatbotPage";
 import VyvojWebuPage from "./pages/services/VyvojWebuPage";
 import AiAgentiPage from "./pages/services/AiAgentiPage";
 import IntegracePage from "./pages/services/IntegracePage";
+import CreativeHiveCoPage from "./pages/case-studies/CreativeHiveCoPage";
+import ContractorsAcademyPage from "./pages/case-studies/ContractorsAcademyPage";
+import SlumberPage from "./pages/case-studies/SlumberPage";
+import ImagineHealthPage from "./pages/case-studies/ImagineHealthPage";
 import "../styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -55,6 +59,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/services/vyvoj-webu" element={<VyvojWebuPage />} />
           <Route path="/services/ai-agenti" element={<AiAgentiPage />} />
           <Route path="/services/integrace" element={<IntegracePage />} />
+          <Route path="/pripadove-studie/creative-hive-co" element={<CreativeHiveCoPage />} />
+          <Route path="/pripadove-studie/the-contractors-academy" element={<ContractorsAcademyPage />} />
+          <Route path="/pripadove-studie/slumber-cbn" element={<SlumberPage />} />
+          <Route path="/pripadove-studie/imagine-health" element={<ImagineHealthPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

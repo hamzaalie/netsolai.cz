@@ -283,7 +283,7 @@ export default function App() {
 
           <div className="portfolio-grid">
 
-            <a className="portfolio-card" href="https://www.creativehiveco.com/" target="_blank" rel="noreferrer">
+            <a className="portfolio-card" href="/pripadove-studie/creative-hive-co">
               <div className="pc-image-wrapper">
                 <img src="/images/portfolio/creative-hive-co.png" alt="Creative Hive Co — creative community platform" />
                 <div className="pc-hover-overlay">
@@ -299,7 +299,7 @@ export default function App() {
               <h3>Creative Hive Co</h3>
             </a>
 
-            <a className="portfolio-card" href="https://www.thecontractorsacademy.com/" target="_blank" rel="noreferrer">
+            <a className="portfolio-card" href="/pripadove-studie/the-contractors-academy">
               <div className="pc-image-wrapper">
                 <img src="/images/portfolio/the-contractors-academy.png" alt="The Contractors Academy — training platform for contractors" />
                 <div className="pc-hover-overlay">
@@ -315,7 +315,7 @@ export default function App() {
               <h3>The Contractors Academy</h3>
             </a>
 
-            <a className="portfolio-card" href="https://slumbercbn.com/" target="_blank" rel="noreferrer">
+            <a className="portfolio-card" href="/pripadove-studie/slumber-cbn">
               <div className="pc-image-wrapper">
                 <img src="/images/portfolio/slumber.png" alt="Slumber CBN — sleep wellness e-commerce brand" />
                 <div className="pc-hover-overlay">
@@ -331,7 +331,7 @@ export default function App() {
               <h3>Slumber CBN</h3>
             </a>
 
-            <a className="portfolio-card" href="https://imagine-thailand.com/" target="_blank" rel="noreferrer">
+            <a className="portfolio-card" href="/pripadove-studie/imagine-health">
               <div className="pc-image-wrapper">
                 <img src="/images/portfolio/imagine-health.png" alt="Imagine Health — health & wellness platform" />
                 <div className="pc-hover-overlay">
