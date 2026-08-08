@@ -4,6 +4,18 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const BLOG_POSTS = [
   {
+    slug: 'kolik-stoji-ai-automatizace-chatbot',
+    tag: 'AI Strategie',
+    tagEn: 'AI Strategy',
+    tagColor: 'green',
+    date: '8. srpna 2026',
+    readTime: '6 min',
+    titleCs: 'Kolik stojí AI chatbot a AI automatizace v roce 2026',
+    titleEn: 'How Much Does an AI Chatbot & AI Automation Cost in 2026',
+    excerptCs: 'Kompletní přehled cen AI chatbotů, AI agentů a automatizace v Česku — co ovlivňuje cenu a na co se ptát dodavatele.',
+    excerptEn: 'A complete pricing overview for AI chatbots, AI agents, and automation — what drives cost and what to ask a vendor.',
+  },
+  {
     slug: 'jak-vybrat-ai-agenturu',
     tag: 'AI Strategie',
     tagEn: 'AI Strategy',
