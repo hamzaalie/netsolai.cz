@@ -2,7 +2,7 @@ import SiteLayout from './SiteLayout';
 import SEOHead from './SEOHead';
 import { BLOG_POSTS } from '../pages/BlogIndexPage';
 
-const CALENDLY_URL = 'https://calendly.com/netsolai-info/30min';
+const BOOKING_URL = 'https://booking.netsolai.cz/register';
 const SITE_URL = 'https://netsolai.cz';
 
 export default function BlogPostLayout({ lang, meta, children, topics }) {
@@ -136,7 +136,7 @@ export default function BlogPostLayout({ lang, meta, children, topics }) {
               <p className="blog-sidebar-name">Netsol AI</p>
               <p className="blog-sidebar-role">AI-Powered Digital Agency</p>
               <p className="blog-sidebar-bio">{T.sidebarBio}</p>
-              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="blog-sidebar-cta">
+              <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="blog-sidebar-cta">
                 {T.sidebarCta}
               </a>
             </div>

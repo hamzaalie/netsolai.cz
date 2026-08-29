@@ -207,8 +207,8 @@ const translations = {
         'Tailored AI action plan included',
         'Complex business problems welcome',
       ],
-      bookBtn: 'Schedule on Calendly',
-      bookNote: "You'll be redirected to Calendly to pick your slot",
+      bookBtn: 'Schedule your call',
+      bookNote: "You'll be redirected to our booking page to pick your slot",
     },
   },
 
@@ -420,8 +420,8 @@ const translations = {
         'Konkrétní AI plán na míru',
         'Vhodné pro komplexní byznys problémy',
       ],
-      bookBtn: 'Rezervovat přes Calendly',
-      bookNote: 'Budete přesměrováni na Calendly pro výběr termínu',
+      bookBtn: 'Rezervovat termín',
+      bookNote: 'Budete přesměrováni na naši rezervační stránku pro výběr termínu',
     },
   },
 };

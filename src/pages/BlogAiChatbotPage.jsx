@@ -1,7 +1,7 @@
 import BlogPostLayout from '../components/BlogPostLayout';
 import { useLanguage } from '../context/LanguageContext';
 
-const CALENDLY_URL = 'https://calendly.com/netsolai-info/30min';
+const BOOKING_URL = 'https://booking.netsolai.cz/register';
 
 const meta = {
   cs: {
@@ -159,7 +159,7 @@ function ArticleCs() {
       <h3 className="blog-cta-h3">Fungoval by AI chatbot ve vaší firmě?</h3>
       <p className="blog-cta-desc">30 minut. Žádné závazky. Zjistíme to společně.</p>
       <div className="blog-cta-actions">
-        <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
           <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M5 1v3M13 1v3M1 7h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
           Rezervovat konzultaci zdarma
         </a>
@@ -281,7 +281,7 @@ function ArticleEn() {
       <h3 className="blog-cta-h3">Would an AI Chatbot Work for Your Business?</h3>
       <p className="blog-cta-desc">30 minutes. No commitment. Let's find out together.</p>
       <div className="blog-cta-actions">
-        <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
           <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M5 1v3M13 1v3M1 7h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
           Book Free Consultation
         </a>

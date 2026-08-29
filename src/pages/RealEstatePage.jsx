@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import SiteFooter from '../components/SiteFooter';
 import '../styles/re-landing.css';
 
-const CALENDLY = 'https://calendly.com/netsolai-info/30min';
+const BOOKING_URL = 'https://booking.netsolai.cz/register';
 
 // ─── Translations ─────────────────────────────────────────────────────────────
 const T = {
@@ -881,7 +881,7 @@ export default function RealEstatePage() {
 
   const bookAudit = () => {
     if (window.fbq) window.fbq('track', 'Lead');
-    window.open(CALENDLY, '_blank');
+    window.open(BOOKING_URL, '_blank');
   };
 
   const handleTypeA = () => {

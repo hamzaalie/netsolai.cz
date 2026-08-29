@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../i18n/index';
 
-const CALENDLY_URL = 'https://calendly.com/netsolai-info/30min';
+const BOOKING_URL = 'https://booking.netsolai.cz/register';
 
 function useBinaryCanvas(id) {
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function FreeConsultationPage() {
             </h1>
             <p className="fc-hero-sub">{T.sub}</p>
             <div className="fc-hero-actions">
-              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
+              <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <rect x="1" y="2" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/>
                   <path d="M5 1v3M13 1v3M1 7h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
@@ -147,7 +147,7 @@ export default function FreeConsultationPage() {
                 <span key={i} className="fc-tag">{tag}</span>
               ))}
             </div>
-            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-cta-btn">{T.cta}</a>
+            <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-cta-btn">{T.cta}</a>
           </div>
         </div>
       </section>
@@ -205,7 +205,7 @@ export default function FreeConsultationPage() {
                     </svg>
                   </div>
                   <p className="fc-book-box-label">{lang === 'cs' ? 'Vyberte si termín' : 'Pick your time slot'}</p>
-                  <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="fc-btn-white fc-btn-white--block">
+                  <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white fc-btn-white--block">
                     {T.bookBtn}
                   </a>
                   <p className="fc-book-note">{T.bookNote}</p>

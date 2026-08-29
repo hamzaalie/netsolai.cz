@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SiteLayout from './SiteLayout';
 import SEOHead from './SEOHead';
 
-const CALENDLY_URL = 'https://calendly.com/netsolai-info/30min';
+const BOOKING_URL = 'https://booking.netsolai.cz/register';
 const SITE_URL = 'https://netsolai.cz';
 
 export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [] }) {
@@ -57,7 +57,7 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
             <h1 className="cta-headline">{T.h1}</h1>
             <p className="cta-sub">{C.heroSub}</p>
             <div className="cta-actions">
-              <a className="cta-btn-primary" href={CALENDLY_URL} target="_blank" rel="noreferrer">{C.ctaPrimary}</a>
+              <a className="cta-btn-primary" href={BOOKING_URL} target="_blank" rel="noreferrer">{C.ctaPrimary}</a>
               <a className="cta-btn-secondary" href="#what">{C.ctaSecondary}</a>
             </div>
             {C.stats && (
@@ -219,7 +219,7 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
               <h2 className="precta-heading">{C.ctaHeading}</h2>
               <p className="precta-desc">{C.ctaDesc}</p>
               <div className="precta-actions">
-                <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="precta-btn-primary">{C.ctaPrimary}</a>
+                <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="precta-btn-primary">{C.ctaPrimary}</a>
                 <a href="/contact" className="precta-btn-secondary">{C.ctaSecondary2}</a>
               </div>
             </div>
