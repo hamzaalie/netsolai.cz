@@ -1,3 +1,4 @@
+import { trackBookingClick } from '../utils/tracking';
 import { useState } from 'react';
 import SiteLayout from './SiteLayout';
 import SEOHead from './SEOHead';
@@ -57,7 +58,7 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
             <h1 className="cta-headline">{T.h1}</h1>
             <p className="cta-sub">{C.heroSub}</p>
             <div className="cta-actions">
-              <a className="cta-btn-primary" href={BOOKING_URL} target="_blank" rel="noreferrer">{C.ctaPrimary}</a>
+              <a className="cta-btn-primary" href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('service-page')}>{C.ctaPrimary}</a>
               <a className="cta-btn-secondary" href="#what">{C.ctaSecondary}</a>
             </div>
             {C.stats && (
@@ -219,7 +220,7 @@ export default function ServicePageLayout({ lang, meta, content, extraJsonLd = [
               <h2 className="precta-heading">{C.ctaHeading}</h2>
               <p className="precta-desc">{C.ctaDesc}</p>
               <div className="precta-actions">
-                <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="precta-btn-primary">{C.ctaPrimary}</a>
+                <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('service-page')} className="precta-btn-primary">{C.ctaPrimary}</a>
                 <a href="/contact" className="precta-btn-secondary">{C.ctaSecondary2}</a>
               </div>
             </div>

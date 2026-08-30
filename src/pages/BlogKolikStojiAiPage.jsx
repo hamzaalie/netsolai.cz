@@ -1,3 +1,4 @@
+import { trackBookingClick } from '../utils/tracking';
 import BlogPostLayout from '../components/BlogPostLayout';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -89,7 +90,7 @@ function ArticleCs() {
       <h3 className="blog-cta-h3">Chcete vědět, kolik by AI řešení stálo konkrétně u vás?</h3>
       <p className="blog-cta-desc">30 minut. Žádné závazky. Konkrétní nabídka na míru.</p>
       <div className="blog-cta-actions">
-        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">Rezervovat konzultaci zdarma</a>
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('blog-kolik-stoji-ai')} className="fc-btn-white">Rezervovat konzultaci zdarma</a>
         <a href="/contact" className="fc-btn-outline fc-btn-outline--dark">Kontaktovat nás</a>
       </div>
     </div>
@@ -146,7 +147,7 @@ function ArticleEn() {
       <h3 className="blog-cta-h3">Want to know what an AI solution would actually cost for your business?</h3>
       <p className="blog-cta-desc">30 minutes. No commitment. A specific quote tailored to you.</p>
       <div className="blog-cta-actions">
-        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">Book a free consultation</a>
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('blog-kolik-stoji-ai')} className="fc-btn-white">Book a free consultation</a>
         <a href="/contact" className="fc-btn-outline fc-btn-outline--dark">Contact us</a>
       </div>
     </div>

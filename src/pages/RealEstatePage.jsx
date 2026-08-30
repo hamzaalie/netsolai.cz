@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import SEOHead from '../components/SEOHead';
 import SiteFooter from '../components/SiteFooter';
+import { trackBookingClick, trackLandingPageView } from '../utils/tracking';
 import '../styles/re-landing.css';
 
 const BOOKING_URL = 'https://booking.netsolai.cz/register';
@@ -859,6 +860,8 @@ export default function RealEstatePage() {
   const processRef = useRef(null);
   const ctaRef = useRef(null);
 
+  useEffect(() => { trackLandingPageView('real-estate'); }, []);
+
   const t = T[lang];
 
   useEffect(() => {
@@ -880,17 +883,19 @@ export default function RealEstatePage() {
   const scrollTo = ref => ref.current?.scrollIntoView({ behavior: 'smooth' });
 
   const bookAudit = () => {
-    if (window.fbq) window.fbq('track', 'Lead');
+    trackBookingClick('real-estate');
     window.open(BOOKING_URL, '_blank');
   };
 
   const handleTypeA = () => {
-    if (window.fbq) window.fbq('trackCustom', 'ClickedTypeA');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 're_clicked_type_a' });
     scrollTo(solARef);
   };
 
   const handleTypeB = () => {
-    if (window.fbq) window.fbq('trackCustom', 'ClickedTypeB');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 're_clicked_type_b' });
     scrollTo(solBRef);
   };
 

@@ -1,3 +1,4 @@
+import { trackBookingClick } from '../utils/tracking';
 import BlogPostLayout from '../components/BlogPostLayout';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -94,7 +95,7 @@ function ArticleCs() {
       <h3 className="blog-cta-h3">Zvažujete AI agenturu? Probereme váš konkrétní případ.</h3>
       <p className="blog-cta-desc">30 minut. Žádné závazky. Žádný tlak na podpis.</p>
       <div className="blog-cta-actions">
-        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">Rezervovat konzultaci zdarma</a>
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('blog-jak-vybrat-agenturu')} className="fc-btn-white">Rezervovat konzultaci zdarma</a>
         <a href="/contact" className="fc-btn-outline fc-btn-outline--dark">Kontaktovat nás</a>
       </div>
     </div>
@@ -156,7 +157,7 @@ function ArticleEn() {
       <h3 className="blog-cta-h3">Considering an AI agency? Let's discuss your specific case.</h3>
       <p className="blog-cta-desc">30 minutes. No commitment. No pressure to sign.</p>
       <div className="blog-cta-actions">
-        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">Book a free consultation</a>
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('blog-jak-vybrat-agenturu')} className="fc-btn-white">Book a free consultation</a>
         <a href="/contact" className="fc-btn-outline fc-btn-outline--dark">Contact us</a>
       </div>
     </div>

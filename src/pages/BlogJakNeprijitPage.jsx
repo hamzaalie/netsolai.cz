@@ -1,3 +1,4 @@
+import { trackBookingClick } from '../utils/tracking';
 import BlogPostLayout from '../components/BlogPostLayout';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -152,7 +153,7 @@ function ArticleCs() {
       <h3 className="blog-cta-h3">Zjistěte, kolik zákazníků vám uniká</h3>
       <p className="blog-cta-desc">30 minut. Žádné závazky. Konkrétní analýza vaší situace.</p>
       <div className="blog-cta-actions">
-        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('blog-jak-neprijit')} className="fc-btn-white">
           <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M5 1v3M13 1v3M1 7h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
           Rezervovat konzultaci zdarma
         </a>
@@ -260,7 +261,7 @@ function ArticleEn() {
       <h3 className="blog-cta-h3">Find Out How Many Customers You're Losing</h3>
       <p className="blog-cta-desc">30 minutes. No commitment. A concrete analysis of your situation.</p>
       <div className="blog-cta-actions">
-        <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="fc-btn-white">
+        <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => trackBookingClick('blog-jak-neprijit')} className="fc-btn-white">
           <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="M5 1v3M13 1v3M1 7h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
           Book Free Consultation
         </a>
