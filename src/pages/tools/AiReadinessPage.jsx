@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SiteLayout from '../../components/SiteLayout';
 import SEOHead from '../../components/SEOHead';
 import { useLanguage } from '../../context/LanguageContext';
+import { trackToolComplete, trackBookingClick } from '../../utils/tracking';
 
 const QUESTIONS_CS = [
   {
@@ -265,7 +266,10 @@ export default function AiReadinessPage() {
   }
 
   function handleSubmit() {
-    if (answeredCount === questions.length) setSubmitted(true);
+    if (answeredCount === questions.length) {
+      setSubmitted(true);
+      trackToolComplete('ai-readiness-quiz');
+    }
   }
 
   const result = submitted ? getResult(totalScore, cs) : null;
@@ -416,7 +420,7 @@ export default function AiReadinessPage() {
                     ? 'Chcete projít výsledky s expertem a dostat konkrétní plán pro vaši kancelář?'
                     : 'Want to go through your results with an expert and get a specific plan for your agency?'}
                 </p>
-                <a href="/free-consultation" className="tool-cta-btn">
+                <a href="/free-consultation" className="tool-cta-btn" onClick={() => trackBookingClick('ai-readiness-quiz')}>
                   {cs ? 'Bezplatná 30minutová konzultace →' : 'Free 30-minute Consultation →'}
                 </a>
               </div>

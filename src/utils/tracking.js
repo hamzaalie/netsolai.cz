@@ -21,3 +21,9 @@ export function trackLandingPageView(page) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: 'landing_page_view', landing_page: page });
 }
+
+/** Fire when someone finishes an interactive tool (quiz, calculator) and sees their result. */
+export function trackToolComplete(tool) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'tool_complete', tool_name: tool });
+}

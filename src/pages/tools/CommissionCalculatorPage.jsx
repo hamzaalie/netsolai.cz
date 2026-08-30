@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SiteLayout from '../../components/SiteLayout';
 import SEOHead from '../../components/SEOHead';
 import { useLanguage } from '../../context/LanguageContext';
+import { trackToolComplete, trackBookingClick } from '../../utils/tracking';
 
 function formatCZK(n) {
   return Math.round(n).toLocaleString('cs-CZ') + ' Kč';
@@ -43,6 +44,7 @@ export default function CommissionCalculatorPage() {
       annualProjection,
     });
     setShowResult(true);
+    trackToolComplete('commission-calculator');
   }
 
   const jsonLd = [{
@@ -239,7 +241,7 @@ export default function CommissionCalculatorPage() {
                         ? 'Chcete zvýšit svůj hodinový výdělek automatizací rutinní práce?'
                         : 'Want to increase your hourly earnings by automating routine work?'}
                     </p>
-                    <a href="/free-consultation" className="tool-cta-btn">
+                    <a href="/free-consultation" className="tool-cta-btn" onClick={() => trackBookingClick('commission-calculator')}>
                       {cs ? 'Bezplatná 30minutová konzultace →' : 'Free 30-minute Consultation →'}
                     </a>
                   </div>

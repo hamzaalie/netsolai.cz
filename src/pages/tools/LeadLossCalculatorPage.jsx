@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import SiteLayout from '../../components/SiteLayout';
 import SEOHead from '../../components/SEOHead';
 import { useLanguage } from '../../context/LanguageContext';
+import { trackToolComplete, trackBookingClick } from '../../utils/tracking';
 
 const RESPONSE_TIME_LOSS = {
   'under1h': 0.05,
@@ -50,6 +51,7 @@ export default function LeadLossCalculatorPage() {
       revenueLostPerYear,
     });
     setShowResult(true);
+    trackToolComplete('lead-loss-calculator');
   }
 
   const jsonLd = [{
@@ -236,7 +238,7 @@ export default function LeadLossCalculatorPage() {
                         ? 'Netsol AI zajistí automatickou odpověď na každou poptávku do 60 sekund — 24/7, česky i anglicky.'
                         : 'Netsol AI delivers an automatic response to every inquiry within 60 seconds — 24/7, in Czech and English.'}
                     </p>
-                    <a href="/free-consultation" className="tool-cta-btn">
+                    <a href="/free-consultation" className="tool-cta-btn" onClick={() => trackBookingClick('lead-loss-calculator')}>
                       {cs ? 'Zjistěte jak → Konzultace zdarma' : 'See How → Free Consultation'}
                     </a>
                   </div>
