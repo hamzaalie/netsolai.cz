@@ -9,6 +9,7 @@ import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import CookiesPage from "./pages/CookiesPage";
 import RealEstatePage from "./pages/RealEstatePage";
+import HvacWebPage from "./pages/HvacWebPage";
 import FreeConsultationPage from "./pages/FreeConsultationPage";
 import BlogJakNeprijitPage from "./pages/BlogJakNeprijitPage";
 import Blog5AutomationsPage from "./pages/Blog5AutomationsPage";
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/cookies-policy" element={<CookiesPage />} />
           <Route path="/real-estate" element={<RealEstatePage />} />
+          <Route path="/tepelna-cerpadla-web" element={<HvacWebPage />} />
           <Route path="/free-consultation" element={<FreeConsultationPage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/jak-vybrat-ai-agenturu" element={<BlogJakVybratAgenturuPage />} />

@@ -27,3 +27,9 @@ export function trackToolComplete(tool) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: 'tool_complete', tool_name: tool });
 }
+
+/** Fire when someone clicks a WhatsApp contact link (a distinct conversion path from the booking flow). */
+export function trackWhatsAppClick(source) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'whatsapp_click', click_source: source });
+}
