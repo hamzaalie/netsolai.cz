@@ -472,8 +472,12 @@ export default function HvacWebPage() {
             <h2 style={{ maxWidth: 'none', margin: '0 auto 12px' }}>{t.fitTitle}</h2>
             <p style={{ maxWidth: 620, margin: '0 auto' }}>{t.fitSub}</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 980, margin: '0 auto', textAlign: 'left' }}>
-            <div className="fc-benefit-card" style={{ borderTop: '3px solid #1fa971' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 980, margin: '48px auto 0', textAlign: 'left' }}>
+            <div className="fc-benefit-card" style={{ borderTop: '3px solid #1fa971', boxShadow: '0 8px 30px rgba(31,169,113,0.08)' }}>
+              <div style={{
+                width: 44, height: 44, borderRadius: 12, background: 'rgba(31,169,113,0.12)', color: '#1fa971',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, fontSize: '1.3rem', fontWeight: 700,
+              }}>✓</div>
               <h3 className="fc-benefit-title">{t.fitYesTitle}</h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0 0' }}>
                 {t.fitYes.map((item, i) => (
@@ -484,7 +488,11 @@ export default function HvacWebPage() {
                 ))}
               </ul>
             </div>
-            <div className="fc-benefit-card" style={{ borderTop: '3px solid #c0392b' }}>
+            <div className="fc-benefit-card" style={{ borderTop: '3px solid #c0392b', boxShadow: '0 8px 30px rgba(192,57,43,0.08)' }}>
+              <div style={{
+                width: 44, height: 44, borderRadius: 12, background: 'rgba(192,57,43,0.12)', color: '#c0392b',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, fontSize: '1.3rem', fontWeight: 700,
+              }}>✕</div>
               <h3 className="fc-benefit-title">{t.fitNoTitle}</h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0 0' }}>
                 {t.fitNo.map((item, i) => (
