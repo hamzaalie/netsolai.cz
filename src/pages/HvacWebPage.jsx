@@ -238,7 +238,7 @@ const T = {
     ],
     fitNoTitle: "We're not for you if…",
     fitNo: [
-      'You want the cheapest possible leads, shared with five competitors',
+      'You want the cheapest possible enquiries, shared with five competitors',
       "Nobody in the business is free to pick up the phone to new enquiries",
       "You sell products online rather than a local service — that's not our lane",
       'You expect results overnight without being involved at all in the first month',
