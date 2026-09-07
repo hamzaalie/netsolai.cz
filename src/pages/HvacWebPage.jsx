@@ -51,29 +51,6 @@ const IconWrench = () => (
 
 const FEATURE_ICONS = { calendar: IconCalendar, grant: IconGrant, card: IconCard, gallery: IconGallery, star: IconStar, bell: IconBell, pin: IconPin, wrench: IconWrench };
 
-// ── Story step icons ───────────────────────────────────────────────────────────
-const IconSearch = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-);
-const IconBrowser = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="4" width="20" height="16" rx="2" /><line x1="2" y1="9" x2="22" y2="9" /><circle cx="5.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
-  </svg>
-);
-const IconCheckBrowser = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="4" width="20" height="16" rx="2" /><line x1="2" y1="9" x2="22" y2="9" /><path d="M8 14l2.5 2.5L16 11" />
-  </svg>
-);
-const IconMessageSent = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 3L2 10.5l7.5 3L13 21l8-18z" />
-  </svg>
-);
-const STORY_ICONS = [IconSearch, IconBrowser, IconCheckBrowser, IconMessageSent];
-
 const T = {
   cs: {
     seo: {
@@ -86,15 +63,12 @@ const T = {
     ctaBooking: 'Rezervovat bezplatnou konzultaci',
     ctaHow: 'Jak vám pomůžeme ↓',
 
-    storyEyebrow: 'TOHLE SE DĚJE KAŽDÝ DEN',
-    storyTitle: 'Sobota večer, 20:14',
-    storyBody: [
-      'Někdo si doma spočítal, že staré topení už nedává smysl. Vytáhne telefon a napíše do Googlu „tepelné čerpadlo instalace [jeho město]".',
-      'Otevře první tři weby. Na dvou z nich neví po 10 sekundách, jestli firma vůbec dělá to, co potřebuje, kolik to zhruba stojí, ani jak ji rychle kontaktovat.',
-      'Na třetím webu vidí jasně: co děláte, pro koho, orientační cenu, a tlačítko „Rezervovat konzultaci" hned nahoře.',
-      'Napíše tam. Ne protože je ta firma lepší. Protože odpověděla na jeho otázky jako první.',
-    ],
-    storyCost: 'Průměrná zakázka na tepelné čerpadlo se v Česku pohybuje kolem 150 000–300 000 Kč. Stačí takhle ztratit 2 poptávky měsíčně a je to statisíce korun ročně, které nikdy neuvidíte — a ani nebudete vědět, že jste o ně přišli.',
+    aboutEyebrow: 'CO DĚLÁME',
+    aboutTitle: 'AI agentura, která pomáhá firmám reálně růst',
+    aboutWhatTitle: 'Co děláme',
+    aboutWhatText: 'Stavíme weby a online systémy pro servisní firmy — s jasným cílem: aby vám skutečně přiváděly zákazníky, ne jen hezky vypadaly.',
+    aboutHowTitle: 'Jak to děláme',
+    aboutHowText: 'AI používáme v každém kroku: při analýze toho, co vaši zákazníci na Googlu skutečně hledají, při stavbě SEO a obsahu webu, i při sledování výsledků a jejich dalším vylepšování.',
 
     problemEyebrow: 'TEN PROBLÉM',
     problemTitle: 'Bojujete s něčím z tohoto?',
@@ -186,15 +160,12 @@ const T = {
     ctaBooking: 'Book a Free Consultation',
     ctaHow: 'How we help ↓',
 
-    storyEyebrow: 'THIS HAPPENS EVERY DAY',
-    storyTitle: 'Saturday evening, 8:14 PM',
-    storyBody: [
-      'Someone at home just did the math — their old heating doesn\'t make sense anymore. They pull out their phone and search "heat pump installation [their city]".',
-      "They open the first three websites. On two of them, after 10 seconds they still don't know if the company even does what they need, roughly what it costs, or how to reach them quickly.",
-      'On the third site, it\'s obvious: what you do, who it\'s for, a rough price, and a "Book a Consultation" button right at the top.',
-      "They message that one. Not because that company is better. Because it answered their questions first.",
-    ],
-    storyCost: 'The average heat pump job in Czechia runs around 150,000–300,000 CZK. Lose just 2 enquiries a month this way and that\'s hundreds of thousands of crowns a year you never see — and never even know you lost.',
+    aboutEyebrow: 'WHAT WE DO',
+    aboutTitle: 'An AI agency that helps businesses actually grow',
+    aboutWhatTitle: 'What we do',
+    aboutWhatText: "We build websites and online systems for service businesses — with one clear goal: to actually bring you customers, not just look nice.",
+    aboutHowTitle: 'How we do it',
+    aboutHowText: "We use AI at every step: analyzing what your customers actually search for on Google, building the site's SEO and content around that, and tracking results to keep improving it.",
 
     problemEyebrow: 'THE PROBLEM',
     problemTitle: 'Are you struggling with any of this?',
@@ -332,33 +303,21 @@ export default function HvacWebPage() {
         </section>
       </div>
 
-      {/* VIVID PROBLEM STORY */}
+      {/* WHAT WE DO / HOW WE DO IT */}
       <section className="section" style={{ background: 'var(--bg-soft)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <p className="eyebrow">{t.storyEyebrow}</p>
+          <p className="eyebrow">{t.aboutEyebrow}</p>
           <div className="section-head" style={{ gridTemplateColumns: '1fr' }}>
-            <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.storyTitle}</h2>
+            <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.aboutTitle}</h2>
           </div>
-          <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'left' }}>
-            {t.storyBody.map((p, i) => {
-              const Icon = STORY_ICONS[i];
-              const isLast = i === t.storyBody.length - 1;
-              return (
-                <div key={i} style={{ display: 'flex', gap: 18, marginBottom: isLast ? 0 : 22 }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                    <div style={{
-                      width: 44, height: 44, borderRadius: '50%', background: '#fff',
-                      border: '1.5px solid rgba(92,92,255,0.3)', color: '#5c5cff',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                    }}><Icon /></div>
-                    {!isLast && <div style={{ width: 2, flex: 1, background: 'rgba(92,92,255,0.2)', marginTop: 4 }} />}
-                  </div>
-                  <p style={{ fontSize: '1.02rem', lineHeight: 1.7, paddingTop: 8 }}>{p}</p>
-                </div>
-              );
-            })}
-            <div style={{ marginTop: 28, padding: '20px 24px', background: 'rgba(92,92,255,0.08)', borderLeft: '3px solid #5c5cff', borderRadius: '0 8px 8px 0' }}>
-              <p style={{ margin: 0, fontWeight: 600 }}>{t.storyCost}</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 900, margin: '0 auto', textAlign: 'left' }}>
+            <div className="fc-benefit-card">
+              <h3 className="fc-benefit-title">{t.aboutWhatTitle}</h3>
+              <p className="fc-benefit-desc">{t.aboutWhatText}</p>
+            </div>
+            <div className="fc-benefit-card">
+              <h3 className="fc-benefit-title">{t.aboutHowTitle}</h3>
+              <p className="fc-benefit-desc">{t.aboutHowText}</p>
             </div>
           </div>
         </div>
