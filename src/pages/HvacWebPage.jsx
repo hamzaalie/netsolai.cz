@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import SiteLayout from '../components/SiteLayout';
 import SEOHead from '../components/SEOHead';
 import { useLanguage } from '../context/LanguageContext';
@@ -262,6 +263,7 @@ const T = {
 export default function HvacWebPage() {
   const { lang } = useLanguage();
   const t = T[lang] || T.cs;
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => { trackLandingPageView('hvac-web'); }, []);
 
@@ -511,12 +513,42 @@ export default function HvacWebPage() {
             <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.faqTitle}</h2>
           </div>
           <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'left' }}>
-            {t.faq.map((item, i) => (
-              <div key={i} style={{ padding: '20px 0', borderBottom: '1px solid var(--border, #eee)' }}>
-                <h3 style={{ margin: '0 0 8px 0', fontSize: '1.05rem' }}>{item.q}</h3>
-                <p style={{ margin: 0, color: 'var(--text-soft, #666)' }}>{item.a}</p>
-              </div>
-            ))}
+            {t.faq.map((item, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div key={i} style={{ borderBottom: '1px solid var(--border, #eee)' }}>
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    style={{
+                      width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                      gap: 16, padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer',
+                      textAlign: 'left', font: 'inherit',
+                    }}
+                  >
+                    <h3 style={{ margin: 0, fontSize: '1.05rem' }}>{item.q}</h3>
+                    <span style={{
+                      flexShrink: 0, width: 26, height: 26, borderRadius: '50%',
+                      background: isOpen ? '#5c5cff' : 'rgba(92,92,255,0.1)', color: isOpen ? '#fff' : '#5c5cff',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '1.1rem', fontWeight: 600, transition: 'background 0.18s, color 0.18s',
+                    }}>{isOpen ? '−' : '+'}</span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        style={{ overflow: 'hidden' }}
+                      >
+                        <p style={{ margin: '0 0 20px 0', color: 'var(--text-soft, #666)' }}>{item.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
