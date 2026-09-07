@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import SiteLayout from '../components/SiteLayout';
 import SEOHead from '../components/SEOHead';
 import { useLanguage } from '../context/LanguageContext';
-import { trackWhatsAppClick, trackLandingPageView } from '../utils/tracking';
+import { trackBookingClick, trackLandingPageView } from '../utils/tracking';
 
-const WHATSAPP_NUMBER = '420721405452';
+const BOOKING_URL = 'https://booking.netsolai.cz/register';
 
 // ── Feature icons (animated, matching the site's line-icon style) ─────────────
 const IconCalendar = () => (
@@ -55,13 +55,12 @@ const T = {
   cs: {
     seo: {
       title: 'Web pro tepelná čerpadla a HVAC firmy | Netsol AI',
-      description: 'Kolik poptávek vám unikne kvůli pomalému nebo nejasnému webu? Ukážeme vám přesně, co změnit. Bezplatný rozbor přes WhatsApp.',
+      description: 'Kolik poptávek vám unikne kvůli pomalému nebo nejasnému webu? Ukážeme vám přesně, co změnit. Bezplatná konzultace.',
     },
-    whatsappMessage: 'Dobrý den, mám zájem o bezplatný rozbor webu pro moji firmu (tepelná čerpadla / HVAC).',
     badge: 'PRO INSTALATÉRY TEPELNÝCH ČERPADEL A HVAC',
     h1: 'Zákazník hledal tepelné čerpadlo. Napsal třem firmám. Vy jste mezi nimi nebyli.',
     heroSub: 'Ne proto, že by vaše práce byla horší. Ale protože váš web mu za 8 sekund neřekl to, co potřeboval vědět — a on napsal tomu, kdo mu to řekl první.',
-    ctaWhatsapp: 'Napsat na WhatsApp',
+    ctaBooking: 'Rezervovat bezplatnou konzultaci',
     ctaHow: 'Jak vám pomůžeme ↓',
 
     storyEyebrow: 'TOHLE SE DĚJE KAŽDÝ DEN',
@@ -69,7 +68,7 @@ const T = {
     storyBody: [
       'Někdo si doma spočítal, že staré topení už nedává smysl. Vytáhne telefon a napíše do Googlu „tepelné čerpadlo instalace [jeho město]".',
       'Otevře první tři weby. Na dvou z nich neví po 10 sekundách, jestli firma vůbec dělá to, co potřebuje, kolik to zhruba stojí, ani jak ji rychle kontaktovat.',
-      'Na třetím webu vidí jasně: co děláte, pro koho, orientační cenu, a tlačítko „Napsat na WhatsApp" hned nahoře.',
+      'Na třetím webu vidí jasně: co děláte, pro koho, orientační cenu, a tlačítko „Rezervovat konzultaci" hned nahoře.',
       'Napíše tam. Ne protože je ta firma lepší. Protože odpověděla na jeho otázky jako první.',
     ],
     storyCost: 'Průměrná zakázka na tepelné čerpadlo se v Česku pohybuje kolem 150 000–300 000 Kč. Stačí takhle ztratit 2 poptávky měsíčně a je to statisíce korun ročně, které nikdy neuvidíte — a ani nebudete vědět, že jste o ně přišli.',
@@ -106,10 +105,10 @@ const T = {
     ],
 
     offerEyebrow: 'ZAČNĚTE TADY — ZDARMA',
-    offerTitle: 'Pošlete nám váš současný web. Natočíme vám video.',
-    offerDesc: 'Konkrétně pro váš web ukážeme 3 věci, které vám dnes stojí poptávky — a co by se s tím dalo udělat. Bez závazků, bez prodejního tlaku.',
-    offerChecklist: ['Krátké video, konkrétně pro váš web', '3 konkrétní věci, které bychom změnili', 'Trvá vám to 10 sekund — jen pošlete odkaz'],
-    offerBoxLabel: 'Pošlete odkaz na váš web přes WhatsApp',
+    offerTitle: 'Rezervujte si bezplatnou 30minutovou konzultaci.',
+    offerDesc: 'Probereme spolu váš současný web naživo a ukážeme 3 konkrétní věci, které vám dnes stojí poptávky. Bez závazků, bez prodejního tlaku.',
+    offerChecklist: ['30minutový hovor, konkrétně o vašem webu', '3 konkrétní doporučení ke zlepšení', 'Žádné závazky, žádný prodejní tlak'],
+    offerBoxLabel: 'Vyberte si termín, který vám vyhovuje',
     offerNote: 'Odpovídáme obvykle do pár hodin',
 
     casesEyebrow: 'DŮKAZ, NE JEN SLIB',
@@ -143,26 +142,25 @@ const T = {
     faqEyebrow: 'ČASTÉ OTÁZKY',
     faqTitle: 'Rychlé odpovědi',
     faq: [
-      { q: 'Kolik to bude stát?', a: 'Záleží na rozsahu — probereme to na WhatsAppu podle toho, co potřebujete. Nejdřív se ale podíváme na váš současný web zdarma, bez závazků.' },
+      { q: 'Kolik to bude stát?', a: 'Záleží na rozsahu — probereme to na úvodní konzultaci podle toho, co potřebujete. Nejdřív se ale podíváme na váš současný web zdarma, bez závazků.' },
       { q: 'Musím měnit doménu nebo hosting?', a: 'Ne, pracujeme s tím, co už máte. Nový web napojíme na vaši stávající doménu.' },
       { q: 'Jak dlouho trvá, než bude web hotový?', a: 'Většinou 2–3 týdny od schválení návrhu. Přesný termín dostanete po prvním rozhovoru.' },
-      { q: 'Co když už web mám a jen nefunguje dobře?', a: 'Přesně na to je bezplatný rozbor — pošlete nám odkaz, natočíme krátké video s tím, co bychom konkrétně zlepšili.' },
-      { q: 'Funguje to i mimo velká města?', a: 'Ano — pracujeme s firmami po celé ČR, celá komunikace probíhá online a přes WhatsApp.' },
+      { q: 'Co když už web mám a jen nefunguje dobře?', a: 'Přesně na to je bezplatná konzultace — společně projdeme váš současný web a ukážeme, co bychom konkrétně zlepšili.' },
+      { q: 'Funguje to i mimo velká města?', a: 'Ano — pracujeme s firmami po celé ČR, celá komunikace probíhá online.' },
     ],
 
     finalTitle: 'Kolik poptávek jste ztratili tento měsíc, aniž byste o tom věděli?',
-    finalDesc: 'Napište nám na WhatsApp a pošlete odkaz na váš web — do pár hodin víte, kde přicházíte o zákazníky.',
+    finalDesc: 'Rezervujte si bezplatnou konzultaci — během 30 minut zjistíte přesně, kde přicházíte o zákazníky.',
   },
   en: {
     seo: {
       title: 'Websites for Heat Pump & HVAC Companies | Netsol AI',
-      description: "How many enquiries are you losing to a slow or unclear website? We'll show you exactly what to fix. Free review via WhatsApp.",
+      description: "How many enquiries are you losing to a slow or unclear website? We'll show you exactly what to fix. Free consultation.",
     },
-    whatsappMessage: "Hi, I'd like a free review of my website for my heat pump / HVAC business.",
     badge: 'FOR HEAT PUMP & HVAC INSTALLERS',
     h1: 'A customer was looking for a heat pump. They messaged three companies. You weren\'t one of them.',
     heroSub: "Not because your work is worse. Because your website didn't tell them what they needed to know in 8 seconds — so they messaged whoever did, first.",
-    ctaWhatsapp: 'Message us on WhatsApp',
+    ctaBooking: 'Book a Free Consultation',
     ctaHow: 'How we help ↓',
 
     storyEyebrow: 'THIS HAPPENS EVERY DAY',
@@ -170,7 +168,7 @@ const T = {
     storyBody: [
       'Someone at home just did the math — their old heating doesn\'t make sense anymore. They pull out their phone and search "heat pump installation [their city]".',
       "They open the first three websites. On two of them, after 10 seconds they still don't know if the company even does what they need, roughly what it costs, or how to reach them quickly.",
-      'On the third site, it\'s obvious: what you do, who it\'s for, a rough price, and a "Message on WhatsApp" button right at the top.',
+      'On the third site, it\'s obvious: what you do, who it\'s for, a rough price, and a "Book a Consultation" button right at the top.',
       "They message that one. Not because that company is better. Because it answered their questions first.",
     ],
     storyCost: 'The average heat pump job in Czechia runs around 150,000–300,000 CZK. Lose just 2 enquiries a month this way and that\'s hundreds of thousands of crowns a year you never see — and never even know you lost.',
@@ -207,10 +205,10 @@ const T = {
     ],
 
     offerEyebrow: 'START HERE — FREE',
-    offerTitle: "Send us your current website. We'll record you a video.",
-    offerDesc: "We'll show you 3 specific things costing you enquiries right now on your website — and what could be done about it. No obligation, no sales pressure.",
-    offerChecklist: ['A short video, specific to your website', "3 concrete things we'd change", 'Takes you 10 seconds — just send the link'],
-    offerBoxLabel: 'Send your website link via WhatsApp',
+    offerTitle: 'Book a free 30-minute consultation.',
+    offerDesc: "We'll go through your current website together, live, and show you 3 specific things costing you enquiries right now. No obligation, no sales pressure.",
+    offerChecklist: ['A 30-minute call, specific to your website', "3 concrete things we'd change", 'No obligation, no sales pressure'],
+    offerBoxLabel: 'Pick a time that works for you',
     offerNote: 'We usually reply within a few hours',
 
     casesEyebrow: 'PROOF, NOT JUST A PROMISE',
@@ -244,27 +242,26 @@ const T = {
     faqEyebrow: 'FAQ',
     faqTitle: 'Quick answers',
     faq: [
-      { q: 'How much will it cost?', a: "Depends on scope — we'll discuss it on WhatsApp based on what you need. First, we'll take a free, no-obligation look at your current site." },
+      { q: 'How much will it cost?', a: "Depends on scope — we'll discuss it during the consultation based on what you need. First, we'll take a free, no-obligation look at your current site." },
       { q: 'Do I need to change domain or hosting?', a: 'No, we work with what you already have. The new site connects to your existing domain.' },
       { q: 'How long does it take to finish?', a: "Usually 2–3 weeks once the design is approved. You'll get an exact timeline after the first conversation." },
-      { q: "What if I already have a site, it just doesn't work well?", a: "That's exactly what the free review is for — send us the link and we'll record a short video with what we'd specifically improve." },
-      { q: 'Does this work outside big cities?', a: "Yes — we work with companies across the whole country, everything runs online and over WhatsApp." },
+      { q: "What if I already have a site, it just doesn't work well?", a: "That's exactly what the free consultation is for — we'll go through your current site together and show you what we'd specifically improve." },
+      { q: 'Does this work outside big cities?', a: "Yes — we work with companies across the whole country, everything runs online." },
     ],
 
     finalTitle: 'How many enquiries did you lose this month without even knowing it?',
-    finalDesc: "Message us on WhatsApp and send your website link — within a few hours you'll know exactly where you're losing customers.",
+    finalDesc: "Book a free consultation — in 30 minutes you'll know exactly where you're losing customers.",
   },
 };
 
 export default function HvacWebPage() {
   const { lang } = useLanguage();
   const t = T[lang] || T.cs;
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.whatsappMessage)}`;
 
   useEffect(() => { trackLandingPageView('hvac-web'); }, []);
 
-  const openWhatsApp = (source) => {
-    trackWhatsAppClick(source);
+  const openBooking = (source) => {
+    trackBookingClick(source);
   };
 
   const jsonLd = [{
@@ -301,9 +298,9 @@ export default function HvacWebPage() {
               <h1 className="fc-hero-h1" style={{ fontSize: 'clamp(1.7rem, 3.4vw, 2.5rem)' }}>{t.h1}</h1>
               <p className="fc-hero-sub" style={{ maxWidth: 620, margin: '0 auto 36px' }}>{t.heroSub}</p>
               <div className="fc-hero-actions" style={{ justifyContent: 'center' }}>
-                <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => openWhatsApp('hvac-hero')} className="fc-btn-white">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.65 0-3.2-.46-4.52-1.26l-.32-.19-3.01.78.8-2.93-.21-.3A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
-                  {t.ctaWhatsapp}
+                <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => openBooking('hvac-hero')} className="fc-btn-white">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 9h18"/></svg>
+                  {t.ctaBooking}
                 </a>
                 <a href="#reseni" className="fc-btn-outline">{t.ctaHow}</a>
               </div>
@@ -421,8 +418,8 @@ export default function HvacWebPage() {
               <div className="fc-book-right">
                 <div className="fc-book-box">
                   <p className="fc-book-box-label">{t.offerBoxLabel}</p>
-                  <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => openWhatsApp('hvac-audit-offer')} className="fc-btn-white fc-btn-white--block">
-                    {t.ctaWhatsapp}
+                  <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => openBooking('hvac-audit-offer')} className="fc-btn-white fc-btn-white--block">
+                    {t.ctaBooking}
                   </a>
                   <p className="fc-book-note">{t.offerNote}</p>
                 </div>
@@ -490,8 +487,8 @@ export default function HvacWebPage() {
           </div>
           <div style={{ textAlign: 'center', marginTop: 32 }}>
             <p style={{ marginBottom: 16, fontWeight: 500 }}>{t.fitCta}</p>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => openWhatsApp('hvac-fit-check')} className="fc-cta-btn">
-              {t.ctaWhatsapp}
+            <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => openBooking('hvac-fit-check')} className="fc-cta-btn">
+              {t.ctaBooking}
             </a>
           </div>
         </div>
@@ -524,8 +521,8 @@ export default function HvacWebPage() {
               <div className="fc-book-left" style={{ maxWidth: 620 }}>
                 <h2 className="fc-book-h2">{t.finalTitle}</h2>
                 <p className="fc-book-desc">{t.finalDesc}</p>
-                <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => openWhatsApp('hvac-final-cta')} className="fc-cta-btn">
-                  {t.ctaWhatsapp}
+                <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => openBooking('hvac-final-cta')} className="fc-cta-btn">
+                  {t.ctaBooking}
                 </a>
               </div>
             </div>
