@@ -505,12 +505,12 @@ export default function HvacWebPage() {
 
       {/* FAQ */}
       <section className="section" style={{ background: 'var(--bg-soft)' }}>
-        <div className="container">
+        <div className="container" style={{ textAlign: 'center' }}>
           <p className="eyebrow">{t.faqEyebrow}</p>
-          <div className="section-head">
-            <h2>{t.faqTitle}</h2>
+          <div className="section-head" style={{ gridTemplateColumns: '1fr' }}>
+            <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.faqTitle}</h2>
           </div>
-          <div style={{ maxWidth: 720, margin: '0 auto' }}>
+          <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'left' }}>
             {t.faq.map((item, i) => (
               <div key={i} style={{ padding: '20px 0', borderBottom: '1px solid var(--border, #eee)' }}>
                 <h3 style={{ margin: '0 0 8px 0', fontSize: '1.05rem' }}>{item.q}</h3>
