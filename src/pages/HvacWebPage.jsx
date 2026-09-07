@@ -247,15 +247,15 @@ export default function HvacWebPage() {
             <div className="fc-hero-orb fc-hero-orb--1" />
             <div className="fc-hero-orb fc-hero-orb--2" />
           </div>
-          <div className="container fc-hero-inner">
-            <div className="fc-hero-text">
+          <div className="container fc-hero-inner" style={{ gridTemplateColumns: '1fr', justifyItems: 'center' }}>
+            <div className="fc-hero-text" style={{ maxWidth: 760, textAlign: 'center' }}>
               <div className="fc-hero-badge">
                 <span className="fc-hero-badge-dot" />
                 {t.badge}
               </div>
-              <h1 className="fc-hero-h1">{t.h1}</h1>
-              <p className="fc-hero-sub">{t.heroSub}</p>
-              <div className="fc-hero-actions">
+              <h1 className="fc-hero-h1" style={{ fontSize: 'clamp(1.7rem, 3.4vw, 2.5rem)' }}>{t.h1}</h1>
+              <p className="fc-hero-sub" style={{ maxWidth: 620, margin: '0 auto 36px' }}>{t.heroSub}</p>
+              <div className="fc-hero-actions" style={{ justifyContent: 'center' }}>
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => openWhatsApp('hvac-hero')} className="fc-btn-white">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.65 0-3.2-.46-4.52-1.26l-.32-.19-3.01.78.8-2.93-.21-.3A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
                   {t.ctaWhatsapp}
