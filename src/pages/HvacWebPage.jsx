@@ -51,6 +51,17 @@ const IconWrench = () => (
 
 const FEATURE_ICONS = { calendar: IconCalendar, grant: IconGrant, card: IconCard, gallery: IconGallery, star: IconStar, bell: IconBell, pin: IconPin, wrench: IconWrench };
 
+const IconTarget = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+const IconSpark = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M6.3 17.7l2.8-2.8M14.9 9.1l2.8-2.8" />
+  </svg>
+);
+
 const T = {
   cs: {
     seo: {
@@ -308,14 +319,16 @@ export default function HvacWebPage() {
         <div className="container" style={{ textAlign: 'center' }}>
           <p className="eyebrow">{t.aboutEyebrow}</p>
           <div className="section-head" style={{ gridTemplateColumns: '1fr' }}>
-            <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.aboutTitle}</h2>
+            <h2 style={{ maxWidth: 640, margin: '0 auto' }}>{t.aboutTitle}</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 900, margin: '0 auto', textAlign: 'left' }}>
-            <div className="fc-benefit-card">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 900, margin: '40px auto 0', textAlign: 'left' }}>
+            <div className="fc-benefit-card hvac-feature-card">
+              <div className="fc-benefit-icon hvac-icon-anim"><IconTarget /></div>
               <h3 className="fc-benefit-title">{t.aboutWhatTitle}</h3>
               <p className="fc-benefit-desc">{t.aboutWhatText}</p>
             </div>
-            <div className="fc-benefit-card">
+            <div className="fc-benefit-card hvac-feature-card">
+              <div className="fc-benefit-icon hvac-icon-anim" style={{ animationDelay: '0.15s' }}><IconSpark /></div>
               <h3 className="fc-benefit-title">{t.aboutHowTitle}</h3>
               <p className="fc-benefit-desc">{t.aboutHowText}</p>
             </div>
