@@ -558,8 +558,8 @@ export default function HvacWebPage() {
         <div className="container">
           <div className="fc-book-card">
             <div className="fc-book-orb" aria-hidden="true" />
-            <div className="fc-book-inner" style={{ justifyContent: 'center', textAlign: 'center' }}>
-              <div className="fc-book-left" style={{ maxWidth: 620 }}>
+            <div className="fc-book-inner" style={{ gridTemplateColumns: '1fr', justifyContent: 'center', textAlign: 'center' }}>
+              <div className="fc-book-left" style={{ maxWidth: 620, margin: '0 auto' }}>
                 <h2 className="fc-book-h2">{t.finalTitle}</h2>
                 <p className="fc-book-desc">{t.finalDesc}</p>
                 <a href={BOOKING_URL} target="_blank" rel="noreferrer" onClick={() => openBooking('hvac-final-cta')} className="fc-cta-btn">
