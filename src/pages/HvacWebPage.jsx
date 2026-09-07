@@ -38,29 +38,18 @@ const T = {
       { title: 'Nevíte, co funguje', desc: 'Bez sledování nepoznáte, jestli vám poptávky vozí Google, Mapy nebo doporučení.' },
     ],
 
-    solutionEyebrow: 'JAK VÁM POMŮŽEME — KROK ZA KROKEM',
-    solutionTitle: 'Ne hezčí web. Web, který vám skutečně vydělává.',
-    steps: [
-      {
-        n: '01',
-        title: 'Web postavený tak, aby přesvědčil za 10 sekund',
-        desc: 'Cena, reference a kontakt vidí návštěvník hned po otevření — rychlý, přehledný a stejně dobrý na mobilu jako na počítači. Základ, bez kterého nic dalšího nefunguje.',
-      },
-      {
-        n: '02',
-        title: 'Zjistíme, co vaši zákazníci skutečně hledají',
-        desc: 'Pomocí AI analyzujeme, jak lidé ve vašem oboru a regionu hledají na Googlu, a podle toho stavíme strukturu a obsah webu — aby se vůbec měl šanci zobrazit, když někdo hledá tepelné čerpadlo u vás v okolí.',
-      },
-      {
-        n: '03',
-        title: 'Optimalizace pro Google a Mapy',
-        desc: 'Správně nastavené SEO, popisky služeb a firemní profil na Google — aby vás bylo vidět mezi prvními výsledky, ne až na druhé stránce, kam se nikdo nedostane.',
-      },
-      {
-        n: '04',
-        title: 'Sledujeme výsledky a web dál zlepšujeme',
-        desc: 'Vidíte, odkud poptávky skutečně přicházejí a co funguje. Web podle toho postupně vylepšujeme — není to jednorázová práce, ale dlouhodobý růst.',
-      },
+    solutionEyebrow: 'CO VÁŠ NOVÝ WEB BUDE UMĚT',
+    solutionTitle: '8 funkcí, které vám skutečně vydělají',
+    solutionSub: 'Ne šablona z krabice. Web postavený konkrétně pro prodej tepelných čerpadel a HVAC služeb.',
+    features: [
+      { icon: '📅', title: 'Online rezervace termínu', desc: 'Zákazník si sám vybere volný termín na prohlídku nebo nabídku — žádné volání tam a zpět.' },
+      { icon: '💸', title: 'Kalkulačka dotace Nová zelená úsporám', desc: 'Web hned spočítá, na jakou dotaci má zákazník nárok. Jeden z nejsilnějších důvodů nechat vám kontakt.' },
+      { icon: '💳', title: 'Online platby a zálohy', desc: 'Zákazník rovnou zaplatí zálohu a rezervaci si tím potvrdí — bez faktur poštou.' },
+      { icon: '🖼️', title: 'Fotogalerie realizací před/po', desc: 'Skutečné projekty, které budují důvěru rychleji než jakýkoli text.' },
+      { icon: '⭐', title: 'Google recenze přímo na webu', desc: 'Hodnocení se natahují automaticky — žádné ruční kopírování, vždy aktuální.' },
+      { icon: '🔔', title: 'Automatické potvrzení a připomínky', desc: 'SMS a e-mail před domluveným termínem — méně zapomenutých schůzek, méně ztraceného času.' },
+      { icon: '📍', title: 'Kontrola pokrytí oblasti', desc: 'Zákazník zadá PSČ a hned ví, jestli k němu jezdíte — filtruje poptávky mimo váš region.' },
+      { icon: '🔧', title: 'Servisní balíčky online', desc: 'Pravidelná údržba jako předplatné, které si zákazník objedná sám — opakovaný příjem bez další práce navíc.' },
     ],
 
     offerEyebrow: 'ZAČNĚTE TADY — ZDARMA',
@@ -122,29 +111,18 @@ const T = {
       { title: "You don't know what's working", desc: "Without tracking, you can't tell if enquiries come from Google, Maps, or referrals." },
     ],
 
-    solutionEyebrow: 'HOW WE HELP — STEP BY STEP',
-    solutionTitle: 'Not a prettier website. A website that actually earns you business.',
-    steps: [
-      {
-        n: '01',
-        title: 'A website built to convince in 10 seconds',
-        desc: 'Price, references, and contact info are visible the moment someone lands — fast, clear, and just as good on mobile as on desktop. The foundation everything else depends on.',
-      },
-      {
-        n: '02',
-        title: 'We find out what your customers actually search for',
-        desc: "Using AI, we analyze how people in your trade and region actually search on Google, and build the site's structure and content around that — so it has a real chance of showing up when someone nearby searches for a heat pump.",
-      },
-      {
-        n: '03',
-        title: 'Optimized for Google and Maps',
-        desc: "Properly set up SEO, service descriptions, and your Google Business profile — so you show up among the first results, not buried on page two where nobody looks.",
-      },
-      {
-        n: '04',
-        title: 'We track results and keep improving the site',
-        desc: "You see exactly where enquiries actually come from and what's working. We keep refining the site based on that — this isn't a one-off job, it's ongoing growth.",
-      },
+    solutionEyebrow: 'WHAT YOUR NEW WEBSITE WILL DO',
+    solutionTitle: '8 features that actually earn you money',
+    solutionSub: 'Not a template out of a box. A website built specifically to sell heat pump and HVAC services.',
+    features: [
+      { icon: '📅', title: 'Online appointment booking', desc: 'Customers pick an open slot for a survey or quote themselves — no back-and-forth phone calls.' },
+      { icon: '💸', title: 'Government grant/subsidy calculator', desc: 'The site instantly calculates what grant a customer qualifies for. One of the strongest reasons for them to leave their contact info.' },
+      { icon: '💳', title: 'Online payments and deposits', desc: 'Customers pay a deposit and confirm their booking on the spot — no invoices by post.' },
+      { icon: '🖼️', title: 'Before/after project gallery', desc: 'Real projects that build trust faster than any amount of text.' },
+      { icon: '⭐', title: 'Google reviews shown on the site', desc: 'Ratings pull in automatically — no manual copying, always up to date.' },
+      { icon: '🔔', title: 'Automatic confirmations and reminders', desc: 'SMS and email before the scheduled appointment — fewer forgotten visits, less wasted time.' },
+      { icon: '📍', title: 'Service area checker', desc: 'Customers enter their postcode and immediately know if you cover their area — filters out enquiries outside your region.' },
+      { icon: '🔧', title: 'Online service plans', desc: 'Recurring maintenance sold as a subscription customers sign up for themselves — repeat revenue with no extra work from you.' },
     ],
 
     offerEyebrow: 'START HERE — FREE',
@@ -269,25 +247,20 @@ export default function HvacWebPage() {
         </div>
       </section>
 
-      {/* SOLUTION — STEP BY STEP */}
+      {/* SOLUTION — 8 CONCRETE FEATURES */}
       <section className="section" id="reseni" style={{ background: 'var(--bg-soft)' }}>
         <div className="container">
           <p className="eyebrow">{t.solutionEyebrow}</p>
           <div className="section-head">
             <h2>{t.solutionTitle}</h2>
+            <p>{t.solutionSub}</p>
           </div>
-          <div style={{ maxWidth: 820, margin: '0 auto' }}>
-            {t.steps.map((step, i) => (
-              <div key={i} style={{ display: 'flex', gap: 20, marginBottom: 28, alignItems: 'flex-start' }}>
-                <div style={{
-                  flexShrink: 0, width: 44, height: 44, borderRadius: '50%',
-                  background: '#5c5cff', color: '#fff', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.95rem',
-                }}>{step.n}</div>
-                <div>
-                  <h3 style={{ margin: '0 0 6px 0', fontSize: '1.1rem' }}>{step.title}</h3>
-                  <p style={{ margin: 0, color: 'var(--text-soft, #666)', lineHeight: 1.6 }}>{step.desc}</p>
-                </div>
+          <div className="fc-benefits-grid">
+            {t.features.map((f, i) => (
+              <div key={i} className="fc-benefit-card">
+                <div className="fc-benefit-icon" style={{ fontSize: '1.6rem' }}>{f.icon}</div>
+                <h3 className="fc-benefit-title">{f.title}</h3>
+                <p className="fc-benefit-desc">{f.desc}</p>
               </div>
             ))}
           </div>
