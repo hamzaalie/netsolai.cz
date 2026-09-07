@@ -6,6 +6,51 @@ import { trackWhatsAppClick, trackLandingPageView } from '../utils/tracking';
 
 const WHATSAPP_NUMBER = '420721405452';
 
+// ── Feature icons (animated, matching the site's line-icon style) ─────────────
+const IconCalendar = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" />
+    <path d="M8 14l2 2 4-4" />
+  </svg>
+);
+const IconGrant = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="7" cy="7" r="3.5" /><circle cx="17" cy="17" r="3.5" /><line x1="5" y1="19" x2="19" y2="5" />
+  </svg>
+);
+const IconCard = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" /><line x1="6" y1="15" x2="10" y2="15" />
+  </svg>
+);
+const IconGallery = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="14" height="14" rx="2" /><rect x="7" y="7" width="14" height="14" rx="2" />
+  </svg>
+);
+const IconStar = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2.5l2.9 6 6.6.8-4.8 4.6 1.2 6.6-5.9-3.2-5.9 3.2 1.2-6.6-4.8-4.6 6.6-.8z" />
+  </svg>
+);
+const IconBell = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.7 21a2 2 0 0 1-3.4 0" />
+  </svg>
+);
+const IconPin = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" /><circle cx="12" cy="10" r="3" />
+  </svg>
+);
+const IconWrench = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2z" />
+  </svg>
+);
+
+const FEATURE_ICONS = { calendar: IconCalendar, grant: IconGrant, card: IconCard, gallery: IconGallery, star: IconStar, bell: IconBell, pin: IconPin, wrench: IconWrench };
+
 const T = {
   cs: {
     seo: {
@@ -50,14 +95,14 @@ const T = {
     solutionTitle: '8 funkcí, které vám skutečně vydělají',
     solutionSub: 'Ne šablona z krabice. Web postavený konkrétně pro prodej tepelných čerpadel a HVAC služeb.',
     features: [
-      { icon: '📅', title: 'Online rezervace termínu', desc: 'Zákazník si sám vybere volný termín na prohlídku nebo nabídku — žádné volání tam a zpět.' },
-      { icon: '💸', title: 'Kalkulačka dotace Nová zelená úsporám', desc: 'Web hned spočítá, na jakou dotaci má zákazník nárok. Jeden z nejsilnějších důvodů nechat vám kontakt.' },
-      { icon: '💳', title: 'Online platby a zálohy', desc: 'Zákazník rovnou zaplatí zálohu a rezervaci si tím potvrdí — bez faktur poštou.' },
-      { icon: '🖼️', title: 'Fotogalerie realizací před/po', desc: 'Skutečné projekty, které budují důvěru rychleji než jakýkoli text.' },
-      { icon: '⭐', title: 'Google recenze přímo na webu', desc: 'Hodnocení se natahují automaticky — žádné ruční kopírování, vždy aktuální.' },
-      { icon: '🔔', title: 'Automatické potvrzení a připomínky', desc: 'SMS a e-mail před domluveným termínem — méně zapomenutých schůzek, méně ztraceného času.' },
-      { icon: '📍', title: 'Kontrola pokrytí oblasti', desc: 'Zákazník zadá PSČ a hned ví, jestli k němu jezdíte — filtruje poptávky mimo váš region.' },
-      { icon: '🔧', title: 'Servisní balíčky online', desc: 'Pravidelná údržba jako předplatné, které si zákazník objedná sám — opakovaný příjem bez další práce navíc.' },
+      { icon: 'calendar', title: 'Online rezervace termínu', desc: 'Zákazník si sám vybere volný termín na prohlídku nebo nabídku — žádné volání tam a zpět.' },
+      { icon: 'grant', title: 'Kalkulačka dotace Nová zelená úsporám', desc: 'Web hned spočítá, na jakou dotaci má zákazník nárok. Jeden z nejsilnějších důvodů nechat vám kontakt.' },
+      { icon: 'card', title: 'Online platby a zálohy', desc: 'Zákazník rovnou zaplatí zálohu a rezervaci si tím potvrdí — bez faktur poštou.' },
+      { icon: 'gallery', title: 'Fotogalerie realizací před/po', desc: 'Skutečné projekty, které budují důvěru rychleji než jakýkoli text.' },
+      { icon: 'star', title: 'Google recenze přímo na webu', desc: 'Hodnocení se natahují automaticky — žádné ruční kopírování, vždy aktuální.' },
+      { icon: 'bell', title: 'Automatické potvrzení a připomínky', desc: 'SMS a e-mail před domluveným termínem — méně zapomenutých schůzek, méně ztraceného času.' },
+      { icon: 'pin', title: 'Kontrola pokrytí oblasti', desc: 'Zákazník zadá PSČ a hned ví, jestli k němu jezdíte — filtruje poptávky mimo váš region.' },
+      { icon: 'wrench', title: 'Servisní balíčky online', desc: 'Pravidelná údržba jako předplatné, které si zákazník objedná sám — opakovaný příjem bez další práce navíc.' },
     ],
 
     offerEyebrow: 'ZAČNĚTE TADY — ZDARMA',
@@ -151,14 +196,14 @@ const T = {
     solutionTitle: '8 features that actually earn you money',
     solutionSub: 'Not a template out of a box. A website built specifically to sell heat pump and HVAC services.',
     features: [
-      { icon: '📅', title: 'Online appointment booking', desc: 'Customers pick an open slot for a survey or quote themselves — no back-and-forth phone calls.' },
-      { icon: '💸', title: 'Government grant/subsidy calculator', desc: 'The site instantly calculates what grant a customer qualifies for. One of the strongest reasons for them to leave their contact info.' },
-      { icon: '💳', title: 'Online payments and deposits', desc: 'Customers pay a deposit and confirm their booking on the spot — no invoices by post.' },
-      { icon: '🖼️', title: 'Before/after project gallery', desc: 'Real projects that build trust faster than any amount of text.' },
-      { icon: '⭐', title: 'Google reviews shown on the site', desc: 'Ratings pull in automatically — no manual copying, always up to date.' },
-      { icon: '🔔', title: 'Automatic confirmations and reminders', desc: 'SMS and email before the scheduled appointment — fewer forgotten visits, less wasted time.' },
-      { icon: '📍', title: 'Service area checker', desc: 'Customers enter their postcode and immediately know if you cover their area — filters out enquiries outside your region.' },
-      { icon: '🔧', title: 'Online service plans', desc: 'Recurring maintenance sold as a subscription customers sign up for themselves — repeat revenue with no extra work from you.' },
+      { icon: 'calendar', title: 'Online appointment booking', desc: 'Customers pick an open slot for a survey or quote themselves — no back-and-forth phone calls.' },
+      { icon: 'grant', title: 'Government grant/subsidy calculator', desc: 'The site instantly calculates what grant a customer qualifies for. One of the strongest reasons for them to leave their contact info.' },
+      { icon: 'card', title: 'Online payments and deposits', desc: 'Customers pay a deposit and confirm their booking on the spot — no invoices by post.' },
+      { icon: 'gallery', title: 'Before/after project gallery', desc: 'Real projects that build trust faster than any amount of text.' },
+      { icon: 'star', title: 'Google reviews shown on the site', desc: 'Ratings pull in automatically — no manual copying, always up to date.' },
+      { icon: 'bell', title: 'Automatic confirmations and reminders', desc: 'SMS and email before the scheduled appointment — fewer forgotten visits, less wasted time.' },
+      { icon: 'pin', title: 'Service area checker', desc: 'Customers enter their postcode and immediately know if you cover their area — filters out enquiries outside your region.' },
+      { icon: 'wrench', title: 'Online service plans', desc: 'Recurring maintenance sold as a subscription customers sign up for themselves — repeat revenue with no extra work from you.' },
     ],
 
     offerEyebrow: 'START HERE — FREE',
@@ -334,14 +379,27 @@ export default function HvacWebPage() {
             <h2>{t.solutionTitle}</h2>
             <p>{t.solutionSub}</p>
           </div>
+          <style>{`
+            @keyframes hvacIconFloat {
+              0%, 100% { transform: translateY(0) rotate(0deg); }
+              50% { transform: translateY(-4px) rotate(-6deg); }
+            }
+            .hvac-icon-anim { animation: hvacIconFloat 2.6s ease-in-out infinite; }
+            .hvac-feature-card:hover .hvac-icon-anim { animation-duration: 0.9s; }
+          `}</style>
           <div className="fc-benefits-grid">
-            {t.features.map((f, i) => (
-              <div key={i} className="fc-benefit-card">
-                <div className="fc-benefit-icon" style={{ fontSize: '1.6rem' }}>{f.icon}</div>
-                <h3 className="fc-benefit-title">{f.title}</h3>
-                <p className="fc-benefit-desc">{f.desc}</p>
-              </div>
-            ))}
+            {t.features.map((f, i) => {
+              const Icon = FEATURE_ICONS[f.icon];
+              return (
+                <div key={i} className="fc-benefit-card hvac-feature-card">
+                  <div className="fc-benefit-icon hvac-icon-anim" style={{ animationDelay: `${i * 0.15}s` }}>
+                    <Icon />
+                  </div>
+                  <h3 className="fc-benefit-title">{f.title}</h3>
+                  <p className="fc-benefit-desc">{f.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
