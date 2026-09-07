@@ -67,6 +67,26 @@ const T = {
       { name: 'Imagine Health', industry: 'Zdraví a wellness', before: 'Zpracování poptávky trvalo 3 dny', after: 'Dnes 2 hodiny', url: 'https://imagine-thailand.com/' },
     ],
 
+    fitEyebrow: 'UŠETŘETE SI TELEFONÁT',
+    fitTitle: 'Jsme pro vás ta pravá volba?',
+    fitSub: 'Pracujeme jen s omezeným počtem firem, aby se každému projektu dostalo skutečné pozornosti. Tady je upřímná verze, kdy to dává smysl — a kdy ne.',
+    fitYesTitle: 'Jsme pro vás skvělá volba, pokud…',
+    fitYes: [
+      'Provozujete servisní firmu, která žije z poptávek a termínů — tepelná čerpadla, klimatizace, HVAC',
+      'Vy nebo někdo z týmu dokáže rychle odpovědět na nové poptávky',
+      'Chcete více zakázek a stabilní, sledovatelný přísun poptávek',
+      'Chcete web, rezervace i sledování výsledků od jednoho týmu',
+      'Marketing vnímáte jako investici do růstu, ne jako jednorázový výdaj',
+    ],
+    fitNoTitle: 'Nejsme pro vás, pokud…',
+    fitNo: [
+      'Hledáte nejlevnější možné poptávky sdílené s pěti konkurenty',
+      'Nikdo ve firmě nemá čas zvednout telefon novým poptávkám',
+      'Prodáváte produkty online, ne lokální službu — to není náš obor',
+      'Čekáte výsledky přes noc bez toho, abyste se do toho první měsíc zapojili',
+    ],
+    fitCta: 'Vypadá to jako vy? Dalším krokem je krátký rozhovor bez tlaku.',
+
     faqEyebrow: 'ČASTÉ OTÁZKY',
     faqTitle: 'Rychlé odpovědi',
     faq: [
@@ -139,6 +159,26 @@ const T = {
       { name: 'The Contractors Academy', industry: 'Trade Education', before: 'Manual onboarding took days', after: 'Sped up by 70%', url: 'https://www.thecontractorsacademy.com/' },
       { name: 'Imagine Health', industry: 'Health & Wellness', before: 'Enquiry processing took 3 days', after: 'Now 2 hours', url: 'https://imagine-thailand.com/' },
     ],
+
+    fitEyebrow: 'SAVE YOURSELF A CALL',
+    fitTitle: 'Are we right for you?',
+    fitSub: "We only work with a limited number of companies so every project gets real attention. Here's the honest version — when this makes sense, and when it doesn't.",
+    fitYesTitle: 'We\'re a great fit if…',
+    fitYes: [
+      'You run a service business that lives on enquiries and appointments — heat pumps, AC, HVAC',
+      'You or someone on your team can respond to new enquiries quickly',
+      'You want more jobs and a steady, trackable flow of enquiries',
+      'You want your website, bookings, and results tracking from one team',
+      'You see marketing as an investment in growth, not a one-off expense',
+    ],
+    fitNoTitle: "We're not for you if…",
+    fitNo: [
+      'You want the cheapest possible leads, shared with five competitors',
+      "Nobody in the business is free to pick up the phone to new enquiries",
+      "You sell products online rather than a local service — that's not our lane",
+      'You expect results overnight without being involved at all in the first month',
+    ],
+    fitCta: 'Sound like you? The next step is a short, no-pressure conversation.',
 
     faqEyebrow: 'FAQ',
     faqTitle: 'Quick answers',
@@ -315,6 +355,47 @@ export default function HvacWebPage() {
                 </p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* QUALIFICATION — are we right for you */}
+      <section className="section">
+        <div className="container">
+          <p className="eyebrow" style={{ textAlign: 'center' }}>{t.fitEyebrow}</p>
+          <div className="section-head" style={{ textAlign: 'center' }}>
+            <h2>{t.fitTitle}</h2>
+            <p style={{ maxWidth: 620, margin: '0 auto' }}>{t.fitSub}</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 980, margin: '0 auto' }}>
+            <div className="fc-benefit-card" style={{ borderTop: '3px solid #1fa971' }}>
+              <h3 className="fc-benefit-title">{t.fitYesTitle}</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0 0' }}>
+                {t.fitYes.map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: 10, marginBottom: 12, lineHeight: 1.5 }}>
+                    <span style={{ color: '#1fa971', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                    <span className="fc-benefit-desc" style={{ margin: 0 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="fc-benefit-card" style={{ borderTop: '3px solid #c0392b' }}>
+              <h3 className="fc-benefit-title">{t.fitNoTitle}</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0 0' }}>
+                {t.fitNo.map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: 10, marginBottom: 12, lineHeight: 1.5 }}>
+                    <span style={{ color: '#c0392b', fontWeight: 700, flexShrink: 0 }}>✕</span>
+                    <span className="fc-benefit-desc" style={{ margin: 0 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>{t.fitCta}</p>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => openWhatsApp('hvac-fit-check')} className="fc-cta-btn">
+              {t.ctaWhatsapp}
+            </a>
           </div>
         </div>
       </section>
