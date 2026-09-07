@@ -29,6 +29,14 @@ const T = {
     ],
     storyCost: 'Průměrná zakázka na tepelné čerpadlo se v Česku pohybuje kolem 150 000–300 000 Kč. Stačí takhle ztratit 2 poptávky měsíčně a je to statisíce korun ročně, které nikdy neuvidíte — a ani nebudete vědět, že jste o ně přišli.',
 
+    problemEyebrow: 'TEN PROBLÉM',
+    problemTitle: 'Poznáváte se v tomhle?',
+    problemPoints: [
+      { title: 'Lidé o dotaci vědí, ale nevědí, jestli na ni mají nárok', desc: 'Takže poptávku odloží „na později" — a to později nikdy nepřijde.' },
+      { title: 'Poptávky, co jste koupili, byly k ničemu', desc: 'Jen se dívali, byli mimo váš region, nebo tu samou poptávku dostal i konkurent.' },
+      { title: 'Prodej se táhne, protože jste na zakázce', desc: 'Poptávka přijde, vy jste u instalace u jiného zákazníka, a odpovíte až za dva dny — kdy už dávno napsali někomu jinému.' },
+    ],
+
     causesEyebrow: 'PROČ SE TO STÁVÁ',
     causesTitle: 'Web, který vypadá dobře, ale nepracuje',
     causes: [
@@ -121,6 +129,14 @@ const T = {
       "They message that one. Not because that company is better. Because it answered their questions first.",
     ],
     storyCost: 'The average heat pump job in Czechia runs around 150,000–300,000 CZK. Lose just 2 enquiries a month this way and that\'s hundreds of thousands of crowns a year you never see — and never even know you lost.',
+
+    problemEyebrow: 'THE PROBLEM',
+    problemTitle: 'Does this sound like you?',
+    problemPoints: [
+      { title: "Homeowners know there's a grant, but not if they qualify", desc: 'So they put the enquiry off for "later" — and later never comes.' },
+      { title: 'The leads you bought were worthless', desc: 'Just browsing, outside your area, or the same enquiry resold to a competitor.' },
+      { title: "The sale drags because you're on a job", desc: "An enquiry comes in while you're mid-installation somewhere else, and by the time you reply two days later, they've already gone with someone else." },
+    ],
 
     causesEyebrow: 'WHY THIS HAPPENS',
     causesTitle: 'A website that looks fine but doesn\'t work',
@@ -265,6 +281,29 @@ export default function HvacWebPage() {
             <div style={{ marginTop: 28, padding: '20px 24px', background: 'rgba(92,92,255,0.08)', borderLeft: '3px solid #5c5cff', borderRadius: '0 8px 8px 0' }}>
               <p style={{ margin: 0, fontWeight: 600 }}>{t.storyCost}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE PROBLEM — sharp, specific pain points */}
+      <section className="section">
+        <div className="container">
+          <p className="eyebrow" style={{ textAlign: 'center' }}>{t.problemEyebrow}</p>
+          <div className="section-head" style={{ textAlign: 'center' }}>
+            <h2>{t.problemTitle}</h2>
+          </div>
+          <div className="fc-benefits-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            {t.problemPoints.map((p, i) => (
+              <div key={i} className="fc-benefit-card">
+                <div style={{
+                  width: 36, height: 36, borderRadius: 10, background: 'rgba(192,57,43,0.12)',
+                  color: '#c0392b', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: 700, fontSize: '1.1rem', marginBottom: 12,
+                }}>✕</div>
+                <h3 className="fc-benefit-title">{p.title}</h3>
+                <p className="fc-benefit-desc">{p.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
