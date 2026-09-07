@@ -39,27 +39,27 @@ const T = {
     ],
 
     solutionEyebrow: 'JAK VÁM POMŮŽEME — KROK ZA KROKEM',
-    solutionTitle: 'Ne hezčí web. Web, který odpovídá za vás.',
+    solutionTitle: 'Ne hezčí web. Web, který vám skutečně vydělává.',
     steps: [
       {
         n: '01',
-        title: 'Web, který odpoví na první pohled',
-        desc: 'Cena, reference a kontakt vidí návštěvník do 10 sekund od otevření — na mobilu stejně dobře jako na počítači.',
+        title: 'Web postavený tak, aby přesvědčil za 10 sekund',
+        desc: 'Cena, reference a kontakt vidí návštěvník hned po otevření — rychlý, přehledný a stejně dobrý na mobilu jako na počítači. Základ, bez kterého nic dalšího nefunguje.',
       },
       {
         n: '02',
-        title: 'AI odpovídá, i když vy nemůžete',
-        desc: 'Poptávka v sobotu večer nebo uprostřed instalace u jiného zákazníka? AI asistent na webu i WhatsAppu odpoví okamžitě a zjistí základní informace.',
+        title: 'Zjistíme, co vaši zákazníci skutečně hledají',
+        desc: 'Pomocí AI analyzujeme, jak lidé ve vašem oboru a regionu hledají na Googlu, a podle toho stavíme strukturu a obsah webu — aby se vůbec měl šanci zobrazit, když někdo hledá tepelné čerpadlo u vás v okolí.',
       },
       {
         n: '03',
-        title: 'Nic vám neproklouzne',
-        desc: 'Každá poptávka se automaticky zaznamená a vy dostanete přehled — žádné ztracené zprávy v e-mailu nebo na sociálních sítích.',
+        title: 'Optimalizace pro Google a Mapy',
+        desc: 'Správně nastavené SEO, popisky služeb a firemní profil na Google — aby vás bylo vidět mezi prvními výsledky, ne až na druhé stránce, kam se nikdo nedostane.',
       },
       {
         n: '04',
-        title: 'Víte, co skutečně funguje',
-        desc: 'Sledujeme, odkud poptávky přicházejí — Google, Mapy, doporučení — takže víte, kam se vyplatí investovat čas i peníze.',
+        title: 'Sledujeme výsledky a web dál zlepšujeme',
+        desc: 'Vidíte, odkud poptávky skutečně přicházejí a co funguje. Web podle toho postupně vylepšujeme — není to jednorázová práce, ale dlouhodobý růst.',
       },
     ],
 
@@ -123,27 +123,27 @@ const T = {
     ],
 
     solutionEyebrow: 'HOW WE HELP — STEP BY STEP',
-    solutionTitle: 'Not a prettier website. A website that answers for you.',
+    solutionTitle: 'Not a prettier website. A website that actually earns you business.',
     steps: [
       {
         n: '01',
-        title: 'A website that answers at a glance',
-        desc: 'Price, references, and contact info are visible within 10 seconds of landing — on mobile just as well as on desktop.',
+        title: 'A website built to convince in 10 seconds',
+        desc: 'Price, references, and contact info are visible the moment someone lands — fast, clear, and just as good on mobile as on desktop. The foundation everything else depends on.',
       },
       {
         n: '02',
-        title: 'AI responds even when you can\'t',
-        desc: 'An enquiry on Saturday night, or while you\'re mid-installation at another job? An AI assistant on your site and WhatsApp responds instantly and gathers the basics.',
+        title: 'We find out what your customers actually search for',
+        desc: "Using AI, we analyze how people in your trade and region actually search on Google, and build the site's structure and content around that — so it has a real chance of showing up when someone nearby searches for a heat pump.",
       },
       {
         n: '03',
-        title: 'Nothing slips through',
-        desc: 'Every enquiry is logged automatically and you get a clear overview — no messages lost in email or social media DMs.',
+        title: 'Optimized for Google and Maps',
+        desc: "Properly set up SEO, service descriptions, and your Google Business profile — so you show up among the first results, not buried on page two where nobody looks.",
       },
       {
         n: '04',
-        title: 'You know what\'s actually working',
-        desc: "We track where enquiries actually come from — Google, Maps, referrals — so you know where it's worth spending time and money.",
+        title: 'We track results and keep improving the site',
+        desc: "You see exactly where enquiries actually come from and what's working. We keep refining the site based on that — this isn't a one-off job, it's ongoing growth.",
       },
     ],
 
