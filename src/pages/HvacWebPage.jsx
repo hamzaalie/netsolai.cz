@@ -51,6 +51,29 @@ const IconWrench = () => (
 
 const FEATURE_ICONS = { calendar: IconCalendar, grant: IconGrant, card: IconCard, gallery: IconGallery, star: IconStar, bell: IconBell, pin: IconPin, wrench: IconWrench };
 
+// ── Story step icons ───────────────────────────────────────────────────────────
+const IconSearch = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+);
+const IconBrowser = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2" /><line x1="2" y1="9" x2="22" y2="9" /><circle cx="5.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+  </svg>
+);
+const IconCheckBrowser = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2" /><line x1="2" y1="9" x2="22" y2="9" /><path d="M8 14l2.5 2.5L16 11" />
+  </svg>
+);
+const IconMessageSent = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 3L2 10.5l7.5 3L13 21l8-18z" />
+  </svg>
+);
+const STORY_ICONS = [IconSearch, IconBrowser, IconCheckBrowser, IconMessageSent];
+
 const T = {
   cs: {
     seo: {
@@ -311,15 +334,29 @@ export default function HvacWebPage() {
 
       {/* VIVID PROBLEM STORY */}
       <section className="section" style={{ background: 'var(--bg-soft)' }}>
-        <div className="container">
+        <div className="container" style={{ textAlign: 'center' }}>
           <p className="eyebrow">{t.storyEyebrow}</p>
-          <div className="section-head">
-            <h2>{t.storyTitle}</h2>
+          <div className="section-head" style={{ gridTemplateColumns: '1fr' }}>
+            <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.storyTitle}</h2>
           </div>
-          <div style={{ maxWidth: 760, margin: '0 auto' }}>
-            {t.storyBody.map((p, i) => (
-              <p key={i} style={{ fontSize: '1.05rem', lineHeight: 1.7, marginBottom: 16 }}>{p}</p>
-            ))}
+          <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'left' }}>
+            {t.storyBody.map((p, i) => {
+              const Icon = STORY_ICONS[i];
+              const isLast = i === t.storyBody.length - 1;
+              return (
+                <div key={i} style={{ display: 'flex', gap: 18, marginBottom: isLast ? 0 : 22 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                    <div style={{
+                      width: 44, height: 44, borderRadius: '50%', background: '#fff',
+                      border: '1.5px solid rgba(92,92,255,0.3)', color: '#5c5cff',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                    }}><Icon /></div>
+                    {!isLast && <div style={{ width: 2, flex: 1, background: 'rgba(92,92,255,0.2)', marginTop: 4 }} />}
+                  </div>
+                  <p style={{ fontSize: '1.02rem', lineHeight: 1.7, paddingTop: 8 }}>{p}</p>
+                </div>
+              );
+            })}
             <div style={{ marginTop: 28, padding: '20px 24px', background: 'rgba(92,92,255,0.08)', borderLeft: '3px solid #5c5cff', borderRadius: '0 8px 8px 0' }}>
               <p style={{ margin: 0, fontWeight: 600 }}>{t.storyCost}</p>
             </div>
@@ -329,12 +366,12 @@ export default function HvacWebPage() {
 
       {/* THE PROBLEM — sharp, specific pain points */}
       <section className="section">
-        <div className="container">
-          <p className="eyebrow" style={{ textAlign: 'center' }}>{t.problemEyebrow}</p>
-          <div className="section-head" style={{ textAlign: 'center' }}>
-            <h2>{t.problemTitle}</h2>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <p className="eyebrow">{t.problemEyebrow}</p>
+          <div className="section-head" style={{ gridTemplateColumns: '1fr' }}>
+            <h2 style={{ maxWidth: 'none', margin: '0 auto' }}>{t.problemTitle}</h2>
           </div>
-          <div className="fc-benefits-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'stretch' }}>
+          <div className="fc-benefits-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'stretch', textAlign: 'left' }}>
             {t.problemPoints.map((p, i) => (
               <div key={i} className="fc-benefit-card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div style={{
@@ -455,13 +492,13 @@ export default function HvacWebPage() {
 
       {/* QUALIFICATION — are we right for you */}
       <section className="section">
-        <div className="container">
-          <p className="eyebrow" style={{ textAlign: 'center' }}>{t.fitEyebrow}</p>
-          <div className="section-head" style={{ textAlign: 'center' }}>
-            <h2>{t.fitTitle}</h2>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <p className="eyebrow">{t.fitEyebrow}</p>
+          <div className="section-head" style={{ gridTemplateColumns: '1fr' }}>
+            <h2 style={{ maxWidth: 'none', margin: '0 auto 12px' }}>{t.fitTitle}</h2>
             <p style={{ maxWidth: 620, margin: '0 auto' }}>{t.fitSub}</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 980, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 980, margin: '0 auto', textAlign: 'left' }}>
             <div className="fc-benefit-card" style={{ borderTop: '3px solid #1fa971' }}>
               <h3 className="fc-benefit-title">{t.fitYesTitle}</h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0 0' }}>
