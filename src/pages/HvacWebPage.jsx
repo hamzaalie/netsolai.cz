@@ -75,7 +75,7 @@ const T = {
     storyCost: 'Průměrná zakázka na tepelné čerpadlo se v Česku pohybuje kolem 150 000–300 000 Kč. Stačí takhle ztratit 2 poptávky měsíčně a je to statisíce korun ročně, které nikdy neuvidíte — a ani nebudete vědět, že jste o ně přišli.',
 
     problemEyebrow: 'TEN PROBLÉM',
-    problemTitle: 'Poznáváte se v tomhle?',
+    problemTitle: 'Bojujete s něčím z tohoto?',
     problemPoints: [
       { title: 'Lidé o dotaci vědí, ale nevědí, jestli na ni mají nárok', desc: 'Takže poptávku odloží „na později" — a to později nikdy nepřijde.' },
       { title: 'Poptávky, co jste koupili, byly k ničemu', desc: 'Jen se dívali, byli mimo váš region, nebo tu samou poptávku dostal i konkurent.' },
@@ -176,7 +176,7 @@ const T = {
     storyCost: 'The average heat pump job in Czechia runs around 150,000–300,000 CZK. Lose just 2 enquiries a month this way and that\'s hundreds of thousands of crowns a year you never see — and never even know you lost.',
 
     problemEyebrow: 'THE PROBLEM',
-    problemTitle: 'Does this sound like you?',
+    problemTitle: 'Are you struggling with any of this?',
     problemPoints: [
       { title: "Homeowners know there's a grant, but not if they qualify", desc: 'So they put the enquiry off for "later" — and later never comes.' },
       { title: 'The leads you bought were worthless', desc: 'Just browsing, outside your area, or the same enquiry resold to a competitor.' },
@@ -337,13 +337,13 @@ export default function HvacWebPage() {
           <div className="section-head" style={{ textAlign: 'center' }}>
             <h2>{t.problemTitle}</h2>
           </div>
-          <div className="fc-benefits-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="fc-benefits-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'stretch' }}>
             {t.problemPoints.map((p, i) => (
-              <div key={i} className="fc-benefit-card">
+              <div key={i} className="fc-benefit-card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div style={{
                   width: 36, height: 36, borderRadius: 10, background: 'rgba(192,57,43,0.12)',
                   color: '#c0392b', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontWeight: 700, fontSize: '1.1rem', marginBottom: 12,
+                  fontWeight: 700, fontSize: '1.1rem', marginBottom: 12, flexShrink: 0,
                 }}>✕</div>
                 <h3 className="fc-benefit-title">{p.title}</h3>
                 <p className="fc-benefit-desc">{p.desc}</p>
