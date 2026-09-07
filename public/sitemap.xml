@@ -30,6 +30,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://netsolai.cz/tepelna-cerpadla-web</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ── Services ── -->
   <url>
     <loc>https://netsolai.cz/services/ai-automatizace</loc>
